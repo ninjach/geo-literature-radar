@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Geo Literature Radar | 地球系统文献主题雷达</title>
+    <meta
+      name="description"
+      content="面向课题组的地球系统科学前沿追踪网站，聚合近半年高质量期刊论文，支持主题筛选、摘要覆盖审计和官方链接回溯。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Geo Literature Radar">
+        <span class="brand-mark">GR</span>
+        <span>
+          <strong>Geo Literature Radar</strong>
+          <small id="brand-subtitle">地球系统文献主题雷达</small>
+        </span>
+      </a>
+
+      <nav class="topnav" aria-label="Main navigation">
+        <a href="#radar" data-i18n="navRadar">主题雷达</a>
+        <a href="#papers" data-i18n="navPapers">论文列表</a>
+        <a href="#sources" data-i18n="navSources">期刊源</a>
+      </nav>
+
+      <div class="top-actions">
+        <button class="control-button" id="language-toggle" type="button">EN</button>
+        <button class="control-button primary" id="refresh-button" type="button">
+          <span aria-hidden="true">↻</span>
+          <span data-i18n="refresh">刷新</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-media">
+          <img src="assets/earth-system-hero.png" alt="Earth system observation and modeling" />
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Research group radar</p>
+          <h1 id="hero-title">地球系统科学前沿追踪</h1>
+          <p id="hero-description">
+            聚合近半年核心期刊论文，按主题、期刊和摘要可用性组织，保留英文原始题录、关键词、摘要与官方链接。
+          </p>
+        </div>
+        <div class="metrics" aria-label="Data metrics">
+          <div>
+            <span data-i18n="metricPapers">论文</span>
+            <strong id="stat-count">--</strong>
+          </div>
+          <div>
+            <span data-i18n="metricJournals">期刊</span>
+            <strong id="stat-journals">18</strong>
+          </div>
+          <div>
+            <span data-i18n="metricAbstracts">摘要覆盖</span>
+            <strong id="stat-abstracts">--</strong>
+          </div>
+          <div>
+            <span data-i18n="metricUpdated">更新</span>
+            <strong id="stat-updated">--</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="filters" aria-label="Filters">
+          <div class="filter-head">
+            <strong data-i18n="filters">筛选</strong>
+            <span id="window-label">近 6 个月</span>
+          </div>
+          <label class="field">
+            <span data-i18n="search">搜索</span>
+            <input id="search" type="search" placeholder="题名、作者、关键词、期刊" />
+          </label>
+          <label class="field">
+            <span data-i18n="theme">主题</span>
+            <select id="theme-filter">
+              <option value="all">全部主题</option>
+            </select>
+          </label>
+          <label class="field">
+            <span data-i18n="journal">期刊</span>
+            <select id="journal-filter">
+              <option value="all">全部期刊</option>
+            </select>
+          </label>
+          <label class="field">
+            <span data-i18n="abstractStatus">摘要状态</span>
+            <select id="abstract-filter">
+              <option value="all">全部</option>
+              <option value="available">有摘要</option>
+              <option value="missing">缺摘要</option>
+            </select>
+          </label>
+          <label class="field">
+            <span data-i18n="sort">排序</span>
+            <select id="sort-select">
+              <option value="date">最新优先</option>
+              <option value="cited">引用热度</option>
+              <option value="priority">阅读优先级</option>
+              <option value="journal">期刊名称</option>
+            </select>
+          </label>
+          <label class="field">
+            <span data-i18n="months">追溯</span>
+            <select id="months-select">
+              <option value="3">近 3 个月</option>
+              <option value="6" selected>近 6 个月</option>
+              <option value="12">近 12 个月</option>
+            </select>
+          </label>
+          <div class="audit-box">
+            <strong data-i18n="dataAudit">数据审计</strong>
+            <p id="coverage-note">正在检查摘要覆盖情况...</p>
+          </div>
+        </aside>
+
+        <section class="content">
+          <section class="panel" id="radar">
+            <div class="section-title">
+              <div>
+                <p class="eyebrow">Theme radar</p>
+                <h2 data-i18n="themeRadar">主题雷达</h2>
+              </div>
+              <p id="result-note">正在加载论文数据...</p>
+            </div>
+            <div class="radar-board" id="radar-board" aria-label="Theme radar"></div>
+          </section>
+
+          <section class="panel" id="papers">
+            <div class="section-title">
+              <div>
+                <p class="eyebrow">Latest papers</p>
+                <h2 data-i18n="paperList">论文列表</h2>
+              </div>
+              <div class="view-tabs" role="tablist" aria-label="View mode">
+                <button class="active" data-view="cards" type="button" data-i18n="cards">卡片</button>
+                <button data-view="table" type="button" data-i18n="table">表格</button>
+              </div>
+            </div>
+            <div class="paper-list" id="paper-list"></div>
+            <div class="paper-table-wrap" id="paper-table-wrap" hidden>
+              <table class="paper-table">
+                <thead>
+                  <tr>
+                    <th data-i18n="date">日期</th>
+                    <th data-i18n="journal">期刊</th>
+                    <th data-i18n="theme">主题</th>
+                    <th data-i18n="paper">论文</th>
+                    <th data-i18n="link">链接</th>
+                  </tr>
+                </thead>
+                <tbody id="paper-table-body"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </section>
+
+      <section class="panel sources" id="sources">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Journal sources</p>
+            <h2 data-i18n="journalSources">期刊源清单</h2>
+          </div>
+          <p data-i18n="sourceText">监测 18 个高质量期刊；题录来自官方源和 DOI 元数据，全文始终回链原站。</p>
+        </div>
+        <div class="journal-grid" id="journal-grid"></div>
+      </section>
+    </main>
+
+    <dialog class="detail-dialog" id="detail-dialog">
+      <form method="dialog">
+        <button class="close-button" type="submit" title="Close">×</button>
+      </form>
+      <article id="detail-content"></article>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

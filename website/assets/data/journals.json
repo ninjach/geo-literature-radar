@@ -1,0 +1,314 @@
+{
+  "journals": [
+    {
+      "id": "nature-climate-change",
+      "name": "Nature Climate Change",
+      "abbr": "NCC",
+      "publisher": "Springer Nature",
+      "category": "气候变化",
+      "issn": [
+        "1758-678X",
+        "1758-6798"
+      ],
+      "crossrefIssn": "1758-6798",
+      "officialUrl": "https://www.nature.com/nclimate/",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "nature-geoscience",
+      "name": "Nature Geoscience",
+      "abbr": "NGEO",
+      "publisher": "Springer Nature",
+      "category": "气候变化",
+      "issn": [
+        "1752-0894",
+        "1752-0908"
+      ],
+      "crossrefIssn": "1752-0908",
+      "officialUrl": "https://www.nature.com/ngeo/",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "nature",
+      "name": "Nature",
+      "abbr": "Nature",
+      "publisher": "Springer Nature",
+      "category": "综合顶刊",
+      "issn": [
+        "0028-0836",
+        "1476-4687"
+      ],
+      "crossrefIssn": "1476-4687",
+      "officialUrl": "https://www.nature.com/nature/",
+      "feedUrl": "",
+      "quality": "flagship"
+    },
+    {
+      "id": "science",
+      "name": "Science",
+      "abbr": "Science",
+      "publisher": "AAAS",
+      "category": "综合顶刊",
+      "issn": [
+        "0036-8075",
+        "1095-9203"
+      ],
+      "crossrefIssn": "1095-9203",
+      "officialUrl": "https://www.science.org/journal/science",
+      "feedUrl": "",
+      "quality": "flagship"
+    },
+    {
+      "id": "pnas",
+      "name": "PNAS",
+      "abbr": "PNAS",
+      "publisher": "National Academy of Sciences",
+      "category": "综合顶刊",
+      "issn": [
+        "0027-8424",
+        "1091-6490"
+      ],
+      "crossrefIssn": "1091-6490",
+      "officialUrl": "https://www.pnas.org/",
+      "feedUrl": "https://www.pnas.org/action/showFeed?type=etoc&feed=rss&jc=pnas",
+      "quality": "flagship"
+    },
+    {
+      "id": "water-resources-research",
+      "name": "Water Resources Research",
+      "abbr": "WRR",
+      "publisher": "AGU / Wiley",
+      "category": "水文水资源",
+      "issn": [
+        "0043-1397",
+        "1944-7973"
+      ],
+      "crossrefIssn": "1944-7973",
+      "officialUrl": "https://agupubs.onlinelibrary.wiley.com/journal/19447973",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "hess",
+      "name": "Hydrology and Earth System Sciences",
+      "abbr": "HESS",
+      "publisher": "Copernicus / EGU",
+      "category": "水文水资源",
+      "issn": [
+        "1027-5606",
+        "1607-7938"
+      ],
+      "crossrefIssn": "1607-7938",
+      "officialUrl": "https://hess.copernicus.org/",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "journal-of-hydrology",
+      "name": "Journal of Hydrology",
+      "abbr": "JH",
+      "publisher": "Elsevier",
+      "category": "水文水资源",
+      "issn": [
+        "0022-1694"
+      ],
+      "crossrefIssn": "0022-1694",
+      "officialUrl": "https://www.sciencedirect.com/journal/journal-of-hydrology",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "gmd",
+      "name": "Geoscientific Model Development",
+      "abbr": "GMD",
+      "publisher": "Copernicus / EGU",
+      "category": "地球系统模型",
+      "issn": [
+        "1991-959X",
+        "1991-9603"
+      ],
+      "crossrefIssn": "1991-9603",
+      "officialUrl": "https://gmd.copernicus.org/",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "earth-system-dynamics",
+      "name": "Earth System Dynamics",
+      "abbr": "ESD",
+      "publisher": "Copernicus / EGU",
+      "category": "地球系统模型",
+      "issn": [
+        "2190-4979",
+        "2190-4987"
+      ],
+      "crossrefIssn": "2190-4987",
+      "officialUrl": "https://esd.copernicus.org/",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "earth-system-science-data",
+      "name": "Earth System Science Data",
+      "abbr": "ESSD",
+      "publisher": "Copernicus / EGU",
+      "category": "地球系统模型",
+      "issn": [
+        "1866-3508",
+        "1866-3516"
+      ],
+      "crossrefIssn": "1866-3516",
+      "officialUrl": "https://essd.copernicus.org/",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "remote-sensing-of-environment",
+      "name": "Remote Sensing of Environment",
+      "abbr": "RSE",
+      "publisher": "Elsevier",
+      "category": "遥感与GeoAI",
+      "issn": [
+        "0034-4257"
+      ],
+      "crossrefIssn": "0034-4257",
+      "officialUrl": "https://www.sciencedirect.com/journal/remote-sensing-of-environment",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "isprs",
+      "name": "ISPRS Journal of Photogrammetry and Remote Sensing",
+      "abbr": "ISPRS JPRS",
+      "publisher": "Elsevier",
+      "category": "遥感与GeoAI",
+      "issn": [
+        "0924-2716"
+      ],
+      "crossrefIssn": "0924-2716",
+      "officialUrl": "https://www.sciencedirect.com/journal/isprs-journal-of-photogrammetry-and-remote-sensing",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "ieee-tgrs",
+      "name": "IEEE Transactions on Geoscience and Remote Sensing",
+      "abbr": "IEEE TGRS",
+      "publisher": "IEEE",
+      "category": "遥感与GeoAI",
+      "issn": [
+        "0196-2892",
+        "1558-0644"
+      ],
+      "crossrefIssn": "1558-0644",
+      "officialUrl": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=36",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "global-change-biology",
+      "name": "Global Change Biology",
+      "abbr": "GCB",
+      "publisher": "Wiley",
+      "category": "生态与碳循环",
+      "issn": [
+        "1354-1013",
+        "1365-2486"
+      ],
+      "crossrefIssn": "1365-2486",
+      "officialUrl": "https://onlinelibrary.wiley.com/journal/13652486",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "biogeosciences",
+      "name": "Biogeosciences",
+      "abbr": "BG",
+      "publisher": "Copernicus / EGU",
+      "category": "生态与碳循环",
+      "issn": [
+        "1726-4170",
+        "1726-4189"
+      ],
+      "crossrefIssn": "1726-4189",
+      "officialUrl": "https://bg.copernicus.org/",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "global-environmental-change",
+      "name": "Global Environmental Change",
+      "abbr": "GEC",
+      "publisher": "Elsevier",
+      "category": "气候变化",
+      "issn": [
+        "0959-3780"
+      ],
+      "crossrefIssn": "0959-3780",
+      "officialUrl": "https://www.sciencedirect.com/journal/global-environmental-change",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "nhess",
+      "name": "Natural Hazards and Earth System Sciences",
+      "abbr": "NHESS",
+      "publisher": "Copernicus / EGU",
+      "category": "灾害风险",
+      "issn": [
+        "1561-8633",
+        "1684-9981"
+      ],
+      "crossrefIssn": "1684-9981",
+      "officialUrl": "https://nhess.copernicus.org/",
+      "feedUrl": "",
+      "quality": "core"
+    }
+  ],
+  "themes": [
+    {
+      "id": "climate",
+      "zh": "气候变化",
+      "en": "Climate Change",
+      "color": "#0f766e"
+    },
+    {
+      "id": "hydrology",
+      "zh": "水文水资源",
+      "en": "Hydrology & Water",
+      "color": "#2563eb"
+    },
+    {
+      "id": "modeling",
+      "zh": "地球系统模型",
+      "en": "Earth System Modeling",
+      "color": "#7c3aed"
+    },
+    {
+      "id": "remote",
+      "zh": "遥感与GeoAI",
+      "en": "Remote Sensing & GeoAI",
+      "color": "#16a34a"
+    },
+    {
+      "id": "carbon",
+      "zh": "生态与碳循环",
+      "en": "Ecology & Carbon",
+      "color": "#b45309"
+    },
+    {
+      "id": "hazard",
+      "zh": "灾害风险",
+      "en": "Hazards & Risk",
+      "color": "#dc2626"
+    },
+    {
+      "id": "general",
+      "zh": "综合顶刊",
+      "en": "Flagship Journals",
+      "color": "#475569"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+.env
+website/.env
+website/dist/
+website/data/cache/
+~$*
+*.pptx
+*.tmp
+*.log

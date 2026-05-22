@@ -1,0 +1,15 @@
+{
+  "name": "geo-literature-radar",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "refresh": "node server.js --refresh-once",
+    "export:static": "node server.js --export-static",
+    "build:pages": "node server.js --build-pages"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
