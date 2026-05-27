@@ -279,16 +279,16 @@ function buildLocalDigest(article) {
   return {
     title: "",
     titleStatus: "needs_translation",
-    mode: "本地摘要缩略",
+    mode: "本地保守速览",
     source: "local",
     confidence: hasAbstract ? "medium" : "low",
     summary: hasAbstract
-      ? excerpt || `本文主要关联${keywordText}。`
-      : `当前元数据没有提供摘要，只能依据英文题名和期刊信息判断其可能关联${keywordText}。请打开官方页面核对摘要与方法细节。`,
+      ? `该文可先作为${keywordText}方向的候选文献。聚合元数据已获取英文摘要，可用于继续核对研究对象、数据来源、方法路径、主要结论和不确定性表达；如需精确中文总结，请在详情页生成中文速览。`
+      : `当前 DOI/OpenAlex/Crossref 元数据没有提供摘要；仅可根据英文题名、期刊和索引词判断其可能关联${keywordText}。请打开官方页面核对摘要、方法和结论。`,
     keywords: article.zhKeywords || [],
     note: hasAbstract
-      ? "本地中文题名是检索题名，不是论文正式译名；导读只用于快速筛选，不替代人工阅读。"
-      : "缺少摘要时只生成题名级导读，避免无依据扩写；中文题名是检索题名，不是正式译名。",
+      ? "本地中文速览只依据题名、英文摘要和开放元数据生成，用于快速筛选，不替代人工精读。"
+      : "缺少摘要时只生成题名级导读，避免无依据扩写；如出版社页面显示摘要，请以官方页面为准。",
     generatedAt: new Date().toISOString()
   };
 }
@@ -307,11 +307,13 @@ function attachDerivedFields(article, previous = {}) {
   article.categoryId = category.id;
   article.categoryZh = category.zh;
   article.categoryEn = category.en;
+  article.zhKeywords = Array.isArray(article.zhKeywords) && article.zhKeywords.length
+    ? article.zhKeywords.map(cleanText).filter(Boolean).slice(0, 8)
+    : inferZhKeywords({ category: category.zh }, theme, article.titleEn || article.title, article.abstractEn || article.abstract, article.subjects || []);
   article.hasAbstract = Boolean(article.abstract && article.abstract.trim().length >= 40);
   article.abstractStatus = article.hasAbstract ? "available" : "missing";
-  delete article.zhKeywords;
-  delete article.localDigest;
-  delete article.zh;
+  article.zh = normalizeCachedZh(article.zh || previous.zh || previous.localDigest);
+  article.localDigest = article.zh || buildLocalDigest(article);
   return article;
 }
 
@@ -384,6 +386,9 @@ function normalizeOpenAlexItem(item, journal) {
   const subjects = [...concepts.slice(0, 8), ...keywords.slice(0, 8)];
   const theme = inferTheme(journal, title, abstract, subjects);
   const category = themeFromLabel(journal.category);
+  const primaryLocation = item.primary_location || {};
+  const bestOaLocation = item.best_oa_location || {};
+  const oaLocation = bestOaLocation.url ? bestOaLocation : primaryLocation;
   const article = {
     id: doi || item.id || `${journal.id}-${Buffer.from(title).toString("base64url").slice(0, 18)}`,
     doi,
@@ -404,7 +409,7 @@ function normalizeOpenAlexItem(item, journal) {
     themeEn: theme.en,
     published: item.publication_date || "",
     url:
-      (item.primary_location && item.primary_location.landing_page_url) ||
+      primaryLocation.landing_page_url ||
       item.doi ||
       item.id ||
       (doi ? `https://doi.org/${doi}` : journal.officialUrl),
@@ -415,6 +420,9 @@ function normalizeOpenAlexItem(item, journal) {
     keywordsEn: subjects,
     citedBy: item.cited_by_count || 0,
     openAccess: Boolean(item.open_access && item.open_access.is_oa),
+    openAccessUrl: item.open_access?.oa_url || oaLocation.landing_page_url || oaLocation.url || "",
+    pdfUrl: oaLocation.pdf_url || "",
+    license: oaLocation.license || "",
     sources: ["OpenAlex DOI metadata"]
   };
   article.zhKeywords = inferZhKeywords(journal, theme, title, abstract, subjects);
@@ -1172,9 +1180,6 @@ async function serveStatic(req, res, pathname) {
 
 function toClientArticle(article) {
   const copy = { ...article };
-  delete copy.zh;
-  delete copy.zhKeywords;
-  delete copy.localDigest;
   return copy;
 }
 
@@ -1190,7 +1195,9 @@ async function exportStaticData({ refresh = false, months = 6 } = {}) {
   if (!refresh) {
     const cached = await readJsonIfExists(ARTICLE_CACHE);
     const staticCached = await readJsonIfExists(path.join(STATIC_DATA_DIR, "articles.json"));
-    payload = cached ? toClientPayload(hydratePayload(cached)) : staticCached;
+    const cacheTime = cached ? new Date(cached.createdAt || cached.generatedAt || 0).getTime() : 0;
+    const staticTime = staticCached ? new Date(staticCached.createdAt || staticCached.generatedAt || 0).getTime() : 0;
+    payload = staticCached && staticTime >= cacheTime ? staticCached : cached ? toClientPayload(hydratePayload(cached)) : null;
   }
   if (!payload) payload = toClientPayload(await getArticles({ refresh, months }));
   await fsp.mkdir(STATIC_DATA_DIR, { recursive: true });
@@ -1208,6 +1215,72 @@ async function buildPagesDist({ refresh = false, months = 6 } = {}) {
   }
   await fsp.cp(path.join(ROOT, "assets"), path.join(DIST_DIR, "assets"), { recursive: true });
   return payload;
+}
+
+function clientArticleId(article) {
+  return article.id || article.doi || article.titleEn || article.title;
+}
+
+async function findArticleById(id, months = 6) {
+  const payload = await getArticles({ refresh: false, months });
+  const normalizedId = normalizeDoi(id);
+  return (payload.articles || []).find((article) => {
+    const keys = [clientArticleId(article), article.id, article.doi, normalizeDoi(article.doi || "")].filter(Boolean);
+    return keys.includes(id) || keys.includes(normalizedId);
+  });
+}
+
+function absoluteUrl(base, candidate) {
+  if (!candidate) return "";
+  try {
+    return new URL(candidate, base).toString();
+  } catch {
+    return "";
+  }
+}
+
+function extractFiguresFromHtml(html, pageUrl) {
+  const figures = [];
+  const figureBlocks = html.match(/<figure[\s\S]*?<\/figure>/gi) || [];
+  const blocks = figureBlocks.length ? figureBlocks : html.match(/<img\b[\s\S]*?>/gi) || [];
+  for (const block of blocks) {
+    const imgMatch = block.match(/<img\b[\s\S]*?(?:src|data-src|data-original)=["']([^"']+)["'][\s\S]*?>/i);
+    if (!imgMatch) continue;
+    const rawSrc = htmlDecode(imgMatch[1]);
+    const src = absoluteUrl(pageUrl, rawSrc);
+    if (!src || /^data:/i.test(src)) continue;
+    const alt = htmlDecode((block.match(/\balt=["']([^"']*)["']/i) || [])[1] || "");
+    const captionRaw =
+      (block.match(/<figcaption[\s\S]*?>([\s\S]*?)<\/figcaption>/i) || [])[1] ||
+      (block.match(/<p[^>]*class=["'][^"']*(?:caption|legend)[^"']*["'][^>]*>([\s\S]*?)<\/p>/i) || [])[1] ||
+      "";
+    const caption = cleanText(captionRaw.replace(/<[^>]+>/g, " "));
+    if (!figures.some((figure) => figure.src === src)) {
+      figures.push({
+        src,
+        alt: cleanText(alt),
+        caption: caption.slice(0, 240),
+        pageUrl
+      });
+    }
+    if (figures.length >= 6) break;
+  }
+  return figures;
+}
+
+async function fetchArticleFigures(article) {
+  if (!article.openAccess && !article.openAccessUrl && !article.pdfUrl) {
+    return { figures: [], note: "Article is not marked as open access in metadata." };
+  }
+  const targetUrl = article.openAccessUrl || article.url;
+  if (!targetUrl || /\.pdf($|\?)/i.test(targetUrl)) {
+    return { figures: [], note: "Only HTML publisher pages can be scanned for figure thumbnails." };
+  }
+  const html = await requestText(targetUrl, { timeout: Math.min(FETCH_TIMEOUT_MS, 16000) });
+  return {
+    sourceUrl: targetUrl,
+    figures: extractFiguresFromHtml(html, targetUrl)
+  };
 }
 
 async function handleApi(req, res, url) {
@@ -1243,7 +1316,26 @@ async function handleApi(req, res, url) {
     }
 
     if ((url.pathname === "/api/summarize" || url.pathname === "/api/localize") && req.method === "POST") {
-      sendJson(res, 410, { error: "Chinese metadata generation has been removed from this site." });
+      const body = JSON.parse((await readRequestBody(req)) || "{}");
+      const article = await findArticleById(body.id || body.doi || body.articleKey || "", Math.max(1, Math.min(12, Number(body.months || 6))));
+      if (!article) {
+        sendJson(res, 404, { error: "Article not found." });
+        return;
+      }
+      const zh = await generateChineseMetadata(article, { force: Boolean(body.force) });
+      sendJson(res, 200, { id: clientArticleId(article), zh });
+      return;
+    }
+
+    if (url.pathname === "/api/figures") {
+      const id = url.searchParams.get("id") || "";
+      const months = Math.max(1, Math.min(12, Number(url.searchParams.get("months") || 6)));
+      const article = await findArticleById(id, months);
+      if (!article) {
+        sendJson(res, 404, { error: "Article not found." });
+        return;
+      }
+      sendJson(res, 200, await fetchArticleFigures(article));
       return;
     }
 
