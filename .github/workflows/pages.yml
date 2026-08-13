@@ -6,11 +6,11 @@ on:
       - main
   workflow_dispatch:
   schedule:
-    # 每天北京时间 05:00 自动刷新，等于 UTC 21:00
-    - cron: "0 21 * * *"
+    # Daily at 05:17 Asia/Shanghai. The offset avoids public API traffic peaks.
+    - cron: "17 21 * * *"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -34,11 +34,34 @@ jobs:
       - name: Refresh literature metadata and build static site
         working-directory: website
         env:
-          FETCH_TIMEOUT_MS: 20000
-          JOURNAL_TIMEOUT_MS: 30000
-          FETCH_CONCURRENCY: 3
+          STATIC_WINDOW_MONTHS: 12
+          FETCH_TIMEOUT_MS: 24000
+          JOURNAL_TIMEOUT_MS: 36000
+          FETCH_CONCURRENCY: 2
+          REQUEST_STAGGER_MS: 650
           PER_JOURNAL: 10
+          MAX_SOURCE_RETRIES: 3
+          OPENALEX_BATCH_SIZE: 6
+          USE_OPENALEX: 1
+          USE_CROSSREF: 1
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+          OPENALEX_MAILTO: ${{ secrets.OPENALEX_MAILTO }}
+          CROSSREF_MAILTO: ${{ secrets.CROSSREF_MAILTO }}
         run: node server.js --build-pages --refresh
+
+      - name: Validate generated dataset
+        working-directory: website
+        run: node server.js --validate-static
+
+      - name: Persist refreshed dataset
+        run: |
+          git config user.name "geo-literature-radar[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/assets/data/articles.json website/assets/data/journals.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(data): refresh literature radar [skip ci]"
+            git push
+          fi
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

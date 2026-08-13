@@ -265,6 +265,90 @@
       "officialUrl": "https://nhess.copernicus.org/",
       "feedUrl": "",
       "quality": "core"
+    },
+    {
+      "id": "nature-communications",
+      "name": "Nature Communications",
+      "abbr": "Nat Commun",
+      "publisher": "Springer Nature",
+      "category": "综合顶刊",
+      "issn": [
+        "2041-1723"
+      ],
+      "crossrefIssn": "2041-1723",
+      "officialUrl": "https://www.nature.com/ncomms/",
+      "feedUrl": "",
+      "quality": "flagship"
+    },
+    {
+      "id": "science-advances",
+      "name": "Science Advances",
+      "abbr": "Sci Adv",
+      "publisher": "AAAS",
+      "category": "综合顶刊",
+      "issn": [
+        "2375-2548"
+      ],
+      "crossrefIssn": "2375-2548",
+      "officialUrl": "https://www.science.org/journal/sciadv",
+      "feedUrl": "",
+      "quality": "flagship"
+    },
+    {
+      "id": "nature-water",
+      "name": "Nature Water",
+      "abbr": "Nat Water",
+      "publisher": "Springer Nature",
+      "category": "水文水资源",
+      "issn": [
+        "2731-6084"
+      ],
+      "crossrefIssn": "2731-6084",
+      "officialUrl": "https://www.nature.com/natwater/",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "nature-sustainability",
+      "name": "Nature Sustainability",
+      "abbr": "Nat Sustain",
+      "publisher": "Springer Nature",
+      "category": "气候变化",
+      "issn": [
+        "2398-9629"
+      ],
+      "crossrefIssn": "2398-9629",
+      "officialUrl": "https://www.nature.com/natsustain/",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "earths-future",
+      "name": "Earth's Future",
+      "abbr": "Earth's Future",
+      "publisher": "AGU / Wiley",
+      "category": "气候变化",
+      "issn": [
+        "2328-4277"
+      ],
+      "crossrefIssn": "2328-4277",
+      "officialUrl": "https://agupubs.onlinelibrary.wiley.com/journal/23284277",
+      "feedUrl": "",
+      "quality": "core"
+    },
+    {
+      "id": "james",
+      "name": "Journal of Advances in Modeling Earth Systems",
+      "abbr": "JAMES",
+      "publisher": "AGU / Wiley",
+      "category": "地球系统模型",
+      "issn": [
+        "1942-2466"
+      ],
+      "crossrefIssn": "1942-2466",
+      "officialUrl": "https://agupubs.onlinelibrary.wiley.com/journal/19422466",
+      "feedUrl": "",
+      "quality": "core"
     }
   ],
   "themes": [

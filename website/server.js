@@ -11,7 +11,6 @@ const ROOT = __dirname;
 const DATA_DIR = path.join(ROOT, "data");
 const CACHE_DIR = path.join(DATA_DIR, "cache");
 const ARTICLE_CACHE = path.join(CACHE_DIR, "articles.json");
-const SUMMARY_CACHE = path.join(CACHE_DIR, "summaries.json");
 const STATIC_DATA_DIR = path.join(ROOT, "assets", "data");
 const DIST_DIR = path.join(ROOT, "dist");
 
@@ -41,8 +40,11 @@ const FETCH_TIMEOUT_MS = Number(process.env.FETCH_TIMEOUT_MS || 18000);
 const FETCH_CONCURRENCY = Number(process.env.FETCH_CONCURRENCY || 3);
 const JOURNAL_TIMEOUT_MS = Number(process.env.JOURNAL_TIMEOUT_MS || 24000);
 const REQUEST_STAGGER_MS = Number(process.env.REQUEST_STAGGER_MS || 350);
-const USE_CROSSREF = process.env.USE_CROSSREF === "1";
-const OPENAI_SUMMARY_ENABLED = process.env.OPENAI_SUMMARY_ENABLED === "1";
+const STATIC_WINDOW_MONTHS = Number(process.env.STATIC_WINDOW_MONTHS || 12);
+const USE_CROSSREF = process.env.USE_CROSSREF !== "0";
+const USE_OPENALEX = process.env.USE_OPENALEX !== "0";
+const OPENALEX_BATCH_SIZE = Math.max(1, Math.min(20, Number(process.env.OPENALEX_BATCH_SIZE || 6)));
+const MAX_SOURCE_RETRIES = Math.max(1, Math.min(5, Number(process.env.MAX_SOURCE_RETRIES || 3)));
 
 const THEME_DEFS = [
   { id: "climate", zh: "气候变化", en: "Climate Change", color: "#0f766e" },
@@ -204,37 +206,6 @@ function inferTheme(journal, title, abstract, subjects = []) {
   return THEME_BY_ID[themeId] || THEME_BY_ID.general;
 }
 
-function inferZhKeywords(journal, theme, title, abstract, subjects = []) {
-  const haystack = ` ${title} ${abstract} ${subjects.join(" ")} `.toLowerCase();
-  const keywords = [theme.zh];
-  for (const [term, zh] of KEYWORD_RULES) {
-    if (haystack.includes(term) && !keywords.includes(zh)) keywords.push(zh);
-  }
-  const category = themeFromLabel(journal.category);
-  if (!keywords.includes(category.zh)) keywords.push(category.zh);
-  return keywords.slice(0, 8);
-}
-
-function buildLocalTitle(article) {
-  const keywords = (article.zhKeywords || [])
-    .filter((keyword) => keyword && !["综合顶刊", "Flagship Journals"].includes(keyword))
-    .slice(0, 3);
-  const title = `${article.titleEn || article.title || ""}`.toLowerCase();
-  const theme = article.themeZh || article.theme || "地球系统";
-  const object = keywords.length ? keywords.join("、") : theme;
-
-  if (title.includes("mapping") || title.includes("map ")) return `${object}制图研究`;
-  if (title.includes("retrieval")) return `${object}反演研究`;
-  if (title.includes("prediction") || title.includes("forecast")) return `${object}预测研究`;
-  if (title.includes("model") || title.includes("simulation")) return `${object}建模研究`;
-  if (title.includes("uncertainty")) return `${object}不确定性研究`;
-  if (title.includes("assessment") || title.includes("evaluat")) return `${object}评估研究`;
-  if (title.includes("change") || title.includes("changes")) return `${object}变化研究`;
-  if (title.includes("response")) return `${object}响应研究`;
-  if (title.includes("risk") || title.includes("hazard")) return `${object}风险研究`;
-  return `${object}相关研究`;
-}
-
 function describeError(error) {
   if (!error) return "unknown error";
   const parts = [error.message, error.code, error.name, error.cause && error.cause.message, String(error)]
@@ -242,19 +213,6 @@ function describeError(error) {
     .map((part) => String(part).trim())
     .filter((part, index, arr) => part && arr.indexOf(part) === index);
   return parts.join(" | ") || "unknown error";
-}
-
-function splitSentences(text = "") {
-  return cleanText(text)
-    .split(/(?<=[.!?])\s+/)
-    .map((sentence) => sentence.trim())
-    .filter(Boolean);
-}
-
-function abstractExcerpt(article, maxChars = 280) {
-  const sentences = splitSentences(article.abstractEn || article.abstract || "");
-  const excerpt = sentences.slice(0, 2).join(" ");
-  return excerpt.length > maxChars ? `${excerpt.slice(0, maxChars).trim()}...` : excerpt;
 }
 
 function hasResearchSignal(article) {
@@ -272,27 +230,6 @@ function isUsefulArticle(article) {
   return true;
 }
 
-function buildLocalDigest(article) {
-  const hasAbstract = Boolean(article.abstract && article.abstract.trim().length >= 40);
-  const keywordText = (article.zhKeywords || []).slice(0, 4).join("、") || article.themeZh;
-  const excerpt = abstractExcerpt(article);
-  return {
-    title: "",
-    titleStatus: "needs_translation",
-    mode: "本地保守速览",
-    source: "local",
-    confidence: hasAbstract ? "medium" : "low",
-    summary: hasAbstract
-      ? `该文可先作为${keywordText}方向的候选文献。聚合元数据已获取英文摘要，可用于继续核对研究对象、数据来源、方法路径、主要结论和不确定性表达；如需精确中文总结，请在详情页生成中文速览。`
-      : `当前 DOI/OpenAlex/Crossref 元数据没有提供摘要；仅可根据英文题名、期刊和索引词判断其可能关联${keywordText}。请打开官方页面核对摘要、方法和结论。`,
-    keywords: article.zhKeywords || [],
-    note: hasAbstract
-      ? "本地中文速览只依据题名、英文摘要和开放元数据生成，用于快速筛选，不替代人工精读。"
-      : "缺少摘要时只生成题名级导读，避免无依据扩写；如出版社页面显示摘要，请以官方页面为准。",
-    generatedAt: new Date().toISOString()
-  };
-}
-
 function attachDerivedFields(article, previous = {}) {
   article.abstract = cleanText(article.abstract || "");
   article.abstractEn = cleanText(article.abstractEn || article.abstract || "");
@@ -307,13 +244,11 @@ function attachDerivedFields(article, previous = {}) {
   article.categoryId = category.id;
   article.categoryZh = category.zh;
   article.categoryEn = category.en;
-  article.zhKeywords = Array.isArray(article.zhKeywords) && article.zhKeywords.length
-    ? article.zhKeywords.map(cleanText).filter(Boolean).slice(0, 8)
-    : inferZhKeywords({ category: category.zh }, theme, article.titleEn || article.title, article.abstractEn || article.abstract, article.subjects || []);
   article.hasAbstract = Boolean(article.abstract && article.abstract.trim().length >= 40);
   article.abstractStatus = article.hasAbstract ? "available" : "missing";
-  article.zh = normalizeCachedZh(article.zh || previous.zh || previous.localDigest);
-  article.localDigest = article.zh || buildLocalDigest(article);
+  delete article.zhKeywords;
+  delete article.zh;
+  delete article.localDigest;
   return article;
 }
 
@@ -355,7 +290,6 @@ function normalizeCrossrefItem(item, journal) {
     openAccess: Boolean(item.license && item.license.length),
     sources: ["Crossref DOI metadata"]
   };
-  article.zhKeywords = inferZhKeywords(journal, theme, title, abstract, subjects);
   return attachDerivedFields(article);
 }
 
@@ -425,7 +359,6 @@ function normalizeOpenAlexItem(item, journal) {
     license: oaLocation.license || "",
     sources: ["OpenAlex DOI metadata"]
   };
-  article.zhKeywords = inferZhKeywords(journal, theme, title, abstract, subjects);
   return attachDerivedFields(article);
 }
 
@@ -466,7 +399,6 @@ function normalizeFeedItem(item, journal) {
     openAccess: false,
     sources: ["Official RSS"]
   };
-  article.zhKeywords = inferZhKeywords(journal, theme, title, abstract, []);
   return attachDerivedFields(article);
 }
 
@@ -608,7 +540,7 @@ async function requestTextViaProxy(targetUrl, options, proxy) {
         const response = Buffer.concat(responseChunks);
         const split = response.indexOf("\r\n\r\n", 0, "latin1");
         if (split === -1) {
-          reject(new Error("OpenAI response did not include headers."));
+          reject(new Error("Proxied response did not include headers."));
           return;
         }
         const rawHead = response.slice(0, split).toString("latin1");
@@ -627,7 +559,7 @@ async function requestTextViaProxy(targetUrl, options, proxy) {
         }
         resolve(text);
       });
-      secure.once("timeout", () => fail(new Error(`OpenAI proxy request timed out after ${timeout}ms`)));
+      secure.once("timeout", () => fail(new Error(`Proxied request timed out after ${timeout}ms`)));
       secure.once("error", fail);
     };
     socket.on("data", onConnectData);
@@ -714,16 +646,19 @@ async function requestJson(targetUrl, options = {}) {
   return JSON.parse(text);
 }
 
-function extractOpenAIResponseText(response) {
-  if (typeof response.output_text === "string" && response.output_text.trim()) return response.output_text;
-  const parts = [];
-  for (const item of response.output || []) {
-    for (const content of item.content || []) {
-      if (content.type === "output_text" && content.text) parts.push(content.text);
+async function requestJsonWithRetry(targetUrl, options = {}) {
+  let lastError;
+  const attempts = options.attempts || MAX_SOURCE_RETRIES;
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    try {
+      if (attempt > 0) await sleep(Math.min(8000, REQUEST_STAGGER_MS * 2 ** attempt));
+      return await requestJson(targetUrl, options);
+    } catch (error) {
+      lastError = error;
+      if (!/429|5\d\d|timeout|timed out|aborted|fetch failed|ECONNRESET/i.test(describeError(error))) break;
     }
   }
-  const chatContent = response.choices?.[0]?.message?.content;
-  return parts.join("\n").trim() || chatContent || "{}";
+  throw lastError;
 }
 
 function parseRssItems(xml) {
@@ -763,33 +698,83 @@ async function fetchOpenAlexForIssn(journal, issn, fromDate, untilDate) {
     "per-page": String(PER_JOURNAL)
   });
   if (process.env.OPENALEX_MAILTO) params.set("mailto", process.env.OPENALEX_MAILTO);
+  if (process.env.OPENALEX_API_KEY) params.set("api_key", process.env.OPENALEX_API_KEY);
   const url = `https://api.openalex.org/works?${params.toString()}`;
-  const data = await requestJson(url, { timeout: Math.min(FETCH_TIMEOUT_MS, 12000) });
+  const data = await requestJsonWithRetry(url, { timeout: Math.min(FETCH_TIMEOUT_MS, 16000) });
   return (data.results || []).map((item) => normalizeOpenAlexItem(item, journal)).filter(Boolean);
 }
 
+function normalizedIssn(value = "") {
+  return String(value).replace(/[^0-9X]/gi, "").toUpperCase();
+}
+
+function openAlexJournalForItem(item, byIssn) {
+  const sources = [
+    item.primary_location?.source,
+    item.best_oa_location?.source,
+    ...(item.locations || []).map((location) => location?.source)
+  ].filter(Boolean);
+  for (const source of sources) {
+    const candidates = [source.issn_l, ...(source.issn || [])].map(normalizedIssn).filter(Boolean);
+    for (const issn of candidates) {
+      if (byIssn.has(issn)) return byIssn.get(issn);
+    }
+  }
+  return null;
+}
+
+async function fetchOpenAlexBatches(fromDate, untilDate) {
+  if (!USE_OPENALEX) return { articles: [], errors: [], requests: 0 };
+  const byIssn = new Map();
+  for (const journal of JOURNALS) {
+    for (const issn of journal.issn || []) byIssn.set(normalizedIssn(issn), journal);
+    if (journal.crossrefIssn) byIssn.set(normalizedIssn(journal.crossrefIssn), journal);
+  }
+  const groups = [];
+  for (let index = 0; index < JOURNALS.length; index += OPENALEX_BATCH_SIZE) {
+    groups.push(JOURNALS.slice(index, index + OPENALEX_BATCH_SIZE));
+  }
+  const articles = [];
+  const errors = [];
+  for (let index = 0; index < groups.length; index += 1) {
+    const group = groups[index];
+    const issns = [...new Set(group.flatMap((journal) => journal.issn || []).map(normalizedIssn).filter(Boolean))];
+    const params = new URLSearchParams({
+      filter: `primary_location.source.issn:${issns.join("|")},from_publication_date:${fromDate},to_publication_date:${untilDate},type:article`,
+      sort: "publication_date:desc",
+      "per-page": "100"
+    });
+    if (process.env.OPENALEX_MAILTO) params.set("mailto", process.env.OPENALEX_MAILTO);
+    if (process.env.OPENALEX_API_KEY) params.set("api_key", process.env.OPENALEX_API_KEY);
+    const url = `https://api.openalex.org/works?${params.toString()}`;
+    try {
+      await sleep(REQUEST_STAGGER_MS * (index + 1));
+      const data = await requestJsonWithRetry(url, { timeout: Math.min(FETCH_TIMEOUT_MS, 18000) });
+      for (const item of data.results || []) {
+        const journal = openAlexJournalForItem(item, byIssn);
+        if (!journal) continue;
+        const article = normalizeOpenAlexItem(item, journal);
+        if (article) articles.push(article);
+      }
+    } catch (error) {
+      errors.push(`OpenAlex batch ${index + 1}/${groups.length} failed: ${describeError(error)}`);
+    }
+  }
+  return { articles, errors, requests: groups.length };
+}
+
 async function fetchCrossrefForIssn(journal, issn, fromDate, untilDate) {
+  const candidateRows = journal.quality === "flagship" ? Math.max(PER_JOURNAL * 12, 120) : Math.max(PER_JOURNAL * 3, 30);
   const params = new URLSearchParams({
     filter: `from-pub-date:${fromDate},until-pub-date:${untilDate},type:journal-article`,
     sort: "published",
     order: "desc",
-    rows: String(PER_JOURNAL)
+    rows: String(candidateRows)
   });
   if (process.env.CROSSREF_MAILTO) params.set("mailto", process.env.CROSSREF_MAILTO);
   const url = `https://api.crossref.org/journals/${encodeURIComponent(issn)}/works?${params.toString()}`;
-  let data;
-  let lastError;
-  for (let attempt = 0; attempt < 2; attempt += 1) {
-    try {
-      await sleep(REQUEST_STAGGER_MS * (attempt + 1));
-      data = await requestJson(url);
-      break;
-    } catch (error) {
-      lastError = error;
-      if (!/429|timeout|aborted/i.test(error.message)) break;
-    }
-  }
-  if (!data) throw lastError;
+  await sleep(REQUEST_STAGGER_MS);
+  const data = await requestJsonWithRetry(url, { timeout: FETCH_TIMEOUT_MS });
   return (data.message.items || []).map((item) => normalizeCrossrefItem(item, journal)).filter(Boolean);
 }
 
@@ -804,11 +789,6 @@ async function fetchJournalArticles(journal, fromDate, untilDate) {
 
   const issns = Array.from(new Set([journal.crossrefIssn || journal.issn[0]].filter(Boolean)));
   for (const issn of issns) {
-    try {
-      collected.push(...(await fetchOpenAlexForIssn(journal, issn, fromDate, untilDate)));
-    } catch (error) {
-      errors.push(`${journal.abbr} OpenAlex ${issn} failed: ${error.message}`);
-    }
     if (USE_CROSSREF) {
       try {
         collected.push(...(await fetchCrossrefForIssn(journal, issn, fromDate, untilDate)));
@@ -914,34 +894,100 @@ function hydratePayload(payload) {
   };
 }
 
+function payloadTime(payload) {
+  const value = payload?.createdAt || payload?.generatedAt || "";
+  const time = new Date(value).getTime();
+  return Number.isFinite(time) ? time : 0;
+}
+
+function newestPayload(...payloads) {
+  return payloads.filter(Boolean).sort((a, b) => payloadTime(b) - payloadTime(a))[0] || null;
+}
+
+function capArticlesPerJournal(articles, limit = PER_JOURNAL) {
+  const counts = new Map();
+  return articles.filter((article) => {
+    const key = article.journalId || article.journal;
+    const count = counts.get(key) || 0;
+    if (count >= limit) return false;
+    counts.set(key, count + 1);
+    return true;
+  });
+}
+
+function buildSourceHealth(articles, errors, freshArticles = []) {
+  const represented = new Set(articles.map((article) => article.journalId).filter(Boolean));
+  const fresh = new Set(freshArticles.map((article) => article.journalId).filter(Boolean));
+  const missing = JOURNALS.filter((journal) => !represented.has(journal.id)).map((journal) => journal.abbr);
+  const fallback = JOURNALS.filter((journal) => represented.has(journal.id) && !fresh.has(journal.id)).map((journal) => journal.abbr);
+  const latestPublication = articles.map((article) => article.published).filter(Boolean).sort().at(-1) || "";
+  const status = missing.length || fresh.size < Math.ceil(JOURNALS.length * 0.75) ? "degraded" : errors.length ? "warning" : "healthy";
+  return {
+    status,
+    representedJournals: represented.size,
+    freshJournals: fresh.size,
+    totalJournals: JOURNALS.length,
+    fallbackJournals: fallback,
+    missingJournals: missing,
+    warningCount: errors.length,
+    latestPublication,
+    openAlexMode: process.env.OPENALEX_API_KEY ? "authenticated" : USE_OPENALEX ? "anonymous-batched" : "disabled",
+    crossrefMode: USE_CROSSREF ? (process.env.CROSSREF_MAILTO ? "polite" : "public") : "disabled"
+  };
+}
+
+function validatePayload(payload) {
+  const articles = payload?.articles || [];
+  const represented = new Set(articles.map((article) => article.journalId).filter(Boolean));
+  const latest = articles.map((article) => article.published).filter(Boolean).sort().at(-1) || "";
+  const latestAge = latest ? Math.floor((Date.now() - new Date(`${latest}T00:00:00Z`).getTime()) / 86400000) : Infinity;
+  const problems = [];
+  if (articles.length < Math.max(40, JOURNALS.length * 2)) problems.push(`article count is too low: ${articles.length}`);
+  if (represented.size < Math.ceil(JOURNALS.length * 0.65)) problems.push(`journal coverage is too low: ${represented.size}/${JOURNALS.length}`);
+  if (!Number.isFinite(latestAge) || latestAge > 60) problems.push(`latest publication is stale: ${latest || "missing"}`);
+  if (!payload?.createdAt || !Number.isFinite(new Date(payload.createdAt).getTime())) problems.push("createdAt is missing or invalid");
+  return { ok: problems.length === 0, problems, count: articles.length, representedJournals: represented.size, latestPublication: latest };
+}
+
 async function getArticles({ refresh = false, months = 6 } = {}) {
   const now = new Date();
   const cached = await readJsonIfExists(ARTICLE_CACHE);
-  if (!refresh && cached && cached.createdAt && Date.now() - new Date(cached.createdAt).getTime() < CACHE_TTL_MS) {
-    return { ...hydratePayload(cached), cached: true };
+  const staticCached = await readJsonIfExists(path.join(STATIC_DATA_DIR, "articles.json"));
+  const baseline = newestPayload(cached, staticCached);
+  if (!refresh && baseline && baseline.createdAt && Date.now() - new Date(baseline.createdAt).getTime() < CACHE_TTL_MS) {
+    return { ...hydratePayload(baseline), cached: true };
   }
 
   const fromDate = isoDate(dateMonthsAgo(months));
   const untilDate = isoDate(now);
   const collected = [];
   const errors = [];
-  const previous = previousArticleMap(cached);
+  const previous = previousArticleMap(baseline);
 
-  const results = await mapLimit(JOURNALS, FETCH_CONCURRENCY, async (journal) => {
-    try {
-      return await withTimeout(fetchJournalArticles(journal, fromDate, untilDate), JOURNAL_TIMEOUT_MS, journal.abbr);
-    } catch (error) {
-      return { articles: [], errors: [`${journal.abbr} journal fetch failed: ${error.message}`] };
-    }
-  });
+  const [results, openAlex] = await Promise.all([
+    mapLimit(JOURNALS, FETCH_CONCURRENCY, async (journal) => {
+      try {
+        return await withTimeout(fetchJournalArticles(journal, fromDate, untilDate), JOURNAL_TIMEOUT_MS, journal.abbr);
+      } catch (error) {
+        return { articles: [], errors: [`${journal.abbr} journal fetch failed: ${describeError(error)}`] };
+      }
+    }),
+    fetchOpenAlexBatches(fromDate, untilDate)
+  ]);
 
   for (const result of results) {
     if (!result) continue;
     collected.push(...result.articles);
     errors.push(...result.errors);
   }
+  collected.push(...openAlex.articles);
+  errors.push(...openAlex.errors);
 
-  const articles = mergeArticles(collected, previous).filter((article) => article.published >= fromDate && article.published <= untilDate);
+  const baselineInWindow = (baseline?.articles || []).filter((article) => article.published >= fromDate && article.published <= untilDate);
+  const articles = capArticlesPerJournal(
+    mergeArticles([...collected, ...baselineInWindow], previous).filter((article) => article.published >= fromDate && article.published <= untilDate)
+  );
+  const sourceHealth = buildSourceHealth(articles, errors, collected);
   const payload = {
     createdAt: now.toISOString(),
     window: { from: fromDate, until: untilDate, months },
@@ -949,181 +995,26 @@ async function getArticles({ refresh = false, months = 6 } = {}) {
     themes: THEME_DEFS,
     count: articles.length,
     coverage: buildCoverage(articles),
+    sourceHealth,
+    validation: null,
     articles,
     errors
   };
+  payload.validation = validatePayload(payload);
 
-  if (articles.length || !cached) {
+  if (payload.validation.ok || !baseline) {
     await writeJson(ARTICLE_CACHE, payload);
     return { ...payload, cached: false };
   }
 
   return {
-    ...hydratePayload(cached),
+    ...hydratePayload(baseline),
     cached: true,
     stale: true,
-    errors: [...(cached.errors || []), "Refresh failed; returned previous cache.", ...errors]
+    sourceHealth: { ...(baseline.sourceHealth || buildSourceHealth(baseline.articles || [], baseline.errors || [])), status: "degraded" },
+    validation: payload.validation,
+    errors: [...(baseline.errors || []), "Refresh validation failed; returned previous static dataset.", ...errors]
   };
-}
-
-function normalizeCachedZh(value) {
-  if (!value) return null;
-  return {
-    title: cleanText(value.title || value.titleZh || ""),
-    titleStatus: value.title || value.titleZh ? "translated" : value.titleStatus || "needs_ai",
-    summary: cleanText(value.summary || value.summaryZh || ""),
-    keywords: Array.isArray(value.keywords || value.keywordsZh) ? (value.keywords || value.keywordsZh).map(cleanText).filter(Boolean).slice(0, 8) : [],
-    note: cleanText(value.note || value.limits || ""),
-    confidence: value.confidence || "low",
-    mode: value.mode || "AI摘要",
-    source: value.source || "cache",
-    generatedAt: value.generatedAt || value.updatedAt || new Date().toISOString()
-  };
-}
-
-async function persistChineseMetadata(articleKey, zh) {
-  const payload = await readJsonIfExists(ARTICLE_CACHE);
-  if (!payload || !Array.isArray(payload.articles)) return;
-  const normalizedKey = normalizeDoi(articleKey);
-  for (const article of payload.articles) {
-    if (normalizeDoi(article.doi || "") === normalizedKey || article.id === articleKey) {
-      article.zh = zh;
-      article.localDigest = zh;
-      break;
-    }
-  }
-  await writeJson(ARTICLE_CACHE, payload);
-}
-
-async function generateChineseMetadata(article, { force = false } = {}) {
-  const cached = (await readJsonIfExists(SUMMARY_CACHE)) || {};
-  const key = article.doi || article.id;
-  const existing = normalizeCachedZh(cached[key]);
-  if (existing && !force && existing.source === "openai") return existing;
-
-  if (!OPENAI_SUMMARY_ENABLED || !process.env.OPENAI_API_KEY) {
-    const fallback = {
-      ...buildLocalDigest(article),
-      source: "local",
-      generatedAt: new Date().toISOString()
-    };
-    cached[key] = fallback;
-    await writeJson(SUMMARY_CACHE, cached);
-    await persistChineseMetadata(key, fallback);
-    return fallback;
-  }
-
-  const system = [
-    "你是地球系统科学与地理信息科学文献助理。",
-    "只允许依据用户提供的英文题名、英文摘要、期刊、关键词和元数据生成中文题名、中文摘要和中文关键词。",
-    "不要补充元数据中不存在的研究区、方法、结论、数值或因果判断。",
-    "如果英文摘要缺失，必须说明只能基于题名和期刊元数据做有限导读。",
-    "中文题名应准确、学术、忠实；不要为了流畅改写研究对象或技术名词。",
-    "输出 JSON，字段为 titleZh、summaryZh、keywordsZh、limits、confidence。summaryZh 不超过 150 个中文字符，keywordsZh 为 4 到 8 个中文关键词。"
-  ].join("\n");
-
-  let parsed;
-  try {
-    const response = await requestJson("https://api.openai.com/v1/responses", {
-      method: "POST",
-      forceProxy: true,
-      timeout: 45000,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
-      },
-      body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || "gpt-5.2",
-        instructions: system,
-        input: [
-          {
-            role: "user",
-            content: [
-              {
-                type: "input_text",
-                text: JSON.stringify(
-                  {
-                    title: article.titleEn || article.title,
-                    abstract: article.abstractEn || article.abstract || "",
-                    journal: article.journal,
-                    published: article.published,
-                    theme: article.themeEn,
-                    keywords: article.keywordsEn || article.subjects || [],
-                    hasAbstract: article.hasAbstract
-                  },
-                  null,
-                  2
-                )
-              }
-            ]
-          }
-        ],
-        reasoning: { effort: process.env.OPENAI_REASONING_EFFORT || "low" },
-        text: {
-          format: {
-            type: "json_schema",
-            name: "literature_metadata_zh",
-            strict: true,
-            schema: {
-              type: "object",
-              additionalProperties: false,
-              properties: {
-                titleZh: { type: "string" },
-                summaryZh: { type: "string" },
-                keywordsZh: {
-                  type: "array",
-                  items: { type: "string" },
-                  minItems: 4,
-                  maxItems: 8
-                },
-                limits: { type: "string" },
-                confidence: { type: "string", enum: ["low", "medium", "high"] }
-              },
-              required: ["titleZh", "summaryZh", "keywordsZh", "limits", "confidence"]
-            }
-          }
-        },
-        max_output_tokens: 700
-      })
-    });
-    const content = extractOpenAIResponseText(response);
-    parsed = JSON.parse(content);
-  } catch (error) {
-    const detail = describeError(error);
-    const fallback = {
-      ...buildLocalDigest(article),
-      source: "local_fallback",
-      mode: "本地保守导读",
-      note: `OpenAI 请求未成功，已使用本地保守导读。错误：${detail}`,
-      generatedAt: new Date().toISOString()
-    };
-    cached[key] = fallback;
-    await writeJson(SUMMARY_CACHE, cached);
-    await persistChineseMetadata(key, fallback);
-    return fallback;
-  }
-
-  const zh = {
-    title: cleanText(parsed.titleZh || ""),
-    titleStatus: parsed.titleZh ? "translated" : "needs_review",
-    summary: cleanText(parsed.summaryZh || article.localDigest.summary),
-    keywords: Array.isArray(parsed.keywordsZh) ? parsed.keywordsZh.map(cleanText).filter(Boolean).slice(0, 8) : article.zhKeywords,
-    note: cleanText(parsed.limits || "摘要严格依据题名、摘要和元数据生成。"),
-    confidence: parsed.confidence || (article.hasAbstract ? "medium" : "low"),
-    mode: "AI中文元数据",
-    source: "openai",
-    generatedAt: new Date().toISOString()
-  };
-  cached[key] = zh;
-  await writeJson(SUMMARY_CACHE, cached);
-  await persistChineseMetadata(key, zh);
-  return zh;
-}
-
-async function readRequestBody(req) {
-  const chunks = [];
-  for await (const chunk of req) chunks.push(chunk);
-  return Buffer.concat(chunks).toString("utf8");
 }
 
 function sendJson(res, status, data) {
@@ -1210,9 +1101,13 @@ async function buildPagesDist({ refresh = false, months = 6 } = {}) {
   const payload = await exportStaticData({ refresh, months });
   await fsp.rm(DIST_DIR, { recursive: true, force: true });
   await fsp.mkdir(DIST_DIR, { recursive: true });
-  for (const file of ["index.html", "styles.css", "app.js"]) {
-    await fsp.copyFile(path.join(ROOT, file), path.join(DIST_DIR, file));
-  }
+  const index = await fsp.readFile(path.join(ROOT, "index.html"), "utf8");
+  await fsp.writeFile(
+    path.join(DIST_DIR, "index.html"),
+    index.replace('<meta name="glr-mode" content="server" />', '<meta name="glr-mode" content="static" />'),
+    "utf8"
+  );
+  for (const file of ["styles.css", "app.js"]) await fsp.copyFile(path.join(ROOT, file), path.join(DIST_DIR, file));
   await fsp.cp(path.join(ROOT, "assets"), path.join(DIST_DIR, "assets"), { recursive: true });
   return payload;
 }
@@ -1315,18 +1210,6 @@ async function handleApi(req, res, url) {
       return;
     }
 
-    if ((url.pathname === "/api/summarize" || url.pathname === "/api/localize") && req.method === "POST") {
-      const body = JSON.parse((await readRequestBody(req)) || "{}");
-      const article = await findArticleById(body.id || body.doi || body.articleKey || "", Math.max(1, Math.min(12, Number(body.months || 6))));
-      if (!article) {
-        sendJson(res, 404, { error: "Article not found." });
-        return;
-      }
-      const zh = await generateChineseMetadata(article, { force: Boolean(body.force) });
-      sendJson(res, 200, { id: clientArticleId(article), zh });
-      return;
-    }
-
     if (url.pathname === "/api/figures") {
       const id = url.searchParams.get("id") || "";
       const months = Math.max(1, Math.min(12, Number(url.searchParams.get("months") || 6)));
@@ -1396,20 +1279,28 @@ async function runSelfTest() {
 }
 
 async function runCli() {
+  if (process.argv.includes("--validate-static")) {
+    const payload = await readJsonIfExists(path.join(STATIC_DATA_DIR, "articles.json"));
+    const result = validatePayload(payload);
+    console.log(JSON.stringify(result, null, 2));
+    if (!result.ok) process.exitCode = 1;
+    return;
+  }
+
   if (process.argv.includes("--export-static")) {
-    const payload = await exportStaticData({ refresh: process.argv.includes("--refresh"), months: 6 });
+    const payload = await exportStaticData({ refresh: process.argv.includes("--refresh"), months: STATIC_WINDOW_MONTHS });
     console.log(`Exported static data for ${payload.count} articles to ${path.relative(ROOT, STATIC_DATA_DIR)}.`);
     return;
   }
 
   if (process.argv.includes("--build-pages")) {
-    const payload = await buildPagesDist({ refresh: process.argv.includes("--refresh"), months: 6 });
+    const payload = await buildPagesDist({ refresh: process.argv.includes("--refresh"), months: STATIC_WINDOW_MONTHS });
     console.log(`Built GitHub Pages artifact at ${path.relative(ROOT, DIST_DIR)} with ${payload.count} articles.`);
     return;
   }
 
   if (process.argv.includes("--refresh-once")) {
-    const payload = await getArticles({ refresh: true, months: 6 });
+    const payload = await getArticles({ refresh: true, months: STATIC_WINDOW_MONTHS });
     console.log(`Fetched ${payload.count} articles from ${payload.journals} journals.`);
     console.log(`Abstract coverage: ${payload.coverage.withAbstract}/${payload.coverage.total} (${Math.round(payload.coverage.abstractRate * 100)}%)`);
     if (payload.errors.length) {
@@ -1435,7 +1326,7 @@ module.exports = {
   getArticles,
   exportStaticData,
   buildPagesDist,
-  generateChineseMetadata,
+  validatePayload,
   runSelfTest,
   JOURNALS,
   THEMES: THEME_DEFS

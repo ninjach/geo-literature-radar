@@ -1,7 +1,8 @@
 .env
 website/.env
-website/dist/
 website/data/cache/
+website/dist/
+website/output/
 ~$*
 *.pptx
 *.tmp

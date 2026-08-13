@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="glr-mode" content="server" />
+    <meta name="theme-color" content="#0b3b39" />
     <title>Geo Literature Radar | 地球系统科学前沿追踪</title>
-    <meta
-      name="description"
-      content="面向课题组的地球系统科学文献追踪网站，聚合近半年高质量期刊论文，支持主题筛选、精确关键词检索、引用次数、中文速览、收藏历史与官方链接回溯。"
-    />
+    <meta name="description" content="面向课题组的地球系统科学文献雷达，自动追踪高质量期刊，支持主题、开放获取、摘要、引用与阅读记录筛选。" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   </head>
   <body>
+    <a class="skip-link" href="#papers">跳到论文列表</a>
     <header class="topbar">
-      <a class="brand" href="/" aria-label="Geo Literature Radar">
+      <a class="brand" href="./" aria-label="Geo Literature Radar 首页">
         <span class="brand-mark">GR</span>
         <span>
           <strong>Geo Literature Radar</strong>
@@ -21,149 +21,89 @@
         </span>
       </a>
 
-      <nav class="topnav" aria-label="Main navigation">
+      <nav class="topnav" aria-label="主导航">
         <a href="#radar" data-i18n="navRadar">主题雷达</a>
-        <a href="#papers" data-i18n="navPapers">论文列表</a>
-        <a href="#sources" data-i18n="navSources">期刊源</a>
+        <a href="#papers" data-i18n="navPapers">论文</a>
+        <a href="#sources" data-i18n="navSources">来源</a>
       </nav>
 
       <div class="top-actions">
-        <button class="control-button" id="language-toggle" type="button">EN</button>
-        <button class="control-button primary" id="refresh-button" type="button">
-          <span aria-hidden="true">↻</span>
-          <span data-i18n="refresh">刷新</span>
+        <button class="status-pill" id="freshness-status" type="button" aria-label="查看数据状态">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span id="freshness-label">检查数据</span>
         </button>
+        <button class="control-button" id="language-toggle" type="button" aria-label="切换语言">EN</button>
+        <button class="icon-button" id="refresh-button" type="button" title="检查最新数据" aria-label="检查最新数据">↻</button>
       </div>
     </header>
 
     <main>
       <section class="hero">
         <div class="hero-media">
-          <img src="assets/earth-system-hero.svg" alt="Earth system observation and modeling" />
+          <img src="assets/earth-system-hero.svg" alt="地球系统观测与模拟示意" />
         </div>
         <div class="hero-copy">
           <p class="eyebrow">Research group radar</p>
           <h1 id="hero-title">地球系统科学前沿追踪</h1>
-          <p id="hero-description">
-            聚合近半年核心期刊论文，按主题、期刊、引用热度、摘要可用性与个人阅读记录组织，保留英文原文题录并提供中文速览。
-          </p>
+          <p id="hero-description">自动汇集近一年高质量期刊论文，以英文原始题录和摘要为核心，帮助课题组快速筛选、回溯与组织阅读。</p>
+          <div class="hero-status" id="hero-status" role="status" aria-live="polite">正在载入最新数据状态...</div>
         </div>
-        <div class="metrics" aria-label="Data metrics">
-          <div>
-            <span data-i18n="metricPapers">论文</span>
-            <strong id="stat-count">--</strong>
-          </div>
-          <div>
-            <span data-i18n="metricJournals">期刊</span>
-            <strong id="stat-journals">18</strong>
-          </div>
-          <div>
-            <span data-i18n="metricAbstracts">摘要覆盖</span>
-            <strong id="stat-abstracts">--</strong>
-          </div>
-          <div>
-            <span data-i18n="metricUpdated">更新</span>
-            <strong id="stat-updated">--</strong>
-          </div>
+        <div class="metrics" aria-label="数据概览">
+          <div><span data-i18n="metricPapers">论文</span><strong id="stat-count">--</strong></div>
+          <div><span data-i18n="metricJournals">期刊</span><strong id="stat-journals">24</strong></div>
+          <div><span data-i18n="metricAbstracts">摘要覆盖</span><strong id="stat-abstracts">--</strong></div>
+          <div><span data-i18n="metricUpdated">数据更新</span><strong id="stat-updated">--</strong></div>
         </div>
       </section>
 
+      <button class="mobile-filter-toggle" id="mobile-filter-toggle" type="button" aria-expanded="false" aria-controls="filters-panel">
+        <span data-i18n="filters">筛选</span><span id="mobile-filter-count">0</span>
+      </button>
+
       <section class="workspace">
-        <aside class="filters" aria-label="Filters">
-          <section class="mini-panel profile-panel">
+        <aside class="filters" id="filters-panel" aria-label="论文筛选">
+          <section class="profile-panel">
             <div class="mini-head">
-              <strong data-i18n="profileTitle">研究者 ID</strong>
+              <strong data-i18n="profileTitle">本地阅读档案</strong>
               <button class="text-button muted-action" id="profile-reset" type="button" hidden data-i18n="switchUser">切换</button>
             </div>
             <form id="profile-form" class="profile-form">
-              <label class="field compact">
-                <span data-i18n="profileName">姓名</span>
-                <input id="profile-name" autocomplete="name" placeholder="姓名或昵称" />
-              </label>
-              <label class="field compact">
-                <span data-i18n="profileEmail">邮箱</span>
-                <input id="profile-email-input" autocomplete="email" placeholder="可选，用于生成本地 ID" />
-              </label>
-              <button class="control-button primary full" type="submit" data-i18n="createProfile">进入</button>
+              <label class="field compact"><span data-i18n="profileName">姓名或昵称</span><input id="profile-name" autocomplete="name" placeholder="姓名或昵称" /></label>
+              <button class="control-button primary full" type="submit" data-i18n="createProfile">建立本地档案</button>
             </form>
             <div class="profile-summary" id="profile-summary" hidden></div>
           </section>
 
           <div class="filter-head">
             <strong data-i18n="filters">筛选</strong>
-            <span id="window-label">近 6 个月</span>
+            <button class="text-button" id="reset-filters" type="button" data-i18n="resetFilters">重置</button>
           </div>
-          <label class="field">
-            <span data-i18n="search">搜索</span>
-            <input id="search" type="search" placeholder="题名、作者、关键词、期刊" />
-          </label>
-          <label class="field">
-            <span data-i18n="searchMode">搜索模式</span>
-            <select id="search-mode">
-              <option value="fuzzy">综合模糊搜索</option>
-              <option value="keyword">精确关键词搜索</option>
-            </select>
-          </label>
-          <label class="field">
-            <span data-i18n="theme">主题</span>
-            <select id="theme-filter">
-              <option value="all">全部主题</option>
-            </select>
-          </label>
-          <label class="field">
-            <span data-i18n="journal">期刊</span>
-            <select id="journal-filter">
-              <option value="all">全部期刊</option>
-            </select>
-          </label>
-          <label class="field">
-            <span data-i18n="abstractStatus">摘要状态</span>
-            <select id="abstract-filter">
-              <option value="all">全部</option>
-              <option value="available">有摘要</option>
-              <option value="missing">缺摘要</option>
-            </select>
-          </label>
-          <label class="field">
-            <span data-i18n="personalFilter">个人记录</span>
-            <select id="personal-filter">
-              <option value="all">全部论文</option>
-              <option value="favorites">我的收藏</option>
-              <option value="history">浏览历史</option>
-            </select>
-          </label>
-          <label class="field">
-            <span data-i18n="sort">排序</span>
-            <select id="sort-select">
-              <option value="date">最新优先</option>
-              <option value="cited">引用热度</option>
-              <option value="priority">阅读优先级</option>
-              <option value="journal">期刊名称</option>
-            </select>
-          </label>
-          <label class="field">
-            <span data-i18n="months">追踪</span>
-            <select id="months-select">
-              <option value="3">近 3 个月</option>
-              <option value="6" selected>近 6 个月</option>
-              <option value="12">近 12 个月</option>
-            </select>
-          </label>
-          <div class="audit-box">
-            <strong data-i18n="dataAudit">数据审计</strong>
-            <p id="coverage-note">正在检查摘要覆盖情况...</p>
-          </div>
+          <label class="field"><span data-i18n="search">搜索</span><input id="search" type="search" placeholder="题名、作者、DOI、关键词" /></label>
+          <label class="field"><span data-i18n="searchMode">搜索模式</span><select id="search-mode"><option value="fuzzy">综合搜索</option><option value="keyword">关键词匹配</option></select></label>
+          <label class="field"><span data-i18n="theme">主题</span><select id="theme-filter"><option value="all">全部主题</option></select></label>
+          <label class="field"><span data-i18n="journal">期刊</span><select id="journal-filter"><option value="all">全部期刊</option></select></label>
+          <label class="field"><span data-i18n="quality">期刊层级</span><select id="quality-filter"><option value="all">全部层级</option><option value="flagship">综合旗舰</option><option value="core">领域核心</option></select></label>
+          <label class="field"><span data-i18n="access">开放获取</span><select id="access-filter"><option value="all">全部</option><option value="open">开放获取</option><option value="closed">非开放或未知</option></select></label>
+          <label class="field"><span data-i18n="abstractStatus">摘要状态</span><select id="abstract-filter"><option value="all">全部</option><option value="available">有摘要</option><option value="missing">缺摘要</option></select></label>
+          <label class="field"><span data-i18n="personalFilter">个人记录</span><select id="personal-filter"><option value="all">全部论文</option><option value="favorites">我的收藏</option><option value="history">浏览历史</option></select></label>
+          <label class="field"><span data-i18n="sort">排序</span><select id="sort-select"><option value="date">最新优先</option><option value="cited">引用热度</option><option value="priority">阅读优先级</option><option value="journal">期刊名称</option></select></label>
+          <label class="field"><span data-i18n="months">时间窗口</span><select id="months-select"><option value="3">近 3 个月</option><option value="6" selected>近 6 个月</option><option value="12">近 12 个月</option></select></label>
 
-          <section class="mini-panel agent-panel">
-            <div class="mini-head">
-              <strong data-i18n="agentTitle">文献 Agent</strong>
-              <span class="tiny-label">local</span>
-            </div>
-            <textarea id="agent-input" rows="3" placeholder="例如：筛选近 6 个月气候变化方向、按引用排序，并给我 5 篇候选"></textarea>
+          <div class="active-filters" id="active-filters" aria-live="polite"></div>
+
+          <section class="audit-box" id="data-audit">
+            <div class="mini-head"><strong data-i18n="dataAudit">数据审计</strong><span id="audit-state">--</span></div>
+            <p id="coverage-note">正在检查摘要与来源覆盖...</p>
+            <button class="text-button" id="show-source-health" type="button" data-i18n="sourceHealth">查看来源状态</button>
+          </section>
+
+          <section class="agent-panel">
+            <div class="mini-head"><strong data-i18n="agentTitle">本地筛选助手</strong><span class="tiny-label">parser</span></div>
+            <textarea id="agent-input" rows="3" placeholder="例如：近 6 个月气候变化方向，开放获取，按引用排序"></textarea>
             <div class="agent-actions">
               <button class="control-button primary" id="agent-run" type="button" data-i18n="agentRun">执行</button>
               <button class="control-button" data-agent-preset="top-cited" type="button" data-i18n="agentTopCited">高被引</button>
-              <button class="control-button" data-agent-preset="favorites" type="button" data-i18n="agentFavorites">收藏</button>
+              <button class="control-button" data-agent-preset="open-access" type="button" data-i18n="agentOpen">开放获取</button>
             </div>
             <div class="agent-result" id="agent-result"></div>
           </section>
@@ -172,68 +112,43 @@
         <section class="content">
           <section class="panel" id="radar">
             <div class="section-title">
-              <div>
-                <p class="eyebrow">Theme radar</p>
-                <h2 data-i18n="themeRadar">主题雷达</h2>
-              </div>
-              <div class="section-actions">
-                <button class="control-button" id="clear-theme-button" type="button" hidden data-i18n="backToAll">返回全部</button>
-                <p id="result-note">正在加载论文数据...</p>
-              </div>
+              <div><p class="eyebrow">Theme radar</p><h2 data-i18n="themeRadar">主题雷达</h2></div>
+              <button class="control-button" id="clear-theme-button" type="button" hidden data-i18n="backToAll">返回全部主题</button>
             </div>
-            <div class="radar-board" id="radar-board" aria-label="Theme radar"></div>
+            <div class="radar-board" id="radar-board" aria-label="主题雷达"></div>
           </section>
 
           <section class="panel" id="papers">
-            <div class="section-title">
-              <div>
-                <p class="eyebrow">Latest papers</p>
-                <h2 data-i18n="paperList">论文列表</h2>
-              </div>
-              <div class="view-tabs" role="tablist" aria-label="View mode">
-                <button class="active" data-view="cards" type="button" data-i18n="cards">卡片</button>
-                <button data-view="table" type="button" data-i18n="table">表格</button>
+            <div class="section-title paper-heading">
+              <div><p class="eyebrow">Latest papers</p><h2><span data-i18n="paperList">论文列表</span><small id="visible-count"></small></h2></div>
+              <div class="paper-tools">
+                <button class="control-button" id="export-results" type="button" data-i18n="exportResults">导出 CSV</button>
+                <div class="view-tabs" role="tablist" aria-label="视图模式"><button class="active" data-view="cards" type="button" data-i18n="cards">卡片</button><button data-view="table" type="button" data-i18n="table">表格</button></div>
               </div>
             </div>
+            <p class="result-note" id="result-note">正在载入论文...</p>
             <div class="paper-list" id="paper-list"></div>
             <div class="paper-table-wrap" id="paper-table-wrap" hidden>
-              <table class="paper-table">
-                <thead>
-                  <tr>
-                    <th data-i18n="date">日期</th>
-                    <th data-i18n="journal">期刊</th>
-                    <th data-i18n="theme">主题</th>
-                    <th data-i18n="citations">引用</th>
-                    <th data-i18n="paper">论文</th>
-                    <th data-i18n="link">链接</th>
-                  </tr>
-                </thead>
-                <tbody id="paper-table-body"></tbody>
-              </table>
+              <table class="paper-table"><thead><tr><th data-i18n="date">日期</th><th data-i18n="journal">期刊</th><th data-i18n="theme">主题</th><th data-i18n="citations">引用</th><th data-i18n="paper">论文</th><th data-i18n="link">链接</th></tr></thead><tbody id="paper-table-body"></tbody></table>
             </div>
+            <button class="load-more" id="load-more" type="button" hidden data-i18n="loadMore">加载更多</button>
           </section>
         </section>
       </section>
 
       <section class="panel sources" id="sources">
-        <div class="section-title">
-          <div>
-            <p class="eyebrow">Journal sources</p>
-            <h2 data-i18n="journalSources">期刊源清单</h2>
-          </div>
-          <p data-i18n="sourceText">监测 18 个高质量期刊；题录来自官方源、OpenAlex 和 DOI 元数据，全文始终回链原站。</p>
-        </div>
+        <div class="section-title"><div><p class="eyebrow">Journal sources</p><h2 data-i18n="journalSources">期刊来源</h2></div><p data-i18n="sourceText">覆盖综合旗舰与领域核心期刊；题录来自 Crossref、OpenAlex 与官方 RSS，并始终回链原站。</p></div>
         <div class="journal-grid" id="journal-grid"></div>
+      </section>
+
+      <section class="method-band" aria-labelledby="method-title">
+        <div><p class="eyebrow">Method</p><h2 id="method-title" data-i18n="methodTitle">数据边界</h2></div>
+        <p data-i18n="methodText">引用次数和开放获取状态会随元数据源变化；索引词不一定等同于作者关键词。摘要缺失不代表期刊页面没有摘要，请以 DOI 和出版社页面为准。</p>
       </section>
     </main>
 
-    <dialog class="detail-dialog" id="detail-dialog">
-      <form method="dialog">
-        <button class="close-button" type="submit" title="Close">×</button>
-      </form>
-      <article id="detail-content"></article>
-    </dialog>
-
+    <dialog class="detail-dialog" id="detail-dialog"><form method="dialog"><button class="close-button" type="submit" title="关闭" aria-label="关闭">×</button></form><article id="detail-content"></article></dialog>
+    <dialog class="health-dialog" id="health-dialog"><form method="dialog"><button class="close-button" type="submit" title="关闭" aria-label="关闭">×</button></form><article id="health-content"></article></dialog>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="app.js"></script>
   </body>
