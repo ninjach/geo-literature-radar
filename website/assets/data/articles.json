@@ -1,8 +1,8 @@
 {
-  "createdAt": "2026-08-14T21:42:27.153Z",
+  "createdAt": "2026-08-15T21:35:46.276Z",
   "window": {
-    "from": "2025-08-14",
-    "until": "2026-08-14",
+    "from": "2025-08-15",
+    "until": "2026-08-15",
     "months": 12
   },
   "journals": 24,
@@ -57,6 +57,14 @@
     "missingAbstract": 89,
     "abstractRate": 0.628,
     "byJournal": {
+      "Nat Commun": {
+        "total": 10,
+        "missing": 2
+      },
+      "NHESS": {
+        "total": 10,
+        "missing": 0
+      },
       "NCC": {
         "total": 10,
         "missing": 8
@@ -93,14 +101,6 @@
         "total": 10,
         "missing": 0
       },
-      "NHESS": {
-        "total": 10,
-        "missing": 0
-      },
-      "Nat Commun": {
-        "total": 10,
-        "missing": 2
-      },
       "Sci Adv": {
         "total": 10,
         "missing": 0
@@ -108,6 +108,10 @@
       "Nat Water": {
         "total": 10,
         "missing": 10
+      },
+      "JAMES": {
+        "total": 10,
+        "missing": 0
       },
       "Science": {
         "total": 10,
@@ -122,10 +126,6 @@
         "missing": 9
       },
       "Earth's Future": {
-        "total": 10,
-        "missing": 0
-      },
-      "JAMES": {
         "total": 10,
         "missing": 0
       },
@@ -163,7 +163,7 @@
     "fallbackJournals": [],
     "missingJournals": [],
     "warningCount": 0,
-    "latestPublication": "2026-08-14",
+    "latestPublication": "2026-08-15",
     "openAlexMode": "anonymous-batched",
     "crossrefMode": "public"
   },
@@ -172,9 +172,214 @@
     "problems": [],
     "count": 239,
     "representedJournals": 24,
-    "latestPublication": "2026-08-14"
+    "latestPublication": "2026-08-15"
   },
   "articles": [
+    {
+      "id": "10.1038/s41467-026-76777-w",
+      "doi": "10.1038/s41467-026-76777-w",
+      "title": "Quantifying the role of nitrogen in achieving global Sustainable Development Goals",
+      "titleEn": "Quantifying the role of nitrogen in achieving global Sustainable Development Goals",
+      "authors": [
+        "Yi Zhou",
+        "Xiuming Zhang",
+        "Yiyang Zou",
+        "Chen Wang",
+        "Xin Xu",
+        "et al."
+      ],
+      "journalId": "nature-communications",
+      "journal": "Nature Communications",
+      "journalAbbr": "Nat Commun",
+      "publisher": "Springer Nature",
+      "categoryId": "general",
+      "category": "综合顶刊",
+      "categoryZh": "综合顶刊",
+      "categoryEn": "Flagship Journals",
+      "themeId": "climate",
+      "theme": "气候变化",
+      "themeZh": "气候变化",
+      "themeEn": "Climate Change",
+      "published": "2026-08-15",
+      "url": "https://doi.org/10.1038/s41467-026-76777-w",
+      "officialJournalUrl": "https://www.nature.com/ncomms/",
+      "abstract": "Achieving the 2030 Sustainable Development Goals (SDGs) requires balancing well-being with environmental protection, yet the role of nitrogen across these goals remains poorly understood. Here, we show how dietary nitrogen intake and nitrogen release to air and water are associated with SDG progress across 166 countries from 2000 to 2022. Higher per-capita nitrogen intake is positively associated with social and economic SDGs, whereas nitrogen release is negatively associated with environmental goals. Economic development is linked to improved SDG performance but also to greater dietary nitrogen demand and nitrogen losses, while warming is associated with pressure on food systems and nitrogen management. Nitrogen-related factors account for 38% of the variation in SDG scores, compared with 34% for climatic conditions and 28% for socio-economic factors. These findings identify nitrogen management as a cross-cutting component of sustainable development and support strategies that align food security, pollution control and climate adaptation across development contexts.",
+      "abstractEn": "Achieving the 2030 Sustainable Development Goals (SDGs) requires balancing well-being with environmental protection, yet the role of nitrogen across these goals remains poorly understood. Here, we show how dietary nitrogen intake and nitrogen release to air and water are associated with SDG progress across 166 countries from 2000 to 2022. Higher per-capita nitrogen intake is positively associated with social and economic SDGs, whereas nitrogen release is negatively associated with environmental goals. Economic development is linked to improved SDG performance but also to greater dietary nitrogen demand and nitrogen losses, while warming is associated with pressure on food systems and nitrogen management. Nitrogen-related factors account for 38% of the variation in SDG scores, compared with 34% for climatic conditions and 28% for socio-economic factors. These findings identify nitrogen management as a cross-cutting component of sustainable development and support strategies that align food security, pollution control and climate adaptation across development contexts.",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 0,
+      "openAccess": true,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#0f766e",
+      "hasAbstract": true,
+      "abstractStatus": "available"
+    },
+    {
+      "id": "10.1038/s41467-026-76753-4",
+      "doi": "10.1038/s41467-026-76753-4",
+      "title": "Unveiling centromeric retrotransposon dynamics through a high-quality rye genome assembly",
+      "titleEn": "Unveiling centromeric retrotransposon dynamics through a high-quality rye genome assembly",
+      "authors": [
+        "Erwang Chen",
+        "Carlotta Marie Wehrkamp",
+        "Srijan Jhingan",
+        "Thomas Lux",
+        "Zihao Zhu",
+        "et al."
+      ],
+      "journalId": "nature-communications",
+      "journal": "Nature Communications",
+      "journalAbbr": "Nat Commun",
+      "publisher": "Springer Nature",
+      "categoryId": "general",
+      "category": "综合顶刊",
+      "categoryZh": "综合顶刊",
+      "categoryEn": "Flagship Journals",
+      "themeId": "remote",
+      "theme": "遥感与GeoAI",
+      "themeZh": "遥感与GeoAI",
+      "themeEn": "Remote Sensing & GeoAI",
+      "published": "2026-08-15",
+      "url": "https://doi.org/10.1038/s41467-026-76753-4",
+      "officialJournalUrl": "https://www.nature.com/ncomms/",
+      "abstract": "Rye ( Secale cereale L.) is an important cereal crop known for its high yield potential and tolerance to biotic and abiotic stresses. However, its large, repeat-rich, and heterozygous genome has posed challenges for assembly compared to related species such as wheat and barley. Here, we present a high-quality, chromosome-scale genome assembly of the inbred line Lo7, generated using PacBio HiFi, Oxford Nanopore, Hi-C, and BioNano technologies with the TRITEX pipeline. The resulting Lo7_V3 assembly spans 6.76 Gb with a contig N50 of 128 Mb, correcting previous misorientations and fully assembling all seven centromeres. Repetitive clusters containing rye-specific satellite sequences (pSc200 and pSc250) are contiguously assembled. Their chromosomal positions are validated using FISH. Centromeric retrotransposon analysis reveals RLG_Abia and RLG_Abigail as abundant, recently active elements, unlike in wheat. Collectively, the Lo7_V3 genome assembly provides an improved genomic resource for future genomic research in rye and related cereal species.",
+      "abstractEn": "Rye ( Secale cereale L.) is an important cereal crop known for its high yield potential and tolerance to biotic and abiotic stresses. However, its large, repeat-rich, and heterozygous genome has posed challenges for assembly compared to related species such as wheat and barley. Here, we present a high-quality, chromosome-scale genome assembly of the inbred line Lo7, generated using PacBio HiFi, Oxford Nanopore, Hi-C, and BioNano technologies with the TRITEX pipeline. The resulting Lo7_V3 assembly spans 6.76 Gb with a contig N50 of 128 Mb, correcting previous misorientations and fully assembling all seven centromeres. Repetitive clusters containing rye-specific satellite sequences (pSc200 and pSc250) are contiguously assembled. Their chromosomal positions are validated using FISH. Centromeric retrotransposon analysis reveals RLG_Abia and RLG_Abigail as abundant, recently active elements, unlike in wheat. Collectively, the Lo7_V3 genome assembly provides an improved genomic resource for future genomic research in rye and related cereal species.",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 0,
+      "openAccess": true,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#16a34a",
+      "hasAbstract": true,
+      "abstractStatus": "available"
+    },
+    {
+      "id": "10.1038/s41467-026-76632-y",
+      "doi": "10.1038/s41467-026-76632-y",
+      "title": "Machine learning-driven optimization of high-velocity impact resistance for three-dimensional biphasic composites",
+      "titleEn": "Machine learning-driven optimization of high-velocity impact resistance for three-dimensional biphasic composites",
+      "authors": [
+        "Lehu Bu",
+        "Pengfei Wang",
+        "Sida Hao",
+        "Shan Li",
+        "Yangfan Wu",
+        "et al."
+      ],
+      "journalId": "nature-communications",
+      "journal": "Nature Communications",
+      "journalAbbr": "Nat Commun",
+      "publisher": "Springer Nature",
+      "categoryId": "general",
+      "category": "综合顶刊",
+      "categoryZh": "综合顶刊",
+      "categoryEn": "Flagship Journals",
+      "themeId": "remote",
+      "theme": "遥感与GeoAI",
+      "themeZh": "遥感与GeoAI",
+      "themeEn": "Remote Sensing & GeoAI",
+      "published": "2026-08-15",
+      "url": "https://doi.org/10.1038/s41467-026-76632-y",
+      "officialJournalUrl": "https://www.nature.com/ncomms/",
+      "abstract": "",
+      "abstractEn": "",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 0,
+      "openAccess": true,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#16a34a",
+      "hasAbstract": false,
+      "abstractStatus": "missing"
+    },
+    {
+      "id": "10.1038/s41467-026-76748-1",
+      "doi": "10.1038/s41467-026-76748-1",
+      "title": "Towards unified AI-driven fracture mechanics: the extended deep energy method (XDEM)",
+      "titleEn": "Towards unified AI-driven fracture mechanics: the extended deep energy method (XDEM)",
+      "authors": [
+        "Yizheng Wang",
+        "Yuzhou Lin",
+        "Somdatta Goswami",
+        "Luyang Zhao",
+        "Huadong Zhang",
+        "et al."
+      ],
+      "journalId": "nature-communications",
+      "journal": "Nature Communications",
+      "journalAbbr": "Nat Commun",
+      "publisher": "Springer Nature",
+      "categoryId": "general",
+      "category": "综合顶刊",
+      "categoryZh": "综合顶刊",
+      "categoryEn": "Flagship Journals",
+      "themeId": "remote",
+      "theme": "遥感与GeoAI",
+      "themeZh": "遥感与GeoAI",
+      "themeEn": "Remote Sensing & GeoAI",
+      "published": "2026-08-15",
+      "url": "https://doi.org/10.1038/s41467-026-76748-1",
+      "officialJournalUrl": "https://www.nature.com/ncomms/",
+      "abstract": "Physics-Informed Neural Networks (PINNs) have recently emerged as powerful tools for solving partial differential equations (PDEs), with the Deep Energy Method (DEM) proving especially effective in fracture mechanics due to its energy-based formulation. Despite these advances, existing DEM approaches require dense collocation near cracks, face stability challenges, and typically treat discrete and continuous fracture models separately. To overcome these limitations, we introduce the Extended Deep Energy Method (XDEM), a unified deep learning framework that incorporates both displacement discontinuities and crack-tip asymptotics in the discrete setting, while flexibly coupling displacement and phase fields in the continuous setting. This integration enables accurate fracture predictions using uniformly distributed, relatively sparse collocation points. Validation across benchmark problems including stress intensity factor evaluation, straight and kinked crack growth, and complex crack initiation demonstrates that XDEM consistently outperforms standard DEM in accuracy and efficiency. By bridging discrete and phase-field models within a single framework, XDEM establishes a robust foundation for applying AI to fracture mechanics and opens new avenues for predictive modeling in engineering and materials science.",
+      "abstractEn": "Physics-Informed Neural Networks (PINNs) have recently emerged as powerful tools for solving partial differential equations (PDEs), with the Deep Energy Method (DEM) proving especially effective in fracture mechanics due to its energy-based formulation. Despite these advances, existing DEM approaches require dense collocation near cracks, face stability challenges, and typically treat discrete and continuous fracture models separately. To overcome these limitations, we introduce the Extended Deep Energy Method (XDEM), a unified deep learning framework that incorporates both displacement discontinuities and crack-tip asymptotics in the discrete setting, while flexibly coupling displacement and phase fields in the continuous setting. This integration enables accurate fracture predictions using uniformly distributed, relatively sparse collocation points. Validation across benchmark problems including stress intensity factor evaluation, straight and kinked crack growth, and complex crack initiation demonstrates that XDEM consistently outperforms standard DEM in accuracy and efficiency. By bridging discrete and phase-field models within a single framework, XDEM establishes a robust foundation for applying AI to fracture mechanics and opens new avenues for predictive modeling in engineering and materials science.",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 0,
+      "openAccess": true,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#16a34a",
+      "hasAbstract": true,
+      "abstractStatus": "available"
+    },
+    {
+      "id": "10.5194/nhess-26-3815-2026",
+      "doi": "10.5194/nhess-26-3815-2026",
+      "title": "Modeling the combined effects of the 2023 Türkiye–Syria earthquake and an Atmospheric River event on landslide hazard",
+      "titleEn": "Modeling the combined effects of the 2023 Türkiye–Syria earthquake and an Atmospheric River event on landslide hazard",
+      "authors": [
+        "Hunter N. Jimenez",
+        "Erkan Istanbulluoglu",
+        "Tolga Gorum",
+        "Thomas A. Stanley",
+        "Pukar M. Amatya",
+        "et al."
+      ],
+      "journalId": "nhess",
+      "journal": "Natural Hazards and Earth System Sciences",
+      "journalAbbr": "NHESS",
+      "publisher": "Copernicus / EGU",
+      "categoryId": "hazard",
+      "category": "灾害风险",
+      "categoryZh": "灾害风险",
+      "categoryEn": "Hazards & Risk",
+      "themeId": "hazard",
+      "theme": "灾害风险",
+      "themeZh": "灾害风险",
+      "themeEn": "Hazards & Risk",
+      "published": "2026-08-14",
+      "url": "https://doi.org/10.5194/nhess-26-3815-2026",
+      "officialJournalUrl": "https://nhess.copernicus.org/",
+      "abstract": "Abstract. The 6 February 2023 Türkiye–Syria earthquake doublet triggered thousands of coseismic landslides. On 14–15 March, an Atmospheric River (AR) delivered up to 183 mm of rainfall across the seismically weakened region, triggering hundreds of additional landslides and debris flows, causing extensive downstream flooding and damage. Existing regional hazard assessment tools typically model seismic- and rainfall-triggered landslides separately, and rarely incorporate post-seismic hillslope weakening into rainfall-based predictions. Here, we develop a rapidly deployable regional hazard model that integrates seismic and rainfall drivers with post-seismic legacy effects to map landslide probability using the open-source Landlab framework and global gridded datasets. Incorporating legacy effects improves model performance under the AR forcing, yields more realistic probabilities, and lowers the critical slope for landslide initiation by up to 13° relative to the same model without the legacy effect. Analysing event sequencing, we find that this AR event preceding or coincident with the earthquake produces the greatest hazard extent, with median critical slopes in high-probability areas (P(F)≥0.6) up to 7° lower than when the AR follows the seismic event. Finally, we develop a pre-event forecasting method that uses historical extreme rainfall records to map post-seismic landslide hazard and show that it closely replicates the hazard map derived from the 14–15 March AR event. The proposed model supports disaster preparedness, early warning, and risk reduction before and after earthquakes in landslide-prone regions.",
+      "abstractEn": "Abstract. The 6 February 2023 Türkiye–Syria earthquake doublet triggered thousands of coseismic landslides. On 14–15 March, an Atmospheric River (AR) delivered up to 183 mm of rainfall across the seismically weakened region, triggering hundreds of additional landslides and debris flows, causing extensive downstream flooding and damage. Existing regional hazard assessment tools typically model seismic- and rainfall-triggered landslides separately, and rarely incorporate post-seismic hillslope weakening into rainfall-based predictions. Here, we develop a rapidly deployable regional hazard model that integrates seismic and rainfall drivers with post-seismic legacy effects to map landslide probability using the open-source Landlab framework and global gridded datasets. Incorporating legacy effects improves model performance under the AR forcing, yields more realistic probabilities, and lowers the critical slope for landslide initiation by up to 13° relative to the same model without the legacy effect. Analysing event sequencing, we find that this AR event preceding or coincident with the earthquake produces the greatest hazard extent, with median critical slopes in high-probability areas (P(F)≥0.6) up to 7° lower than when the AR follows the seismic event. Finally, we develop a pre-event forecasting method that uses historical extreme rainfall records to map post-seismic landslide hazard and show that it closely replicates the hazard map derived from the 14–15 March AR event. The proposed model supports disaster preparedness, early warning, and risk reduction before and after earthquakes in landslide-prone regions.",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 1,
+      "openAccess": true,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#dc2626",
+      "hasAbstract": true,
+      "abstractStatus": "available"
+    },
     {
       "id": "10.1038/s41558-026-02691-0",
       "doi": "10.1038/s41558-026-02691-0",
@@ -731,47 +936,6 @@
       "abstractStatus": "available"
     },
     {
-      "id": "10.5194/nhess-26-3815-2026",
-      "doi": "10.5194/nhess-26-3815-2026",
-      "title": "Modeling the combined effects of the 2023 Türkiye–Syria earthquake and an Atmospheric River event on landslide hazard",
-      "titleEn": "Modeling the combined effects of the 2023 Türkiye–Syria earthquake and an Atmospheric River event on landslide hazard",
-      "authors": [
-        "Hunter N. Jimenez",
-        "Erkan Istanbulluoglu",
-        "Tolga Gorum",
-        "Thomas A. Stanley",
-        "Pukar M. Amatya",
-        "et al."
-      ],
-      "journalId": "nhess",
-      "journal": "Natural Hazards and Earth System Sciences",
-      "journalAbbr": "NHESS",
-      "publisher": "Copernicus / EGU",
-      "categoryId": "hazard",
-      "category": "灾害风险",
-      "categoryZh": "灾害风险",
-      "categoryEn": "Hazards & Risk",
-      "themeId": "hazard",
-      "theme": "灾害风险",
-      "themeZh": "灾害风险",
-      "themeEn": "Hazards & Risk",
-      "published": "2026-08-14",
-      "url": "https://doi.org/10.5194/nhess-26-3815-2026",
-      "officialJournalUrl": "https://nhess.copernicus.org/",
-      "abstract": "Abstract. The 6 February 2023 Türkiye–Syria earthquake doublet triggered thousands of coseismic landslides. On 14–15 March, an Atmospheric River (AR) delivered up to 183 mm of rainfall across the seismically weakened region, triggering hundreds of additional landslides and debris flows, causing extensive downstream flooding and damage. Existing regional hazard assessment tools typically model seismic- and rainfall-triggered landslides separately, and rarely incorporate post-seismic hillslope weakening into rainfall-based predictions. Here, we develop a rapidly deployable regional hazard model that integrates seismic and rainfall drivers with post-seismic legacy effects to map landslide probability using the open-source Landlab framework and global gridded datasets. Incorporating legacy effects improves model performance under the AR forcing, yields more realistic probabilities, and lowers the critical slope for landslide initiation by up to 13° relative to the same model without the legacy effect. Analysing event sequencing, we find that this AR event preceding or coincident with the earthquake produces the greatest hazard extent, with median critical slopes in high-probability areas (P(F)≥0.6) up to 7° lower than when the AR follows the seismic event. Finally, we develop a pre-event forecasting method that uses historical extreme rainfall records to map post-seismic landslide hazard and show that it closely replicates the hazard map derived from the 14–15 March AR event. The proposed model supports disaster preparedness, early warning, and risk reduction before and after earthquakes in landslide-prone regions.",
-      "abstractEn": "Abstract. The 6 February 2023 Türkiye–Syria earthquake doublet triggered thousands of coseismic landslides. On 14–15 March, an Atmospheric River (AR) delivered up to 183 mm of rainfall across the seismically weakened region, triggering hundreds of additional landslides and debris flows, causing extensive downstream flooding and damage. Existing regional hazard assessment tools typically model seismic- and rainfall-triggered landslides separately, and rarely incorporate post-seismic hillslope weakening into rainfall-based predictions. Here, we develop a rapidly deployable regional hazard model that integrates seismic and rainfall drivers with post-seismic legacy effects to map landslide probability using the open-source Landlab framework and global gridded datasets. Incorporating legacy effects improves model performance under the AR forcing, yields more realistic probabilities, and lowers the critical slope for landslide initiation by up to 13° relative to the same model without the legacy effect. Analysing event sequencing, we find that this AR event preceding or coincident with the earthquake produces the greatest hazard extent, with median critical slopes in high-probability areas (P(F)≥0.6) up to 7° lower than when the AR follows the seismic event. Finally, we develop a pre-event forecasting method that uses historical extreme rainfall records to map post-seismic landslide hazard and show that it closely replicates the hazard map derived from the 14–15 March AR event. The proposed model supports disaster preparedness, early warning, and risk reduction before and after earthquakes in landslide-prone regions.",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 0,
-      "openAccess": true,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#dc2626",
-      "hasAbstract": true,
-      "abstractStatus": "available"
-    },
-    {
       "id": "10.1038/s41467-026-76653-7",
       "doi": "10.1038/s41467-026-76653-7",
       "title": "Dual-additive enabled inorganic-rich solid electrolyte interphase for high-rate lithium negative electrodes",
@@ -936,47 +1100,6 @@
       "abstractStatus": "available"
     },
     {
-      "id": "10.1038/s41467-026-76613-1",
-      "doi": "10.1038/s41467-026-76613-1",
-      "title": "A superelastic titanium alloy showing nearly temperature-independent high strength and elastic modulus",
-      "titleEn": "A superelastic titanium alloy showing nearly temperature-independent high strength and elastic modulus",
-      "authors": [
-        "Boer Chen",
-        "Honghong Su",
-        "Shuanglei Li",
-        "Zhonghan Li",
-        "Ying Yang",
-        "et al."
-      ],
-      "journalId": "nature-communications",
-      "journal": "Nature Communications",
-      "journalAbbr": "Nat Commun",
-      "publisher": "Springer Nature",
-      "categoryId": "general",
-      "category": "综合顶刊",
-      "categoryZh": "综合顶刊",
-      "categoryEn": "Flagship Journals",
-      "themeId": "climate",
-      "theme": "气候变化",
-      "themeZh": "气候变化",
-      "themeEn": "Climate Change",
-      "published": "2026-08-14",
-      "url": "https://doi.org/10.1038/s41467-026-76613-1",
-      "officialJournalUrl": "https://www.nature.com/ncomms/",
-      "abstract": "",
-      "abstractEn": "",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 0,
-      "openAccess": true,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#0f766e",
-      "hasAbstract": false,
-      "abstractStatus": "missing"
-    },
-    {
       "id": "10.1038/s41467-026-76435-1",
       "doi": "10.1038/s41467-026-76435-1",
       "title": "Deciphering the evolutionary origin of the enantioselectivity of short-chain dehydrogenases from plants toward 1-borneol",
@@ -1018,16 +1141,16 @@
       "abstractStatus": "available"
     },
     {
-      "id": "10.1038/s41467-026-76563-8",
-      "doi": "10.1038/s41467-026-76563-8",
-      "title": "Carbon-rich carbon nitride for singlet-oxygen-driven photocatalytic degradation of benzophenone-3 and coral vitality recovery",
-      "titleEn": "Carbon-rich carbon nitride for singlet-oxygen-driven photocatalytic degradation of benzophenone-3 and coral vitality recovery",
+      "id": "10.1038/s41467-026-76613-1",
+      "doi": "10.1038/s41467-026-76613-1",
+      "title": "A superelastic titanium alloy showing nearly temperature-independent high strength and elastic modulus",
+      "titleEn": "A superelastic titanium alloy showing nearly temperature-independent high strength and elastic modulus",
       "authors": [
-        "Shien Zhu",
-        "Xiaofei Yang",
-        "Di He",
-        "Yanyan Zhang",
-        "Hang Liu",
+        "Boer Chen",
+        "Honghong Su",
+        "Shuanglei Li",
+        "Zhonghan Li",
+        "Ying Yang",
         "et al."
       ],
       "journalId": "nature-communications",
@@ -1038,12 +1161,12 @@
       "category": "综合顶刊",
       "categoryZh": "综合顶刊",
       "categoryEn": "Flagship Journals",
-      "themeId": "carbon",
-      "theme": "生态与碳循环",
-      "themeZh": "生态与碳循环",
-      "themeEn": "Ecology & Carbon",
+      "themeId": "climate",
+      "theme": "气候变化",
+      "themeZh": "气候变化",
+      "themeEn": "Climate Change",
       "published": "2026-08-14",
-      "url": "https://doi.org/10.1038/s41467-026-76563-8",
+      "url": "https://doi.org/10.1038/s41467-026-76613-1",
       "officialJournalUrl": "https://www.nature.com/ncomms/",
       "abstract": "",
       "abstractEn": "",
@@ -1054,130 +1177,9 @@
       "sources": [
         "Crossref DOI metadata"
       ],
-      "themeColor": "#b45309",
+      "themeColor": "#0f766e",
       "hasAbstract": false,
       "abstractStatus": "missing"
-    },
-    {
-      "id": "10.1038/s41467-026-76564-7",
-      "doi": "10.1038/s41467-026-76564-7",
-      "title": "Efficient experimental characterization of the GPCRome via deep receptor scanning",
-      "titleEn": "Efficient experimental characterization of the GPCRome via deep receptor scanning",
-      "authors": [
-        "Austin Tedman",
-        "Muskan Goel",
-        "Sohan Shah",
-        "Matthew K. Howard",
-        "Laura M. Chamness",
-        "et al."
-      ],
-      "journalId": "nature-communications",
-      "journal": "Nature Communications",
-      "journalAbbr": "Nat Commun",
-      "publisher": "Springer Nature",
-      "categoryId": "general",
-      "category": "综合顶刊",
-      "categoryZh": "综合顶刊",
-      "categoryEn": "Flagship Journals",
-      "themeId": "remote",
-      "theme": "遥感与GeoAI",
-      "themeZh": "遥感与GeoAI",
-      "themeEn": "Remote Sensing & GeoAI",
-      "published": "2026-08-14",
-      "url": "https://doi.org/10.1038/s41467-026-76564-7",
-      "officialJournalUrl": "https://www.nature.com/ncomms/",
-      "abstract": "G protein-coupled receptors (GPCRs) mediate a variety of signaling pathways and represent the most common class of pharmaceutical target. While advances in structural biochemistry have provided deep functional insights into key receptors, many of the 800+ human GPCRs remain understudied. We introduce a versatile “deep receptor scanning” platform that can be used to experimentally characterize 766 human GPCRs and 174 known GPCR splice variants in parallel. We use this platform to quantitatively characterize the relative abundance of canonical and alternative receptor transcripts, their translational efficiency, and the plasma membrane expression of each receptor in the context of a recombinant pool of HEK293T cells expressing individual GPCRs. We then employ machine learning to identify specific structural features that are strongly associated with variations in GPCR expression. Our results show that many highly-expressed receptors exhibit systematic differences in hydrophobicity and secondary structure. This experimental platform and informatic approach are compatible with a variety of assays and can be used to efficiently explore the biochemical and pharmacological properties of the GPCRome.",
-      "abstractEn": "G protein-coupled receptors (GPCRs) mediate a variety of signaling pathways and represent the most common class of pharmaceutical target. While advances in structural biochemistry have provided deep functional insights into key receptors, many of the 800+ human GPCRs remain understudied. We introduce a versatile “deep receptor scanning” platform that can be used to experimentally characterize 766 human GPCRs and 174 known GPCR splice variants in parallel. We use this platform to quantitatively characterize the relative abundance of canonical and alternative receptor transcripts, their translational efficiency, and the plasma membrane expression of each receptor in the context of a recombinant pool of HEK293T cells expressing individual GPCRs. We then employ machine learning to identify specific structural features that are strongly associated with variations in GPCR expression. Our results show that many highly-expressed receptors exhibit systematic differences in hydrophobicity and secondary structure. This experimental platform and informatic approach are compatible with a variety of assays and can be used to efficiently explore the biochemical and pharmacological properties of the GPCRome.",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 0,
-      "openAccess": true,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#16a34a",
-      "hasAbstract": true,
-      "abstractStatus": "available"
-    },
-    {
-      "id": "10.1038/s41467-026-75861-5",
-      "doi": "10.1038/s41467-026-75861-5",
-      "title": "A regulator of amino acid catabolism controls Acinetobacter baumannii gut colonization",
-      "titleEn": "A regulator of amino acid catabolism controls Acinetobacter baumannii gut colonization",
-      "authors": [
-        "John H. Geary",
-        "Xiaomei Ren",
-        "Dziedzom A. Bansah",
-        "Ngoc T. T. Pham",
-        "Iván C. Acosta",
-        "et al."
-      ],
-      "journalId": "nature-communications",
-      "journal": "Nature Communications",
-      "journalAbbr": "Nat Commun",
-      "publisher": "Springer Nature",
-      "categoryId": "general",
-      "category": "综合顶刊",
-      "categoryZh": "综合顶刊",
-      "categoryEn": "Flagship Journals",
-      "themeId": "hazard",
-      "theme": "灾害风险",
-      "themeZh": "灾害风险",
-      "themeEn": "Hazards & Risk",
-      "published": "2026-08-14",
-      "url": "https://doi.org/10.1038/s41467-026-75861-5",
-      "officialJournalUrl": "https://www.nature.com/ncomms/",
-      "abstract": "Asymptomatic gut colonization increases the risk of clinical infection and transmission by the multidrug-resistant pathogen Acinetobacter baumannii . Ornithine utilization was shown to be critical for A. baumannii competition with the resident microbiota to persist in gut colonization, but the regulatory mechanisms and cues are unknown. Here, we identify a transcriptional regulator, AstR, that specifically activates the expression of the A. baumannii ornithine utilization operon astNOP . Phylogenetic analysis suggests that AstR was co-opted from the Acinetobacter arginine utilization ast(G)CADBE locus and is specialized to regulate ornithine utilization in A. baumannii . Reporter assays showed that astN promoter expression was activated by ornithine but inhibited by glutamate and other preferred amino acids. astN promoter expression was similarly activated by incubation with fecal samples from conventional mice but not germ-free mice, suggesting AstR-dependent activation of the astN promoter responds to intermicrobial competition for amino acids. Finally, AstR was required for A. baumannii to colonize the gut in a mouse model. Together, these results suggest that pathogenic Acinetobacter species evolved AstR to regulate ornithine catabolism, which is required to compete with the microbiota during gut colonization.",
-      "abstractEn": "Asymptomatic gut colonization increases the risk of clinical infection and transmission by the multidrug-resistant pathogen Acinetobacter baumannii . Ornithine utilization was shown to be critical for A. baumannii competition with the resident microbiota to persist in gut colonization, but the regulatory mechanisms and cues are unknown. Here, we identify a transcriptional regulator, AstR, that specifically activates the expression of the A. baumannii ornithine utilization operon astNOP . Phylogenetic analysis suggests that AstR was co-opted from the Acinetobacter arginine utilization ast(G)CADBE locus and is specialized to regulate ornithine utilization in A. baumannii . Reporter assays showed that astN promoter expression was activated by ornithine but inhibited by glutamate and other preferred amino acids. astN promoter expression was similarly activated by incubation with fecal samples from conventional mice but not germ-free mice, suggesting AstR-dependent activation of the astN promoter responds to intermicrobial competition for amino acids. Finally, AstR was required for A. baumannii to colonize the gut in a mouse model. Together, these results suggest that pathogenic Acinetobacter species evolved AstR to regulate ornithine catabolism, which is required to compete with the microbiota during gut colonization.",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 0,
-      "openAccess": true,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#dc2626",
-      "hasAbstract": true,
-      "abstractStatus": "available"
-    },
-    {
-      "id": "10.1038/s41467-026-76410-w",
-      "doi": "10.1038/s41467-026-76410-w",
-      "title": "Weakly supervised artificial intelligence for multi-cancer detection of lymph node metastasis on whole slide images",
-      "titleEn": "Weakly supervised artificial intelligence for multi-cancer detection of lymph node metastasis on whole slide images",
-      "authors": [
-        "Lili Sun",
-        "Shuilian Yao",
-        "Qi Jia",
-        "Yanmei Zhu"
-      ],
-      "journalId": "nature-communications",
-      "journal": "Nature Communications",
-      "journalAbbr": "Nat Commun",
-      "publisher": "Springer Nature",
-      "categoryId": "general",
-      "category": "综合顶刊",
-      "categoryZh": "综合顶刊",
-      "categoryEn": "Flagship Journals",
-      "themeId": "remote",
-      "theme": "遥感与GeoAI",
-      "themeZh": "遥感与GeoAI",
-      "themeEn": "Remote Sensing & GeoAI",
-      "published": "2026-08-14",
-      "url": "https://doi.org/10.1038/s41467-026-76410-w",
-      "officialJournalUrl": "https://www.nature.com/ncomms/",
-      "abstract": "The accurate identification of lymph node metastasis is critical for cancer diagnosis/treatment but remains time-consuming and error-prone for pathologists. We develop MambaMIL+HiLA-MIL, a multiple instance learning model combining Vision Mamba with high-low attention separation mechanism. This model is compared against six baselines under four feature extractors (ResNet, UNI, Virchow, and GigaPath). Ten-fold cross-validation is employed for model evaluation. Our model significantly outperforms all baselines. It exhibits strong performance in detection of isolated tumor cells and micro-metastasis, while maintaining high performance for negative and macro-metastasis cases. The model still demonstrates good stability in detecting lymph node metastasis across multi-cancer and various individual cancer types. UNI and GigaPath yield significantly better performance than ResNet and Virchow. Here, we show that MambaMIL+HiLA-MIL is a multi-cancer four-class lymph node metastasis model, demonstrating high efficiency and robustness across multiple centers and various feature extractors, offering a reliable tool for clinical lymph node metastasis classification.",
-      "abstractEn": "The accurate identification of lymph node metastasis is critical for cancer diagnosis/treatment but remains time-consuming and error-prone for pathologists. We develop MambaMIL+HiLA-MIL, a multiple instance learning model combining Vision Mamba with high-low attention separation mechanism. This model is compared against six baselines under four feature extractors (ResNet, UNI, Virchow, and GigaPath). Ten-fold cross-validation is employed for model evaluation. Our model significantly outperforms all baselines. It exhibits strong performance in detection of isolated tumor cells and micro-metastasis, while maintaining high performance for negative and macro-metastasis cases. The model still demonstrates good stability in detecting lymph node metastasis across multi-cancer and various individual cancer types. UNI and GigaPath yield significantly better performance than ResNet and Virchow. Here, we show that MambaMIL+HiLA-MIL is a multi-cancer four-class lymph node metastasis model, demonstrating high efficiency and robustness across multiple centers and various feature extractors, offering a reliable tool for clinical lymph node metastasis classification.",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 0,
-      "openAccess": true,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#16a34a",
-      "hasAbstract": true,
-      "abstractStatus": "available"
     },
     {
       "id": "10.1126/sciadv.aef5620",
@@ -1623,6 +1625,47 @@
       "themeColor": "#2563eb",
       "hasAbstract": false,
       "abstractStatus": "missing"
+    },
+    {
+      "id": "10.1029/2025ms005733",
+      "doi": "10.1029/2025ms005733",
+      "title": "Overview of Aerosols in the E3SM Version 3: New Model Features and Their Impacts",
+      "titleEn": "Overview of Aerosols in the E3SM Version 3: New Model Features and Their Impacts",
+      "authors": [
+        "Hailong Wang",
+        "Mingxuan Wu",
+        "Ziming Ke",
+        "Yan Feng",
+        "Manish Shrivastava",
+        "et al."
+      ],
+      "journalId": "james",
+      "journal": "Journal of Advances in Modeling Earth Systems",
+      "journalAbbr": "JAMES",
+      "publisher": "AGU / Wiley",
+      "categoryId": "modeling",
+      "category": "地球系统模型",
+      "categoryZh": "地球系统模型",
+      "categoryEn": "Earth System Modeling",
+      "themeId": "modeling",
+      "theme": "地球系统模型",
+      "themeZh": "地球系统模型",
+      "themeEn": "Earth System Modeling",
+      "published": "2026-08-14",
+      "url": "https://doi.org/10.1029/2025ms005733",
+      "officialJournalUrl": "https://agupubs.onlinelibrary.wiley.com/journal/19422466",
+      "abstract": "Accurate and comprehensive representation of aerosols in Earth system models (ESMs) is critical for modeling radiative forcing and seasonal‐to‐decadal variability. With increasing computing power, detailed physical and chemical processes representing aerosols and their interactions with other components of the Earth system can be treated more explicitly and accurately in ESMs. Like many other ESMs, the U.S. DOE Energy Exascale Earth System Model (E3SM) versions 1 and 2 have a state‐of‐the‐art treatment of major aerosol species but crudely treat or even neglect some aerosol components that become increasingly important in the future with decreasing sulfur emissions. Several science‐driven model developments of new aerosol features, including an explicit treatment of nitrate and ammonium aerosol species using MOSAIC coupled with the chemUCI gas chemistry scheme, explicit secondary organic aerosol (SOA) formation and loss, prognostic stratospheric sulfate (using chemical, microphysical and optical treatments instead of prescribing optical properties for volcanic aerosol), improved convective wet removal, improved numerical coupling of aerosol processes (i.e., emission, dry deposition, and turbulent mixing), and a new dust particle emission scheme, have been included in E3SM version 3 (E3SMv3) to better capture their roles in the Earth system. These new aerosol developments also require coupling with relatively comprehensive atmospheric chemistry to represent the reactions involving precursor gases and oxidants. Besides the new modeling capabilities, the aerosol improvements (e.g., SOA and dust lifetime and spatial distribution) contribute to E3SMv3's better performance in reproducing the historical temperature trends and enable the model to better project near‐future Earth system changes.",
+      "abstractEn": "Accurate and comprehensive representation of aerosols in Earth system models (ESMs) is critical for modeling radiative forcing and seasonal‐to‐decadal variability. With increasing computing power, detailed physical and chemical processes representing aerosols and their interactions with other components of the Earth system can be treated more explicitly and accurately in ESMs. Like many other ESMs, the U.S. DOE Energy Exascale Earth System Model (E3SM) versions 1 and 2 have a state‐of‐the‐art treatment of major aerosol species but crudely treat or even neglect some aerosol components that become increasingly important in the future with decreasing sulfur emissions. Several science‐driven model developments of new aerosol features, including an explicit treatment of nitrate and ammonium aerosol species using MOSAIC coupled with the chemUCI gas chemistry scheme, explicit secondary organic aerosol (SOA) formation and loss, prognostic stratospheric sulfate (using chemical, microphysical and optical treatments instead of prescribing optical properties for volcanic aerosol), improved convective wet removal, improved numerical coupling of aerosol processes (i.e., emission, dry deposition, and turbulent mixing), and a new dust particle emission scheme, have been included in E3SM version 3 (E3SMv3) to better capture their roles in the Earth system. These new aerosol developments also require coupling with relatively comprehensive atmospheric chemistry to represent the reactions involving precursor gases and oxidants. Besides the new modeling capabilities, the aerosol improvements (e.g., SOA and dust lifetime and spatial distribution) contribute to E3SMv3's better performance in reproducing the historical temperature trends and enable the model to better project near‐future Earth system changes.",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 0,
+      "openAccess": true,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#7c3aed",
+      "hasAbstract": true,
+      "abstractStatus": "available"
     },
     {
       "id": "10.1126/science.aec4776",
@@ -6354,43 +6397,6 @@
       "abstractStatus": "available"
     },
     {
-      "id": "10.1029/2025ms005673",
-      "doi": "10.1029/2025ms005673",
-      "title": "From Static to Spatiotemporal: Dynamic Volatility Distribution Parameterizations for Global Organic Aerosol Simulations",
-      "titleEn": "From Static to Spatiotemporal: Dynamic Volatility Distribution Parameterizations for Global Organic Aerosol Simulations",
-      "authors": [
-        "Mingxinyu Lu",
-        "Chloe Yuchao Gao"
-      ],
-      "journalId": "james",
-      "journal": "Journal of Advances in Modeling Earth Systems",
-      "journalAbbr": "JAMES",
-      "publisher": "AGU / Wiley",
-      "categoryId": "modeling",
-      "category": "地球系统模型",
-      "categoryZh": "地球系统模型",
-      "categoryEn": "Earth System Modeling",
-      "themeId": "modeling",
-      "theme": "地球系统模型",
-      "themeZh": "地球系统模型",
-      "themeEn": "Earth System Modeling",
-      "published": "2026-08-05",
-      "url": "https://doi.org/10.1029/2025ms005673",
-      "officialJournalUrl": "https://agupubs.onlinelibrary.wiley.com/journal/19422466",
-      "abstract": "Organic aerosols (OA) are a major component of fine particulate matter that affects air quality and climate, yet atmospheric models often underestimate their concentrations, partly reflecting uncertainties in the assumed volatility distribution of primary organic aerosol emissions. Using the NASA GISS ModelE Earth system model, we test four hypotheses: OA biases decrease when volatility distributions are differentiated by (H1) emission source, (H2) anthropogenic sector, (H3) geographic region, and (H4) VBS volatility bin. Simulations are evaluated against IMPROVE over the Continental US, ACTRIS over Europe, and the Chen et al. (2024, https://doi.org/10.1038/s41467‐024‐48902‐0 ) field‐campaign data set over China; for Africa and India, where direct OA observations are sparse, modeled OA is compared with MERRA‐2 reanalysis and complemented by MODIS/CALIPSO aerosol optical depth (AOD). Optimized volatility distributions reduce OA biases by up to 35% relative to the baseline, with optimal profiles varying across regions, seasons, and sectors. To extend these gains to data‐limited regions, we train Random Forest, XGBoost, and a back‐propagation neural network to construct spatiotemporally variable distributions. Although this improves performance, purely statistical predictions produce unrealistic summertime overestimations because they neglect the underlying chemistry. We therefore impose a physicochemical constraint based on RO 2 + NO chemistry, activated where exceeds a piecewise‐regression threshold, and anthropogenic plus biomass‐burning OA emissions exceed the monthly 75th percentile, which reduces biases by up to 77% in the most overestimated regions. Aerosol‐population diagnostics show that volatility changes redistribute organic mass among primary‐organic, black‐carbon–organic, and organic–sulfate populations, providing a physically consistent pathway for improving OA representation.",
-      "abstractEn": "Organic aerosols (OA) are a major component of fine particulate matter that affects air quality and climate, yet atmospheric models often underestimate their concentrations, partly reflecting uncertainties in the assumed volatility distribution of primary organic aerosol emissions. Using the NASA GISS ModelE Earth system model, we test four hypotheses: OA biases decrease when volatility distributions are differentiated by (H1) emission source, (H2) anthropogenic sector, (H3) geographic region, and (H4) VBS volatility bin. Simulations are evaluated against IMPROVE over the Continental US, ACTRIS over Europe, and the Chen et al. (2024, https://doi.org/10.1038/s41467‐024‐48902‐0 ) field‐campaign data set over China; for Africa and India, where direct OA observations are sparse, modeled OA is compared with MERRA‐2 reanalysis and complemented by MODIS/CALIPSO aerosol optical depth (AOD). Optimized volatility distributions reduce OA biases by up to 35% relative to the baseline, with optimal profiles varying across regions, seasons, and sectors. To extend these gains to data‐limited regions, we train Random Forest, XGBoost, and a back‐propagation neural network to construct spatiotemporally variable distributions. Although this improves performance, purely statistical predictions produce unrealistic summertime overestimations because they neglect the underlying chemistry. We therefore impose a physicochemical constraint based on RO 2 + NO chemistry, activated where exceeds a piecewise‐regression threshold, and anthropogenic plus biomass‐burning OA emissions exceed the monthly 75th percentile, which reduces biases by up to 77% in the most overestimated regions. Aerosol‐population diagnostics show that volatility changes redistribute organic mass among primary‐organic, black‐carbon–organic, and organic–sulfate populations, providing a physically consistent pathway for improving OA representation.",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 0,
-      "openAccess": true,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#7c3aed",
-      "hasAbstract": true,
-      "abstractStatus": "available"
-    },
-    {
       "id": "10.1038/s41586-026-10884-y",
       "doi": "10.1038/s41586-026-10884-y",
       "title": "The Virtual Tissues foundation model resolves spatial proteomics across scales",
@@ -7779,16 +7785,16 @@
       "abstractStatus": "missing"
     },
     {
-      "id": "10.1016/j.rse.2026.115453",
-      "doi": "10.1016/j.rse.2026.115453",
-      "title": "Hyperspectral constraints reduce bias in ECOSTRESS evapotranspiration and drought indicators",
-      "titleEn": "Hyperspectral constraints reduce bias in ECOSTRESS evapotranspiration and drought indicators",
+      "id": "10.1016/j.rse.2026.115445",
+      "doi": "10.1016/j.rse.2026.115445",
+      "title": "A cross-European assessment on the pre-emergence detection of trees attacked by spruce bark beetle using UAV imagery",
+      "titleEn": "A cross-European assessment on the pre-emergence detection of trees attacked by spruce bark beetle using UAV imagery",
       "authors": [
-        "Michael Marshall",
-        "Monica Pepe",
-        "Giulia Tagliabue",
-        "Vincent Odongo",
-        "Wim Timmermans",
+        "Langning Huo",
+        "Luiz Henrique Elias Cosimo",
+        "Aurora Bozzini",
+        "Salma Bijou",
+        "Raquel Alves de Oliveira",
         "et al."
       ],
       "journalId": "remote-sensing-of-environment",
@@ -7799,12 +7805,12 @@
       "category": "遥感与GeoAI",
       "categoryZh": "遥感与GeoAI",
       "categoryEn": "Remote Sensing & GeoAI",
-      "themeId": "hydrology",
-      "theme": "水文水资源",
-      "themeZh": "水文水资源",
-      "themeEn": "Hydrology & Water",
+      "themeId": "remote",
+      "theme": "遥感与GeoAI",
+      "themeZh": "遥感与GeoAI",
+      "themeEn": "Remote Sensing & GeoAI",
       "published": "2026-08-01",
-      "url": "https://doi.org/10.1016/j.rse.2026.115453",
+      "url": "https://doi.org/10.1016/j.rse.2026.115445",
       "officialJournalUrl": "https://www.sciencedirect.com/journal/remote-sensing-of-environment",
       "abstract": "",
       "abstractEn": "",
@@ -7815,7 +7821,7 @@
       "sources": [
         "Crossref DOI metadata"
       ],
-      "themeColor": "#2563eb",
+      "themeColor": "#16a34a",
       "hasAbstract": false,
       "abstractStatus": "missing"
     },
