@@ -1,8 +1,8 @@
 {
-  "createdAt": "2026-08-15T21:35:46.276Z",
+  "createdAt": "2026-08-16T21:35:05.272Z",
   "window": {
-    "from": "2025-08-15",
-    "until": "2026-08-15",
+    "from": "2025-08-16",
+    "until": "2026-08-16",
     "months": 12
   },
   "journals": 24,
@@ -57,6 +57,10 @@
     "missingAbstract": 89,
     "abstractRate": 0.628,
     "byJournal": {
+      "Earth's Future": {
+        "total": 10,
+        "missing": 0
+      },
       "Nat Commun": {
         "total": 10,
         "missing": 2
@@ -125,10 +129,6 @@
         "total": 10,
         "missing": 9
       },
-      "Earth's Future": {
-        "total": 10,
-        "missing": 0
-      },
       "Nature": {
         "total": 9,
         "missing": 3
@@ -156,14 +156,14 @@
     }
   },
   "sourceHealth": {
-    "status": "healthy",
+    "status": "warning",
     "representedJournals": 24,
     "freshJournals": 24,
     "totalJournals": 24,
     "fallbackJournals": [],
     "missingJournals": [],
-    "warningCount": 0,
-    "latestPublication": "2026-08-15",
+    "warningCount": 4,
+    "latestPublication": "2026-08-16",
     "openAlexMode": "anonymous-batched",
     "crossrefMode": "public"
   },
@@ -172,9 +172,50 @@
     "problems": [],
     "count": 239,
     "representedJournals": 24,
-    "latestPublication": "2026-08-15"
+    "latestPublication": "2026-08-16"
   },
   "articles": [
+    {
+      "id": "10.1029/2026ef008098",
+      "doi": "10.1029/2026ef008098",
+      "title": "Terrestrial Poor Ecohealth Areas Continue to Expand Across Asian Drylands",
+      "titleEn": "Terrestrial Poor Ecohealth Areas Continue to Expand Across Asian Drylands",
+      "authors": [
+        "Sikandar Ali",
+        "Akash Tariq",
+        "Fanjiang Zeng",
+        "Jordi Sardans",
+        "Patient Mindje Kayumba",
+        "et al."
+      ],
+      "journalId": "earths-future",
+      "journal": "Earth's Future",
+      "journalAbbr": "Earth's Future",
+      "publisher": "AGU / Wiley",
+      "categoryId": "climate",
+      "category": "气候变化",
+      "categoryZh": "气候变化",
+      "categoryEn": "Climate Change",
+      "themeId": "climate",
+      "theme": "气候变化",
+      "themeZh": "气候变化",
+      "themeEn": "Climate Change",
+      "published": "2026-08-16",
+      "url": "https://doi.org/10.1029/2026ef008098",
+      "officialJournalUrl": "https://agupubs.onlinelibrary.wiley.com/journal/23284277",
+      "abstract": "The 7th Rio declaration principle emphasizes global collaboration to protect and restore ecosystem health. While dryland ecosystem health (EH) remains critical to global sustainability agendas, its long‐term regional dynamics remain poorly constrained across the Asian drylands (AD), where land management decisions increasingly shape ecological outcomes. Here, we develop an integrated regional framework that combines vegetation dynamics, soil moisture, land use, and landscape spatial configuration to assess EH trajectories across AD from 2000 to 2020. We found that EH declined across AD until 2012 and partially recovered after 2013. Specifically, areas with poor EH increased by 2.1% (58 Mha), while healthy ecosystems declined by 0.08% and accounted for only 2% (7.9 Mha) of AD by 2020. These regional trends concealed pronounced spatial contrasts, with continued degradation across much of Central Asia and improvement in parts of Dryland East Asia. These divergent trends reflect interacting human land‐use and climate pressures. Land‐use change affected nearly 4.9% (42.87 Mha) of AD, largely driven by increasing pressure on rangelands and cropland expansion, and reductions in inland water and urbanization. Climatic conditions further contributed to these drivers, as post‐2013 warming coincided with increased soil moisture stress in Central Asia, while higher precipitation supported ecohealth recovery in East Asia drylands. These findings show that recent improvements in AD remain limited in extent and unevenly distributed, emphasizing that without region‐specific strategies integrating sustainable water resources management, rangeland stewardship, and climate adaptation, poor ecosystem health is likely to continue expanding across large portions of the Asian drylands.",
+      "abstractEn": "The 7th Rio declaration principle emphasizes global collaboration to protect and restore ecosystem health. While dryland ecosystem health (EH) remains critical to global sustainability agendas, its long‐term regional dynamics remain poorly constrained across the Asian drylands (AD), where land management decisions increasingly shape ecological outcomes. Here, we develop an integrated regional framework that combines vegetation dynamics, soil moisture, land use, and landscape spatial configuration to assess EH trajectories across AD from 2000 to 2020. We found that EH declined across AD until 2012 and partially recovered after 2013. Specifically, areas with poor EH increased by 2.1% (58 Mha), while healthy ecosystems declined by 0.08% and accounted for only 2% (7.9 Mha) of AD by 2020. These regional trends concealed pronounced spatial contrasts, with continued degradation across much of Central Asia and improvement in parts of Dryland East Asia. These divergent trends reflect interacting human land‐use and climate pressures. Land‐use change affected nearly 4.9% (42.87 Mha) of AD, largely driven by increasing pressure on rangelands and cropland expansion, and reductions in inland water and urbanization. Climatic conditions further contributed to these drivers, as post‐2013 warming coincided with increased soil moisture stress in Central Asia, while higher precipitation supported ecohealth recovery in East Asia drylands. These findings show that recent improvements in AD remain limited in extent and unevenly distributed, emphasizing that without region‐specific strategies integrating sustainable water resources management, rangeland stewardship, and climate adaptation, poor ecosystem health is likely to continue expanding across large portions of the Asian drylands.",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 0,
+      "openAccess": true,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#0f766e",
+      "hasAbstract": true,
+      "abstractStatus": "available"
+    },
     {
       "id": "10.1038/s41467-026-76777-w",
       "doi": "10.1038/s41467-026-76777-w",
@@ -1182,46 +1223,6 @@
       "abstractStatus": "missing"
     },
     {
-      "id": "10.1126/sciadv.aef5620",
-      "doi": "10.1126/sciadv.aef5620",
-      "title": "Acoustic resonators as wireless actuators in air for small-scale robots",
-      "titleEn": "Acoustic resonators as wireless actuators in air for small-scale robots",
-      "authors": [
-        "Junsun Hwang",
-        "Quentin Angéloz",
-        "Ashwin Subramanian Murugan",
-        "Hervé Lissek",
-        "Mahmut Selman Sakar"
-      ],
-      "journalId": "science-advances",
-      "journal": "Science Advances",
-      "journalAbbr": "Sci Adv",
-      "publisher": "AAAS",
-      "categoryId": "general",
-      "category": "综合顶刊",
-      "categoryZh": "综合顶刊",
-      "categoryEn": "Flagship Journals",
-      "themeId": "modeling",
-      "theme": "地球系统模型",
-      "themeZh": "地球系统模型",
-      "themeEn": "Earth System Modeling",
-      "published": "2026-08-14",
-      "url": "https://doi.org/10.1126/sciadv.aef5620",
-      "officialJournalUrl": "https://www.science.org/journal/sciadv",
-      "abstract": "While acoustic resonators have been extensively studied in liquids for the realization of untethered microrobots, their implementation in air remains largely unexplored. Here, we revisit the classical principle of Helmholtz resonance and show that 3D printed cavities with sizes ranging from centimeter to micrometer generate spatiotemporally controlled thrust ranging from millinewton to micronewton upon resonance excitation. We provide a comprehensive design framework to efficiently harness acoustic and aerodynamic forces that are validated through analytical modeling, numerical simulations, and experiments. We show robotic navigation of small-scale boats powered by either air-borne or structure-borne sound, highlighting the versatility of the actuation scheme. We present one type of microflier propelled by vertical thrust that weighs only 150 micrograms with a thrust-to-weight ratio of 4.9 and another type of microflier propelled by a rotor that weighs only 184 micrograms and rotates as fast as 13,000 revolutions per minute. The actuation scheme is compatible with even further miniaturization, pushing the boundaries of robotics and aeronautics.",
-      "abstractEn": "While acoustic resonators have been extensively studied in liquids for the realization of untethered microrobots, their implementation in air remains largely unexplored. Here, we revisit the classical principle of Helmholtz resonance and show that 3D printed cavities with sizes ranging from centimeter to micrometer generate spatiotemporally controlled thrust ranging from millinewton to micronewton upon resonance excitation. We provide a comprehensive design framework to efficiently harness acoustic and aerodynamic forces that are validated through analytical modeling, numerical simulations, and experiments. We show robotic navigation of small-scale boats powered by either air-borne or structure-borne sound, highlighting the versatility of the actuation scheme. We present one type of microflier propelled by vertical thrust that weighs only 150 micrograms with a thrust-to-weight ratio of 4.9 and another type of microflier propelled by a rotor that weighs only 184 micrograms and rotates as fast as 13,000 revolutions per minute. The actuation scheme is compatible with even further miniaturization, pushing the boundaries of robotics and aeronautics.",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 0,
-      "openAccess": false,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#7c3aed",
-      "hasAbstract": true,
-      "abstractStatus": "available"
-    },
-    {
       "id": "10.1126/sciadv.aee6914",
       "doi": "10.1126/sciadv.aee6914",
       "title": "CDT1 acts with the replisome to remodel replication forks",
@@ -1258,6 +1259,46 @@
         "Crossref DOI metadata"
       ],
       "themeColor": "#dc2626",
+      "hasAbstract": true,
+      "abstractStatus": "available"
+    },
+    {
+      "id": "10.1126/sciadv.aef5620",
+      "doi": "10.1126/sciadv.aef5620",
+      "title": "Acoustic resonators as wireless actuators in air for small-scale robots",
+      "titleEn": "Acoustic resonators as wireless actuators in air for small-scale robots",
+      "authors": [
+        "Junsun Hwang",
+        "Quentin Angéloz",
+        "Ashwin Subramanian Murugan",
+        "Hervé Lissek",
+        "Mahmut Selman Sakar"
+      ],
+      "journalId": "science-advances",
+      "journal": "Science Advances",
+      "journalAbbr": "Sci Adv",
+      "publisher": "AAAS",
+      "categoryId": "general",
+      "category": "综合顶刊",
+      "categoryZh": "综合顶刊",
+      "categoryEn": "Flagship Journals",
+      "themeId": "modeling",
+      "theme": "地球系统模型",
+      "themeZh": "地球系统模型",
+      "themeEn": "Earth System Modeling",
+      "published": "2026-08-14",
+      "url": "https://doi.org/10.1126/sciadv.aef5620",
+      "officialJournalUrl": "https://www.science.org/journal/sciadv",
+      "abstract": "While acoustic resonators have been extensively studied in liquids for the realization of untethered microrobots, their implementation in air remains largely unexplored. Here, we revisit the classical principle of Helmholtz resonance and show that 3D printed cavities with sizes ranging from centimeter to micrometer generate spatiotemporally controlled thrust ranging from millinewton to micronewton upon resonance excitation. We provide a comprehensive design framework to efficiently harness acoustic and aerodynamic forces that are validated through analytical modeling, numerical simulations, and experiments. We show robotic navigation of small-scale boats powered by either air-borne or structure-borne sound, highlighting the versatility of the actuation scheme. We present one type of microflier propelled by vertical thrust that weighs only 150 micrograms with a thrust-to-weight ratio of 4.9 and another type of microflier propelled by a rotor that weighs only 184 micrograms and rotates as fast as 13,000 revolutions per minute. The actuation scheme is compatible with even further miniaturization, pushing the boundaries of robotics and aeronautics.",
+      "abstractEn": "While acoustic resonators have been extensively studied in liquids for the realization of untethered microrobots, their implementation in air remains largely unexplored. Here, we revisit the classical principle of Helmholtz resonance and show that 3D printed cavities with sizes ranging from centimeter to micrometer generate spatiotemporally controlled thrust ranging from millinewton to micronewton upon resonance excitation. We provide a comprehensive design framework to efficiently harness acoustic and aerodynamic forces that are validated through analytical modeling, numerical simulations, and experiments. We show robotic navigation of small-scale boats powered by either air-borne or structure-borne sound, highlighting the versatility of the actuation scheme. We present one type of microflier propelled by vertical thrust that weighs only 150 micrograms with a thrust-to-weight ratio of 4.9 and another type of microflier propelled by a rotor that weighs only 184 micrograms and rotates as fast as 13,000 revolutions per minute. The actuation scheme is compatible with even further miniaturization, pushing the boundaries of robotics and aeronautics.",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 0,
+      "openAccess": false,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#7c3aed",
       "hasAbstract": true,
       "abstractStatus": "available"
     },
@@ -6356,47 +6397,6 @@
       "abstractStatus": "available"
     },
     {
-      "id": "10.1029/2025ef007737",
-      "doi": "10.1029/2025ef007737",
-      "title": "Spatial Heterogeneity and Nonlinear Influencing Mechanisms of Vegetation Carbon Sequestration Capacity in the Southwest China Karst Region",
-      "titleEn": "Spatial Heterogeneity and Nonlinear Influencing Mechanisms of Vegetation Carbon Sequestration Capacity in the Southwest China Karst Region",
-      "authors": [
-        "Xiangwen Gong",
-        "Lei Fan",
-        "Bo Yao",
-        "Xuyang Wang",
-        "Chunlin Wang",
-        "et al."
-      ],
-      "journalId": "earths-future",
-      "journal": "Earth's Future",
-      "journalAbbr": "Earth's Future",
-      "publisher": "AGU / Wiley",
-      "categoryId": "climate",
-      "category": "气候变化",
-      "categoryZh": "气候变化",
-      "categoryEn": "Climate Change",
-      "themeId": "climate",
-      "theme": "气候变化",
-      "themeZh": "气候变化",
-      "themeEn": "Climate Change",
-      "published": "2026-08-05",
-      "url": "https://doi.org/10.1029/2025ef007737",
-      "officialJournalUrl": "https://agupubs.onlinelibrary.wiley.com/journal/23284277",
-      "abstract": "Understanding of the spatiotemporal dynamics of vegetation carbon sequestration capacity (VCSC) in Southwest China's contiguous karst region is critical for regional carbon cycling. Using MOD17A3 data from 2001 to 2023, we analyzed spatial heterogeneity in vegetation net primary productivity (NPP) and applied Geodetector to evaluate nonlinear influencing mechanisms across 32 factors. The results showed that the multi‐year average NPP in the southwest karst was 725 g C m −2 yr −1 , exhibiting a southward‐increasing gradient. Recovery areas expanded at a rate of 3.21 g C m −2 yr −1 , covering 79.3% of the region. Comparative analysis revealed that Engineering Governance Areas (EGA) significantly outperformed Natural Recovery Areas (NRA) in enhancing VCSC. In EGA, the mean recovery rate (3.67 g C m −2 yr −1 ), significantly improved areas (51.3%), extremely stable area (71.7%), and future sustainable recovery (72.0%) were 1.38, 1.23, 1.22, and 1.18 times higher than those in NRA, respectively. However, natural factors played a greater role than anthropogenic activities in explaining the spatial heterogeneity of NPP. Environmental interactions exhibited both nonlinear and bivariate enhancement, with combined effects exceeding those of individual factors. The dominant interactions were AET ∩ ELE (77.7%) for the whole region, AET ∩ PRS (61.8%) in EGA, and AET ∩ ELE (87.3%) in NRA. The optimal environmental thresholds for vegetation growth were AET of 1,244–1,397 mm, precipitation of 2,025–2,259 mm, temperature of 18.5–20.8°C, and elevation of 1,094–1,438 m. Integrating restoration strategies with these environmental thresholds helps identify priority zones, providing a scientific basis for the precision management of karst desertification and supporting China's “dual carbon” goals.",
-      "abstractEn": "Understanding of the spatiotemporal dynamics of vegetation carbon sequestration capacity (VCSC) in Southwest China's contiguous karst region is critical for regional carbon cycling. Using MOD17A3 data from 2001 to 2023, we analyzed spatial heterogeneity in vegetation net primary productivity (NPP) and applied Geodetector to evaluate nonlinear influencing mechanisms across 32 factors. The results showed that the multi‐year average NPP in the southwest karst was 725 g C m −2 yr −1 , exhibiting a southward‐increasing gradient. Recovery areas expanded at a rate of 3.21 g C m −2 yr −1 , covering 79.3% of the region. Comparative analysis revealed that Engineering Governance Areas (EGA) significantly outperformed Natural Recovery Areas (NRA) in enhancing VCSC. In EGA, the mean recovery rate (3.67 g C m −2 yr −1 ), significantly improved areas (51.3%), extremely stable area (71.7%), and future sustainable recovery (72.0%) were 1.38, 1.23, 1.22, and 1.18 times higher than those in NRA, respectively. However, natural factors played a greater role than anthropogenic activities in explaining the spatial heterogeneity of NPP. Environmental interactions exhibited both nonlinear and bivariate enhancement, with combined effects exceeding those of individual factors. The dominant interactions were AET ∩ ELE (77.7%) for the whole region, AET ∩ PRS (61.8%) in EGA, and AET ∩ ELE (87.3%) in NRA. The optimal environmental thresholds for vegetation growth were AET of 1,244–1,397 mm, precipitation of 2,025–2,259 mm, temperature of 18.5–20.8°C, and elevation of 1,094–1,438 m. Integrating restoration strategies with these environmental thresholds helps identify priority zones, providing a scientific basis for the precision management of karst desertification and supporting China's “dual carbon” goals.",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 0,
-      "openAccess": true,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#0f766e",
-      "hasAbstract": true,
-      "abstractStatus": "available"
-    },
-    {
       "id": "10.1038/s41586-026-10884-y",
       "doi": "10.1038/s41586-026-10884-y",
       "title": "The Virtual Tissues foundation model resolves spatial proteomics across scales",
@@ -7785,16 +7785,16 @@
       "abstractStatus": "missing"
     },
     {
-      "id": "10.1016/j.rse.2026.115445",
-      "doi": "10.1016/j.rse.2026.115445",
-      "title": "A cross-European assessment on the pre-emergence detection of trees attacked by spruce bark beetle using UAV imagery",
-      "titleEn": "A cross-European assessment on the pre-emergence detection of trees attacked by spruce bark beetle using UAV imagery",
+      "id": "10.1016/j.rse.2026.115453",
+      "doi": "10.1016/j.rse.2026.115453",
+      "title": "Hyperspectral constraints reduce bias in ECOSTRESS evapotranspiration and drought indicators",
+      "titleEn": "Hyperspectral constraints reduce bias in ECOSTRESS evapotranspiration and drought indicators",
       "authors": [
-        "Langning Huo",
-        "Luiz Henrique Elias Cosimo",
-        "Aurora Bozzini",
-        "Salma Bijou",
-        "Raquel Alves de Oliveira",
+        "Michael Marshall",
+        "Monica Pepe",
+        "Giulia Tagliabue",
+        "Vincent Odongo",
+        "Wim Timmermans",
         "et al."
       ],
       "journalId": "remote-sensing-of-environment",
@@ -7805,12 +7805,12 @@
       "category": "遥感与GeoAI",
       "categoryZh": "遥感与GeoAI",
       "categoryEn": "Remote Sensing & GeoAI",
-      "themeId": "remote",
-      "theme": "遥感与GeoAI",
-      "themeZh": "遥感与GeoAI",
-      "themeEn": "Remote Sensing & GeoAI",
+      "themeId": "hydrology",
+      "theme": "水文水资源",
+      "themeZh": "水文水资源",
+      "themeEn": "Hydrology & Water",
       "published": "2026-08-01",
-      "url": "https://doi.org/10.1016/j.rse.2026.115445",
+      "url": "https://doi.org/10.1016/j.rse.2026.115453",
       "officialJournalUrl": "https://www.sciencedirect.com/journal/remote-sensing-of-environment",
       "abstract": "",
       "abstractEn": "",
@@ -7821,7 +7821,7 @@
       "sources": [
         "Crossref DOI metadata"
       ],
-      "themeColor": "#16a34a",
+      "themeColor": "#2563eb",
       "hasAbstract": false,
       "abstractStatus": "missing"
     },
@@ -9714,6 +9714,11 @@
       "abstractStatus": "missing"
     }
   ],
-  "errors": [],
+  "errors": [
+    "OpenAlex batch 1/4 failed: HTTP 429 for https://api.openalex.org/works?filter=primary_location.source.issn%3A1758678X%7C17586798%7C17520894%7C17520908%7C00280836%7C14764687%7C00368075%7C10959203%7C00278424%7C10916490%7C00431397%7C19447973%2Cfrom_publication_date%3A2025-08-16%2Cto_publication_date%3A2026-08-16%2Ctype%3Aarticle&sort=publication_date%3Adesc&per-page=100: {\"error\":\"Rate limit exceeded\",\"message\":\"Insufficient budget. This request costs $0.0001 but you only have $0 remaining. Resets at midnight UTC. Need more? Add funds at https://openalex.org/pricing\", | Error | Error: HTTP 429 for https://api.openalex.org/works?filter=primary_location.source.issn%3A1758678X%7C17586798%7C17520894%7C17520908%7C00280836%7C14764687%7C00368075%7C10959203%7C00278424%7C10916490%7C00431397%7C19447973%2Cfrom_publication_date%3A2025-08-16%2Cto_publication_date%3A2026-08-16%2Ctype%3Aarticle&sort=publication_date%3Adesc&per-page=100: {\"error\":\"Rate limit exceeded\",\"message\":\"Insufficient budget. This request costs $0.0001 but you only have $0 remaining. Resets at midnight UTC. Need more? Add funds at https://openalex.org/pricing\",",
+    "OpenAlex batch 2/4 failed: HTTP 429 for https://api.openalex.org/works?filter=primary_location.source.issn%3A10275606%7C16077938%7C00221694%7C1991959X%7C19919603%7C21904979%7C21904987%7C18663508%7C18663516%7C00344257%2Cfrom_publication_date%3A2025-08-16%2Cto_publication_date%3A2026-08-16%2Ctype%3Aarticle&sort=publication_date%3Adesc&per-page=100: {\"error\":\"Rate limit exceeded\",\"message\":\"Insufficient budget. This request costs $0.0001 but you only have $0 remaining. Resets at midnight UTC. Need more? Add funds at https://openalex.org/pricing\", | Error | Error: HTTP 429 for https://api.openalex.org/works?filter=primary_location.source.issn%3A10275606%7C16077938%7C00221694%7C1991959X%7C19919603%7C21904979%7C21904987%7C18663508%7C18663516%7C00344257%2Cfrom_publication_date%3A2025-08-16%2Cto_publication_date%3A2026-08-16%2Ctype%3Aarticle&sort=publication_date%3Adesc&per-page=100: {\"error\":\"Rate limit exceeded\",\"message\":\"Insufficient budget. This request costs $0.0001 but you only have $0 remaining. Resets at midnight UTC. Need more? Add funds at https://openalex.org/pricing\",",
+    "OpenAlex batch 3/4 failed: HTTP 429 for https://api.openalex.org/works?filter=primary_location.source.issn%3A09242716%7C01962892%7C15580644%7C13541013%7C13652486%7C17264170%7C17264189%7C09593780%7C15618633%7C16849981%2Cfrom_publication_date%3A2025-08-16%2Cto_publication_date%3A2026-08-16%2Ctype%3Aarticle&sort=publication_date%3Adesc&per-page=100: {\"error\":\"Rate limit exceeded\",\"message\":\"Insufficient budget. This request costs $0.0001 but you only have $0 remaining. Resets at midnight UTC. Need more? Add funds at https://openalex.org/pricing\", | Error | Error: HTTP 429 for https://api.openalex.org/works?filter=primary_location.source.issn%3A09242716%7C01962892%7C15580644%7C13541013%7C13652486%7C17264170%7C17264189%7C09593780%7C15618633%7C16849981%2Cfrom_publication_date%3A2025-08-16%2Cto_publication_date%3A2026-08-16%2Ctype%3Aarticle&sort=publication_date%3Adesc&per-page=100: {\"error\":\"Rate limit exceeded\",\"message\":\"Insufficient budget. This request costs $0.0001 but you only have $0 remaining. Resets at midnight UTC. Need more? Add funds at https://openalex.org/pricing\",",
+    "OpenAlex batch 4/4 failed: HTTP 429 for https://api.openalex.org/works?filter=primary_location.source.issn%3A20411723%7C23752548%7C27316084%7C23989629%7C23284277%7C19422466%2Cfrom_publication_date%3A2025-08-16%2Cto_publication_date%3A2026-08-16%2Ctype%3Aarticle&sort=publication_date%3Adesc&per-page=100: {\"error\":\"Rate limit exceeded\",\"message\":\"Insufficient budget. This request costs $0.0001 but you only have $0 remaining. Resets at midnight UTC. Need more? Add funds at https://openalex.org/pricing\", | Error | Error: HTTP 429 for https://api.openalex.org/works?filter=primary_location.source.issn%3A20411723%7C23752548%7C27316084%7C23989629%7C23284277%7C19422466%2Cfrom_publication_date%3A2025-08-16%2Cto_publication_date%3A2026-08-16%2Ctype%3Aarticle&sort=publication_date%3Adesc&per-page=100: {\"error\":\"Rate limit exceeded\",\"message\":\"Insufficient budget. This request costs $0.0001 but you only have $0 remaining. Resets at midnight UTC. Need more? Add funds at https://openalex.org/pricing\","
+  ],
   "cached": false
 }
