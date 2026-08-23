@@ -1,8 +1,8 @@
 {
-  "createdAt": "2026-08-22T21:37:11.187Z",
+  "createdAt": "2026-08-23T21:37:04.398Z",
   "window": {
-    "from": "2025-08-22",
-    "until": "2026-08-22",
+    "from": "2025-08-23",
+    "until": "2026-08-23",
     "months": 12
   },
   "journals": 24,
@@ -494,6 +494,43 @@
       "abstractStatus": "available"
     },
     {
+      "id": "10.1038/s41467-026-76147-6",
+      "doi": "10.1038/s41467-026-76147-6",
+      "title": "Longitudinal digital phenotyping of activity rhythms and biological aging using commercial wearables",
+      "titleEn": "Longitudinal digital phenotyping of activity rhythms and biological aging using commercial wearables",
+      "authors": [
+        "Jinjoo Shim",
+        "Jukka-Pekka Onnela"
+      ],
+      "journalId": "nature-communications",
+      "journal": "Nature Communications",
+      "journalAbbr": "Nat Commun",
+      "publisher": "Springer Nature",
+      "categoryId": "general",
+      "category": "综合顶刊",
+      "categoryZh": "综合顶刊",
+      "categoryEn": "Flagship Journals",
+      "themeId": "hazard",
+      "theme": "灾害风险",
+      "themeZh": "灾害风险",
+      "themeEn": "Hazards & Risk",
+      "published": "2026-08-22",
+      "url": "https://doi.org/10.1038/s41467-026-76147-6",
+      "officialJournalUrl": "https://www.nature.com/ncomms/",
+      "abstract": "Disrupted rest-activity rhythms have been associated with aging and chronic disease, yet longitudinal evidence from free-living populations has been lacking. Here we integrate multi-year Fitbit activity data from the All of Us Research Program with clinical biomarker-derived PhenoAge from 2,222 participants (8,447 person-years). Through high-dimensional digital phenotyping, we show that circadian rest-activity rhythm intensity, timing, and stability are associated with biological aging trajectories. Higher rhythm intensity was associated with 26–46% lower odds of accelerated aging. Associations of timing and regularity were stronger in females. In males, accelerated aging followed a biphasic instability pattern with early-morning surges and late-evening rebounds. These findings provide large-scale longitudinal evidence that consumer wearable-derived rest-activity rhythms may serve as digital biomarkers of aging trajectories. By linking population-scale digital phenotyping to biological aging, this work highlights the potential of scalable digital measures for aging-related risk assessment and future healthy-aging research.",
+      "abstractEn": "Disrupted rest-activity rhythms have been associated with aging and chronic disease, yet longitudinal evidence from free-living populations has been lacking. Here we integrate multi-year Fitbit activity data from the All of Us Research Program with clinical biomarker-derived PhenoAge from 2,222 participants (8,447 person-years). Through high-dimensional digital phenotyping, we show that circadian rest-activity rhythm intensity, timing, and stability are associated with biological aging trajectories. Higher rhythm intensity was associated with 26–46% lower odds of accelerated aging. Associations of timing and regularity were stronger in females. In males, accelerated aging followed a biphasic instability pattern with early-morning surges and late-evening rebounds. These findings provide large-scale longitudinal evidence that consumer wearable-derived rest-activity rhythms may serve as digital biomarkers of aging trajectories. By linking population-scale digital phenotyping to biological aging, this work highlights the potential of scalable digital measures for aging-related risk assessment and future healthy-aging research.",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 0,
+      "openAccess": true,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#dc2626",
+      "hasAbstract": true,
+      "abstractStatus": "available"
+    },
+    {
       "id": "10.1038/s41467-026-76854-0",
       "doi": "10.1038/s41467-026-76854-0",
       "title": "Soft microgel networks stabilize and extend nozzle-free water jets",
@@ -531,43 +568,6 @@
         "Crossref DOI metadata"
       ],
       "themeColor": "#7c3aed",
-      "hasAbstract": true,
-      "abstractStatus": "available"
-    },
-    {
-      "id": "10.1038/s41467-026-76147-6",
-      "doi": "10.1038/s41467-026-76147-6",
-      "title": "Longitudinal digital phenotyping of activity rhythms and biological aging using commercial wearables",
-      "titleEn": "Longitudinal digital phenotyping of activity rhythms and biological aging using commercial wearables",
-      "authors": [
-        "Jinjoo Shim",
-        "Jukka-Pekka Onnela"
-      ],
-      "journalId": "nature-communications",
-      "journal": "Nature Communications",
-      "journalAbbr": "Nat Commun",
-      "publisher": "Springer Nature",
-      "categoryId": "general",
-      "category": "综合顶刊",
-      "categoryZh": "综合顶刊",
-      "categoryEn": "Flagship Journals",
-      "themeId": "hazard",
-      "theme": "灾害风险",
-      "themeZh": "灾害风险",
-      "themeEn": "Hazards & Risk",
-      "published": "2026-08-22",
-      "url": "https://doi.org/10.1038/s41467-026-76147-6",
-      "officialJournalUrl": "https://www.nature.com/ncomms/",
-      "abstract": "Disrupted rest-activity rhythms have been associated with aging and chronic disease, yet longitudinal evidence from free-living populations has been lacking. Here we integrate multi-year Fitbit activity data from the All of Us Research Program with clinical biomarker-derived PhenoAge from 2,222 participants (8,447 person-years). Through high-dimensional digital phenotyping, we show that circadian rest-activity rhythm intensity, timing, and stability are associated with biological aging trajectories. Higher rhythm intensity was associated with 26–46% lower odds of accelerated aging. Associations of timing and regularity were stronger in females. In males, accelerated aging followed a biphasic instability pattern with early-morning surges and late-evening rebounds. These findings provide large-scale longitudinal evidence that consumer wearable-derived rest-activity rhythms may serve as digital biomarkers of aging trajectories. By linking population-scale digital phenotyping to biological aging, this work highlights the potential of scalable digital measures for aging-related risk assessment and future healthy-aging research.",
-      "abstractEn": "Disrupted rest-activity rhythms have been associated with aging and chronic disease, yet longitudinal evidence from free-living populations has been lacking. Here we integrate multi-year Fitbit activity data from the All of Us Research Program with clinical biomarker-derived PhenoAge from 2,222 participants (8,447 person-years). Through high-dimensional digital phenotyping, we show that circadian rest-activity rhythm intensity, timing, and stability are associated with biological aging trajectories. Higher rhythm intensity was associated with 26–46% lower odds of accelerated aging. Associations of timing and regularity were stronger in females. In males, accelerated aging followed a biphasic instability pattern with early-morning surges and late-evening rebounds. These findings provide large-scale longitudinal evidence that consumer wearable-derived rest-activity rhythms may serve as digital biomarkers of aging trajectories. By linking population-scale digital phenotyping to biological aging, this work highlights the potential of scalable digital measures for aging-related risk assessment and future healthy-aging research.",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 0,
-      "openAccess": true,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#dc2626",
       "hasAbstract": true,
       "abstractStatus": "available"
     },
@@ -1792,7 +1792,7 @@
       "abstractEn": "Biomedical research is increasingly constrained by repetitive, fragmented workflows that slow discovery. We introduce Biomni, a general-purpose biomedical artificial intelligence agent that autonomously executes diverse research tasks. To map the biomedical action space, Biomni’s action-discovery agent mines tools, databases, and protocols from thousands of publications across 25 domains, building a unified agentic environment. Its general-purpose architecture integrates large language model reasoning with retrieval-augmented planning and code-based execution, dynamically composing workflows without predefined templates. Systematic benchmarking shows strong generalization across heterogeneous tasks—causal gene prioritization, drug repurposing, rare-disease diagnosis, microbiome analysis, and molecular cloning—without task-specific tuning. Real-world case studies demonstrate Biomni interpreting multimodal datasets, optimizing protein stability, orchestrating wet-lab instruments, and generating experimentally testable protocols. Biomni envisions artificial intelligence augmenting human scientists and accelerating discovery.",
       "subjects": [],
       "keywordsEn": [],
-      "citedBy": 7,
+      "citedBy": 8,
       "openAccess": false,
       "sources": [
         "Crossref DOI metadata"
@@ -1992,42 +1992,6 @@
       "abstractStatus": "available"
     },
     {
-      "id": "10.1126/science.aeg5569",
-      "doi": "10.1126/science.aeg5569",
-      "title": "Bonding carbons iteratively",
-      "titleEn": "Bonding carbons iteratively",
-      "authors": [
-        "Martin D. Burke"
-      ],
-      "journalId": "science",
-      "journal": "Science",
-      "journalAbbr": "Science",
-      "publisher": "AAAS",
-      "categoryId": "general",
-      "category": "综合顶刊",
-      "categoryZh": "综合顶刊",
-      "categoryEn": "Flagship Journals",
-      "themeId": "carbon",
-      "theme": "生态与碳循环",
-      "themeZh": "生态与碳循环",
-      "themeEn": "Ecology & Carbon",
-      "published": "2026-08-20",
-      "url": "https://doi.org/10.1126/science.aeg5569",
-      "officialJournalUrl": "https://www.science.org/journal/science",
-      "abstract": "A modular synthesis method could broaden the accessibility of chemistry",
-      "abstractEn": "A modular synthesis method could broaden the accessibility of chemistry",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 0,
-      "openAccess": false,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#b45309",
-      "hasAbstract": true,
-      "abstractStatus": "available"
-    },
-    {
       "id": "10.1126/science.ael2161",
       "doi": "10.1126/science.ael2161",
       "title": "Who checks what AI can do?",
@@ -2060,6 +2024,42 @@
         "Crossref DOI metadata"
       ],
       "themeColor": "#16a34a",
+      "hasAbstract": true,
+      "abstractStatus": "available"
+    },
+    {
+      "id": "10.1126/science.aeg5569",
+      "doi": "10.1126/science.aeg5569",
+      "title": "Bonding carbons iteratively",
+      "titleEn": "Bonding carbons iteratively",
+      "authors": [
+        "Martin D. Burke"
+      ],
+      "journalId": "science",
+      "journal": "Science",
+      "journalAbbr": "Science",
+      "publisher": "AAAS",
+      "categoryId": "general",
+      "category": "综合顶刊",
+      "categoryZh": "综合顶刊",
+      "categoryEn": "Flagship Journals",
+      "themeId": "carbon",
+      "theme": "生态与碳循环",
+      "themeZh": "生态与碳循环",
+      "themeEn": "Ecology & Carbon",
+      "published": "2026-08-20",
+      "url": "https://doi.org/10.1126/science.aeg5569",
+      "officialJournalUrl": "https://www.science.org/journal/science",
+      "abstract": "A modular synthesis method could broaden the accessibility of chemistry",
+      "abstractEn": "A modular synthesis method could broaden the accessibility of chemistry",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 0,
+      "openAccess": false,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#b45309",
       "hasAbstract": true,
       "abstractStatus": "available"
     },
@@ -3083,12 +3083,53 @@
       "abstractEn": "Psychedelics can profoundly alter consciousness by reorganizing brain connectivity 1,2 , producing acute experiences that shape lasting psychological change 3,4 . Psychedelic dynamics are commonly described as desynchronized or entropically disordered 5,6 , yet the brain organization underlying self-dissolving and boundary-dissolving experiences that participants often report 7 , and how context shapes that organization 8 , remain unresolved. To address this, we acquired the largest single-site psychedelic neuroimaging dataset to date. Sixty-two adults underwent functional magnetic resonance imaging (fMRI) and electroencephalography (EEG) during rest and naturalistic stimuli (meditation, music and movie), before and on the day of psilocybin administration (fMRI ~ 80 min post-dose; EEG ~ 150 min post-dose). Half ranked the experience among the most meaningful of their lives 7 . Here, using machine learning to represent the brain dynamics of each individual as low-dimensional trajectories, we show that psilocybin reorganizes brain activity into structured, context-sensitive patterns that co-vary with the quality of subjective experience, revealing a latent order missed by time-averaged measures. Networks that ordinarily segregate internal and external processing integrated, producing cohesive context-aligned trajectories in participants reporting the felt experience of being continuous with, rather than separate from, the environment, a state we refer to as embeddedness. The strength of this context alignment scaled with both the depth of self-dissolving and boundary-dissolving experience and the next-day mindset change. Our findings recast apparent disorder as latent organization aligned with context, linking neurobiology to subjective experience and behavioural change.",
       "subjects": [],
       "keywordsEn": [],
-      "citedBy": 1,
+      "citedBy": 2,
       "openAccess": true,
       "sources": [
         "Crossref DOI metadata"
       ],
       "themeColor": "#16a34a",
+      "hasAbstract": true,
+      "abstractStatus": "available"
+    },
+    {
+      "id": "10.1038/s41586-026-10912-x",
+      "doi": "10.1038/s41586-026-10912-x",
+      "title": "Multiyear tropical warm pool warming drives slowdown in Antarctic mass loss",
+      "titleEn": "Multiyear tropical warm pool warming drives slowdown in Antarctic mass loss",
+      "authors": [
+        "Yunhe Wang",
+        "Qinghua Ding",
+        "Xiaofeng Li",
+        "Thomas J. Ballinger",
+        "Yoshihiro Nakayama",
+        "et al."
+      ],
+      "journalId": "nature",
+      "journal": "Nature",
+      "journalAbbr": "Nature",
+      "publisher": "Springer Nature",
+      "categoryId": "general",
+      "category": "综合顶刊",
+      "categoryZh": "综合顶刊",
+      "categoryEn": "Flagship Journals",
+      "themeId": "climate",
+      "theme": "气候变化",
+      "themeZh": "气候变化",
+      "themeEn": "Climate Change",
+      "published": "2026-08-19",
+      "url": "https://doi.org/10.1038/s41586-026-10912-x",
+      "officialJournalUrl": "https://www.nature.com/nature/",
+      "abstract": "Antarctic mass loss has been a major contributor to global sea-level rise for most of the last few decades, mainly driven by West Antarctica 1 . During 2021–2023, however, a sharp increase in surface mass balance over Queen Mary Land and Wilkes Land in East Antarctica offset West Antarctic loss and slowed the rate of total ice mass loss 2,3 . Although this slowdown is consistent with the expected long-term precipitation response to global warming through poleward-shifted storm tracks and Antarctic moistening 4 , our results point to a different mechanism. Here we show that the recent ice mass gain was linked to a recurrent atmospheric teleconnection driven by sea surface temperature anomalies in the tropical warm pool, which experienced unusually persistent warming from 2021 to 2023 relative to the previous two decades. On the basis of observations and model experiments, we find that tropical warm pool warming excites a poleward-propagating Rossby-wave train that induces a high-pressure anomaly over East Antarctica, enhancing Queen Mary Land and Wilkes Land precipitation and driving the observed mass gain, with moisture primarily sourced from the mid-latitude Indian Ocean. Similar multiyear warming in the tropical warm pool recurs about once per decade in observations and historical simulations, and its influence on precipitation is distinct from the effects of global warming. Therefore, the recent Antarctic Ice Sheet mass gain is probably temporary and does not yet reflect a sustained, global-warming-driven moistening of Antarctica.",
+      "abstractEn": "Antarctic mass loss has been a major contributor to global sea-level rise for most of the last few decades, mainly driven by West Antarctica 1 . During 2021–2023, however, a sharp increase in surface mass balance over Queen Mary Land and Wilkes Land in East Antarctica offset West Antarctic loss and slowed the rate of total ice mass loss 2,3 . Although this slowdown is consistent with the expected long-term precipitation response to global warming through poleward-shifted storm tracks and Antarctic moistening 4 , our results point to a different mechanism. Here we show that the recent ice mass gain was linked to a recurrent atmospheric teleconnection driven by sea surface temperature anomalies in the tropical warm pool, which experienced unusually persistent warming from 2021 to 2023 relative to the previous two decades. On the basis of observations and model experiments, we find that tropical warm pool warming excites a poleward-propagating Rossby-wave train that induces a high-pressure anomaly over East Antarctica, enhancing Queen Mary Land and Wilkes Land precipitation and driving the observed mass gain, with moisture primarily sourced from the mid-latitude Indian Ocean. Similar multiyear warming in the tropical warm pool recurs about once per decade in observations and historical simulations, and its influence on precipitation is distinct from the effects of global warming. Therefore, the recent Antarctic Ice Sheet mass gain is probably temporary and does not yet reflect a sustained, global-warming-driven moistening of Antarctica.",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 1,
+      "openAccess": true,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#0f766e",
       "hasAbstract": true,
       "abstractStatus": "available"
     },
@@ -3368,47 +3409,6 @@
       "officialJournalUrl": "https://www.nature.com/nature/",
       "abstract": "Tropical wetlands are widely considered the largest natural source of atmospheric methane (CH 4 ) 1–4 . However, uncertainties about wetland extent and CH 4 production have led to large variations in modelled CH 4 emission trends 2,3 . Most historical reconstructions rely on data from polar ice cores, which cannot fully resolve the tropical contribution 5,6 to the CH 4 budget. Here we present a 2,000-year record of atmospheric CH 4 concentrations from ice cores drilled from the South Peak summit of Nevado Huascarán (Summit Core A, SCA; −9.122° S, −77.605° W; 6,768 m asl). We find that the trends and magnitudes of our CH 4 record are broadly consistent with polar records 7 . Our δ 13 C-CH 4 measurements (from approximately 1530 CE to 1999 CE) align with isotope values 8 consistent with a dominant tropical CH 4 source. Integration of our record into an atmospheric four-box model suggests a sustained equatorial dominance of CH 4 source strength over the past two millennia. Our findings indicate that equatorial CH 4 emissions are higher than previous estimates based only on polar ice core data, supporting the long-standing hypothesis that low-latitude CH 4 emissions dominated pre-industrial (PI) CH 4 variability 5,6 . These results demonstrate the importance of tropical ice cores on the reconstruction of CH 4 variability and latitudinal distribution.",
       "abstractEn": "Tropical wetlands are widely considered the largest natural source of atmospheric methane (CH 4 ) 1–4 . However, uncertainties about wetland extent and CH 4 production have led to large variations in modelled CH 4 emission trends 2,3 . Most historical reconstructions rely on data from polar ice cores, which cannot fully resolve the tropical contribution 5,6 to the CH 4 budget. Here we present a 2,000-year record of atmospheric CH 4 concentrations from ice cores drilled from the South Peak summit of Nevado Huascarán (Summit Core A, SCA; −9.122° S, −77.605° W; 6,768 m asl). We find that the trends and magnitudes of our CH 4 record are broadly consistent with polar records 7 . Our δ 13 C-CH 4 measurements (from approximately 1530 CE to 1999 CE) align with isotope values 8 consistent with a dominant tropical CH 4 source. Integration of our record into an atmospheric four-box model suggests a sustained equatorial dominance of CH 4 source strength over the past two millennia. Our findings indicate that equatorial CH 4 emissions are higher than previous estimates based only on polar ice core data, supporting the long-standing hypothesis that low-latitude CH 4 emissions dominated pre-industrial (PI) CH 4 variability 5,6 . These results demonstrate the importance of tropical ice cores on the reconstruction of CH 4 variability and latitudinal distribution.",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 0,
-      "openAccess": true,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#0f766e",
-      "hasAbstract": true,
-      "abstractStatus": "available"
-    },
-    {
-      "id": "10.1038/s41586-026-10912-x",
-      "doi": "10.1038/s41586-026-10912-x",
-      "title": "Multiyear tropical warm pool warming drives slowdown in Antarctic mass loss",
-      "titleEn": "Multiyear tropical warm pool warming drives slowdown in Antarctic mass loss",
-      "authors": [
-        "Yunhe Wang",
-        "Qinghua Ding",
-        "Xiaofeng Li",
-        "Thomas J. Ballinger",
-        "Yoshihiro Nakayama",
-        "et al."
-      ],
-      "journalId": "nature",
-      "journal": "Nature",
-      "journalAbbr": "Nature",
-      "publisher": "Springer Nature",
-      "categoryId": "general",
-      "category": "综合顶刊",
-      "categoryZh": "综合顶刊",
-      "categoryEn": "Flagship Journals",
-      "themeId": "climate",
-      "theme": "气候变化",
-      "themeZh": "气候变化",
-      "themeEn": "Climate Change",
-      "published": "2026-08-19",
-      "url": "https://doi.org/10.1038/s41586-026-10912-x",
-      "officialJournalUrl": "https://www.nature.com/nature/",
-      "abstract": "Antarctic mass loss has been a major contributor to global sea-level rise for most of the last few decades, mainly driven by West Antarctica 1 . During 2021–2023, however, a sharp increase in surface mass balance over Queen Mary Land and Wilkes Land in East Antarctica offset West Antarctic loss and slowed the rate of total ice mass loss 2,3 . Although this slowdown is consistent with the expected long-term precipitation response to global warming through poleward-shifted storm tracks and Antarctic moistening 4 , our results point to a different mechanism. Here we show that the recent ice mass gain was linked to a recurrent atmospheric teleconnection driven by sea surface temperature anomalies in the tropical warm pool, which experienced unusually persistent warming from 2021 to 2023 relative to the previous two decades. On the basis of observations and model experiments, we find that tropical warm pool warming excites a poleward-propagating Rossby-wave train that induces a high-pressure anomaly over East Antarctica, enhancing Queen Mary Land and Wilkes Land precipitation and driving the observed mass gain, with moisture primarily sourced from the mid-latitude Indian Ocean. Similar multiyear warming in the tropical warm pool recurs about once per decade in observations and historical simulations, and its influence on precipitation is distinct from the effects of global warming. Therefore, the recent Antarctic Ice Sheet mass gain is probably temporary and does not yet reflect a sustained, global-warming-driven moistening of Antarctica.",
-      "abstractEn": "Antarctic mass loss has been a major contributor to global sea-level rise for most of the last few decades, mainly driven by West Antarctica 1 . During 2021–2023, however, a sharp increase in surface mass balance over Queen Mary Land and Wilkes Land in East Antarctica offset West Antarctic loss and slowed the rate of total ice mass loss 2,3 . Although this slowdown is consistent with the expected long-term precipitation response to global warming through poleward-shifted storm tracks and Antarctic moistening 4 , our results point to a different mechanism. Here we show that the recent ice mass gain was linked to a recurrent atmospheric teleconnection driven by sea surface temperature anomalies in the tropical warm pool, which experienced unusually persistent warming from 2021 to 2023 relative to the previous two decades. On the basis of observations and model experiments, we find that tropical warm pool warming excites a poleward-propagating Rossby-wave train that induces a high-pressure anomaly over East Antarctica, enhancing Queen Mary Land and Wilkes Land precipitation and driving the observed mass gain, with moisture primarily sourced from the mid-latitude Indian Ocean. Similar multiyear warming in the tropical warm pool recurs about once per decade in observations and historical simulations, and its influence on precipitation is distinct from the effects of global warming. Therefore, the recent Antarctic Ice Sheet mass gain is probably temporary and does not yet reflect a sustained, global-warming-driven moistening of Antarctica.",
       "subjects": [],
       "keywordsEn": [],
       "citedBy": 0,
@@ -7312,6 +7312,47 @@
       "abstractStatus": "missing"
     },
     {
+      "id": "10.1016/j.jhydrol.2026.135707",
+      "doi": "10.1016/j.jhydrol.2026.135707",
+      "title": "Enhanced water level fluctuations reduced the competitive advantage of cyanobacteria",
+      "titleEn": "Enhanced water level fluctuations reduced the competitive advantage of cyanobacteria",
+      "authors": [
+        "Yan Chen",
+        "Rui Xia",
+        "Ruining Jia",
+        "Junde Ming",
+        "Kai Zhang",
+        "et al."
+      ],
+      "journalId": "journal-of-hydrology",
+      "journal": "Journal of Hydrology",
+      "journalAbbr": "JH",
+      "publisher": "Elsevier",
+      "categoryId": "hydrology",
+      "category": "水文水资源",
+      "categoryZh": "水文水资源",
+      "categoryEn": "Hydrology & Water",
+      "themeId": "hydrology",
+      "theme": "水文水资源",
+      "themeZh": "水文水资源",
+      "themeEn": "Hydrology & Water",
+      "published": "2026-08-01",
+      "url": "https://doi.org/10.1016/j.jhydrol.2026.135707",
+      "officialJournalUrl": "https://www.sciencedirect.com/journal/journal-of-hydrology",
+      "abstract": "",
+      "abstractEn": "",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 2,
+      "openAccess": true,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#2563eb",
+      "hasAbstract": false,
+      "abstractStatus": "missing"
+    },
+    {
       "id": "10.1016/j.rse.2026.115460",
       "doi": "10.1016/j.rse.2026.115460",
       "title": "Development and validation of physically constrained machine learning for improving remote sensing-based evapotranspiration estimation",
@@ -7430,47 +7471,6 @@
         "Crossref DOI metadata"
       ],
       "themeColor": "#16a34a",
-      "hasAbstract": false,
-      "abstractStatus": "missing"
-    },
-    {
-      "id": "10.1016/j.jhydrol.2026.135707",
-      "doi": "10.1016/j.jhydrol.2026.135707",
-      "title": "Enhanced water level fluctuations reduced the competitive advantage of cyanobacteria",
-      "titleEn": "Enhanced water level fluctuations reduced the competitive advantage of cyanobacteria",
-      "authors": [
-        "Yan Chen",
-        "Rui Xia",
-        "Ruining Jia",
-        "Junde Ming",
-        "Kai Zhang",
-        "et al."
-      ],
-      "journalId": "journal-of-hydrology",
-      "journal": "Journal of Hydrology",
-      "journalAbbr": "JH",
-      "publisher": "Elsevier",
-      "categoryId": "hydrology",
-      "category": "水文水资源",
-      "categoryZh": "水文水资源",
-      "categoryEn": "Hydrology & Water",
-      "themeId": "hydrology",
-      "theme": "水文水资源",
-      "themeZh": "水文水资源",
-      "themeEn": "Hydrology & Water",
-      "published": "2026-08-01",
-      "url": "https://doi.org/10.1016/j.jhydrol.2026.135707",
-      "officialJournalUrl": "https://www.sciencedirect.com/journal/journal-of-hydrology",
-      "abstract": "",
-      "abstractEn": "",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 2,
-      "openAccess": true,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#2563eb",
       "hasAbstract": false,
       "abstractStatus": "missing"
     },
