@@ -1,8 +1,8 @@
 {
-  "createdAt": "2026-08-29T23:21:40.373Z",
+  "createdAt": "2026-08-30T23:31:15.543Z",
   "window": {
-    "from": "2025-08-29",
-    "until": "2026-08-29",
+    "from": "2025-08-30",
+    "until": "2026-08-30",
     "months": 12
   },
   "journals": 24,
@@ -69,6 +69,10 @@
         "total": 10,
         "missing": 3
       },
+      "Earth's Future": {
+        "total": 10,
+        "missing": 0
+      },
       "PNAS": {
         "total": 10,
         "missing": 0
@@ -96,10 +100,6 @@
       "Nat Sustain": {
         "total": 10,
         "missing": 9
-      },
-      "Earth's Future": {
-        "total": 10,
-        "missing": 0
       },
       "Science": {
         "total": 10,
@@ -454,6 +454,46 @@
       "abstractStatus": "available"
     },
     {
+      "id": "10.1038/s41467-026-77060-8",
+      "doi": "10.1038/s41467-026-77060-8",
+      "title": "Cavity-enhanced optical readout and control of nuclear spin qubits",
+      "titleEn": "Cavity-enhanced optical readout and control of nuclear spin qubits",
+      "authors": [
+        "Alexander Ulanowski",
+        "Johannes Früh",
+        "Fabian Salamon",
+        "Adrian Holzäpfel",
+        "Andreas Reiserer"
+      ],
+      "journalId": "nature-communications",
+      "journal": "Nature Communications",
+      "journalAbbr": "Nat Commun",
+      "publisher": "Springer Nature",
+      "categoryId": "general",
+      "category": "综合顶刊",
+      "categoryZh": "综合顶刊",
+      "categoryEn": "Flagship Journals",
+      "themeId": "climate",
+      "theme": "气候变化",
+      "themeZh": "气候变化",
+      "themeEn": "Climate Change",
+      "published": "2026-08-29",
+      "url": "https://doi.org/10.1038/s41467-026-77060-8",
+      "officialJournalUrl": "https://www.nature.com/ncomms/",
+      "abstract": "Their exceptional coherence makes nuclear spins in solids a prime candidate for quantum memories in quantum networks and repeaters. Still, the direct all-optical initialization, coherent control, and readout of individual nuclear spin qubits have been an outstanding challenge. Here, this is achieved by embedding 167 Er dopants in yttrium orthosilicate in a cryogenic Fabry-Perot cavity, whose linewidth of 65 MHz is much smaller than the 0.9 GHz separation of neighboring hyperfine levels. Frequency-selective emission enhancement thus enables a single-shot readout fidelity of 91(2) %. Furthermore, a large magnetic field freezes paramagnetic impurities, leading to coherence times exceeding 0.2 s. The combination of nuclear-spin qubits with frequency-multiplexed addressing and lifetime-limited photon emission in the minimal-loss telecommunications C-band establishes 167 Er as a leading platform for long-range, fiber-based quantum networks.",
+      "abstractEn": "Their exceptional coherence makes nuclear spins in solids a prime candidate for quantum memories in quantum networks and repeaters. Still, the direct all-optical initialization, coherent control, and readout of individual nuclear spin qubits have been an outstanding challenge. Here, this is achieved by embedding 167 Er dopants in yttrium orthosilicate in a cryogenic Fabry-Perot cavity, whose linewidth of 65 MHz is much smaller than the 0.9 GHz separation of neighboring hyperfine levels. Frequency-selective emission enhancement thus enables a single-shot readout fidelity of 91(2) %. Furthermore, a large magnetic field freezes paramagnetic impurities, leading to coherence times exceeding 0.2 s. The combination of nuclear-spin qubits with frequency-multiplexed addressing and lifetime-limited photon emission in the minimal-loss telecommunications C-band establishes 167 Er as a leading platform for long-range, fiber-based quantum networks.",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 0,
+      "openAccess": true,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#0f766e",
+      "hasAbstract": true,
+      "abstractStatus": "available"
+    },
+    {
       "id": "10.1038/s41467-026-76436-0",
       "doi": "10.1038/s41467-026-76436-0",
       "title": "Six-fold reduction in ocean heat content estimate uncertainty since 1960",
@@ -483,46 +523,6 @@
       "officialJournalUrl": "https://www.nature.com/ncomms/",
       "abstract": "Ocean heat content (OHC) dominates Earth’s energy imbalance, but its uncertainty has not been fully understood. Here, we construct a Large-Ensemble to comprehensively quantify the OHC uncertainty from global to regional scales since 1955, and consider eight groups of error sources based on the community’s efforts. The global upper 2000 m OHC estimated uncertainty (defined as 5–95% quartile error range) has reduced six-fold since 1955 from ~111 ZJ (1955–1965) to ~19 ZJ (2014–2023), mainly due to reduced mapping/sampling uncertainty. This indicates a robust upper 2000 m OHC increase since 1955 of 449 [385, 519] ZJ. Quality-Control (QC) has become a primary error source recently, due to the difficulties detecting outliers in eddy-rich regions. Trend uncertainty sources differ from annual OHC: for 2005–2023, the upper 2000m trend is 10.9 [9.2, 11.4] ZJ yr −1 (0.68 [0.57, 0.71] Wm −2 ), with uncertainties from spatial gaps, mapping, QC, and climatology choice. The ocean warming rate increase from 2005–2023 is small but robust: 0.34 [0.19, 0.46] Wm −2 dec −1 . These comprehensive uncertainty estimates guide future improvements in the global ocean observing system.",
       "abstractEn": "Ocean heat content (OHC) dominates Earth’s energy imbalance, but its uncertainty has not been fully understood. Here, we construct a Large-Ensemble to comprehensively quantify the OHC uncertainty from global to regional scales since 1955, and consider eight groups of error sources based on the community’s efforts. The global upper 2000 m OHC estimated uncertainty (defined as 5–95% quartile error range) has reduced six-fold since 1955 from ~111 ZJ (1955–1965) to ~19 ZJ (2014–2023), mainly due to reduced mapping/sampling uncertainty. This indicates a robust upper 2000 m OHC increase since 1955 of 449 [385, 519] ZJ. Quality-Control (QC) has become a primary error source recently, due to the difficulties detecting outliers in eddy-rich regions. Trend uncertainty sources differ from annual OHC: for 2005–2023, the upper 2000m trend is 10.9 [9.2, 11.4] ZJ yr −1 (0.68 [0.57, 0.71] Wm −2 ), with uncertainties from spatial gaps, mapping, QC, and climatology choice. The ocean warming rate increase from 2005–2023 is small but robust: 0.34 [0.19, 0.46] Wm −2 dec −1 . These comprehensive uncertainty estimates guide future improvements in the global ocean observing system.",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 0,
-      "openAccess": true,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#0f766e",
-      "hasAbstract": true,
-      "abstractStatus": "available"
-    },
-    {
-      "id": "10.1038/s41467-026-77060-8",
-      "doi": "10.1038/s41467-026-77060-8",
-      "title": "Cavity-enhanced optical readout and control of nuclear spin qubits",
-      "titleEn": "Cavity-enhanced optical readout and control of nuclear spin qubits",
-      "authors": [
-        "Alexander Ulanowski",
-        "Johannes Früh",
-        "Fabian Salamon",
-        "Adrian Holzäpfel",
-        "Andreas Reiserer"
-      ],
-      "journalId": "nature-communications",
-      "journal": "Nature Communications",
-      "journalAbbr": "Nat Commun",
-      "publisher": "Springer Nature",
-      "categoryId": "general",
-      "category": "综合顶刊",
-      "categoryZh": "综合顶刊",
-      "categoryEn": "Flagship Journals",
-      "themeId": "climate",
-      "theme": "气候变化",
-      "themeZh": "气候变化",
-      "themeEn": "Climate Change",
-      "published": "2026-08-29",
-      "url": "https://doi.org/10.1038/s41467-026-77060-8",
-      "officialJournalUrl": "https://www.nature.com/ncomms/",
-      "abstract": "Their exceptional coherence makes nuclear spins in solids a prime candidate for quantum memories in quantum networks and repeaters. Still, the direct all-optical initialization, coherent control, and readout of individual nuclear spin qubits have been an outstanding challenge. Here, this is achieved by embedding 167 Er dopants in yttrium orthosilicate in a cryogenic Fabry-Perot cavity, whose linewidth of 65 MHz is much smaller than the 0.9 GHz separation of neighboring hyperfine levels. Frequency-selective emission enhancement thus enables a single-shot readout fidelity of 91(2) %. Furthermore, a large magnetic field freezes paramagnetic impurities, leading to coherence times exceeding 0.2 s. The combination of nuclear-spin qubits with frequency-multiplexed addressing and lifetime-limited photon emission in the minimal-loss telecommunications C-band establishes 167 Er as a leading platform for long-range, fiber-based quantum networks.",
-      "abstractEn": "Their exceptional coherence makes nuclear spins in solids a prime candidate for quantum memories in quantum networks and repeaters. Still, the direct all-optical initialization, coherent control, and readout of individual nuclear spin qubits have been an outstanding challenge. Here, this is achieved by embedding 167 Er dopants in yttrium orthosilicate in a cryogenic Fabry-Perot cavity, whose linewidth of 65 MHz is much smaller than the 0.9 GHz separation of neighboring hyperfine levels. Frequency-selective emission enhancement thus enables a single-shot readout fidelity of 91(2) %. Furthermore, a large magnetic field freezes paramagnetic impurities, leading to coherence times exceeding 0.2 s. The combination of nuclear-spin qubits with frequency-multiplexed addressing and lifetime-limited photon emission in the minimal-loss telecommunications C-band establishes 167 Er as a leading platform for long-range, fiber-based quantum networks.",
       "subjects": [],
       "keywordsEn": [],
       "citedBy": 0,
@@ -772,6 +772,46 @@
       "themeColor": "#b45309",
       "hasAbstract": false,
       "abstractStatus": "missing"
+    },
+    {
+      "id": "10.1029/2026ef008831",
+      "doi": "10.1029/2026ef008831",
+      "title": "Misrepresentation of Human Climate Fingerprint in DOE Report",
+      "titleEn": "Misrepresentation of Human Climate Fingerprint in DOE Report",
+      "authors": [
+        "Benjamin D. Santer",
+        "Susan Solomon",
+        "David W. J. Thompson",
+        "Qiang Fu",
+        "Andrew E. Dessler"
+      ],
+      "journalId": "earths-future",
+      "journal": "Earth's Future",
+      "journalAbbr": "Earth's Future",
+      "publisher": "AGU / Wiley",
+      "categoryId": "climate",
+      "category": "气候变化",
+      "categoryZh": "气候变化",
+      "categoryEn": "Climate Change",
+      "themeId": "climate",
+      "theme": "气候变化",
+      "themeZh": "气候变化",
+      "themeEn": "Climate Change",
+      "published": "2026-08-29",
+      "url": "https://doi.org/10.1029/2026ef008831",
+      "officialJournalUrl": "https://agupubs.onlinelibrary.wiley.com/journal/23284277",
+      "abstract": "A July 2025 report from the U.S. Department of Energy (DOE) made the key claim that the stratosphere has warmed since 2000, contrary to model projections and inconsistent with the expected anthropogenic fingerprint. The DOE report provided no references or data to support this claim. Its basis appears to be an unpublished figure comparing simulated and observed tropical trends in the temperature of the lower stratosphere (TLS), a layer extending from roughly 15 to 20 km above Earth's surface. The observed tropical TLS trends shown in the unpublished DOE figure are incorrect. When the correct observational data sets are used, model tropical TLS trends are consistent with satellite observations, and a model‐predicted anthropogenic fingerprint is identifiable with high confidence in observed latitude‐altitude profiles of tropical temperature change. An earlier rebuttal of the DOE “no human fingerprint” claim considered global‐mean temperature changes only and did not perform a pattern‐based fingerprint study. Unless corrected or retracted, the DOE report will continue to misinform policymakers and the public about the reality of human effects on climate.",
+      "abstractEn": "A July 2025 report from the U.S. Department of Energy (DOE) made the key claim that the stratosphere has warmed since 2000, contrary to model projections and inconsistent with the expected anthropogenic fingerprint. The DOE report provided no references or data to support this claim. Its basis appears to be an unpublished figure comparing simulated and observed tropical trends in the temperature of the lower stratosphere (TLS), a layer extending from roughly 15 to 20 km above Earth's surface. The observed tropical TLS trends shown in the unpublished DOE figure are incorrect. When the correct observational data sets are used, model tropical TLS trends are consistent with satellite observations, and a model‐predicted anthropogenic fingerprint is identifiable with high confidence in observed latitude‐altitude profiles of tropical temperature change. An earlier rebuttal of the DOE “no human fingerprint” claim considered global‐mean temperature changes only and did not perform a pattern‐based fingerprint study. Unless corrected or retracted, the DOE report will continue to misinform policymakers and the public about the reality of human effects on climate.",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 0,
+      "openAccess": true,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#0f766e",
+      "hasAbstract": true,
+      "abstractStatus": "available"
     },
     {
       "id": "10.1073/pnas.2535288123",
@@ -1893,46 +1933,6 @@
       "abstractStatus": "available"
     },
     {
-      "id": "10.1126/science.aef8874",
-      "doi": "10.1126/science.aef8874",
-      "title": "Recovering signatures of archaic hominin introgression using ancestral recombination graphs",
-      "titleEn": "Recovering signatures of archaic hominin introgression using ancestral recombination graphs",
-      "authors": [
-        "Yulin Zhang",
-        "Arjun Biddanda",
-        "Sarah A. Johnson",
-        "Colm O’Dushlaine",
-        "Priya Moorjani"
-      ],
-      "journalId": "science",
-      "journal": "Science",
-      "journalAbbr": "Science",
-      "publisher": "AAAS",
-      "categoryId": "general",
-      "category": "综合顶刊",
-      "categoryZh": "综合顶刊",
-      "categoryEn": "Flagship Journals",
-      "themeId": "modeling",
-      "theme": "地球系统模型",
-      "themeZh": "地球系统模型",
-      "themeEn": "Earth System Modeling",
-      "published": "2026-08-27",
-      "url": "https://doi.org/10.1126/science.aef8874",
-      "officialJournalUrl": "https://www.science.org/journal/science",
-      "abstract": "Admixture between modern humans and extinct hominins has shaped the genomes of present-day individuals, but reconstructing this history has been constrained by the scarcity of archaic samples and unadmixed outgroup populations. We introduce TRACE, a reference- and outgroup-free approach that uses features of ancestral recombination graphs to identify archaic ancestry. Simulations demonstrate that TRACE achieves high precision and low false discovery rates. Applied to 1000 genomes, TRACE recovers known Neanderthal and Denisovan introgression and uncovers ghost admixture from uncharacterized hominins in both Africans and non-Africans. Ghost ancestry persists in Neanderthal and Denisovan ancestry deserts, challenging their interpretation as Homo sapiens –specific regions. In Oceanians, TRACE finds that deep lineages are enriched in Denisovan compared with Neanderthal regions, supporting super-archaic introgression. TRACE enables mapping of archaic introgression without archaic reference genomes.",
-      "abstractEn": "Admixture between modern humans and extinct hominins has shaped the genomes of present-day individuals, but reconstructing this history has been constrained by the scarcity of archaic samples and unadmixed outgroup populations. We introduce TRACE, a reference- and outgroup-free approach that uses features of ancestral recombination graphs to identify archaic ancestry. Simulations demonstrate that TRACE achieves high precision and low false discovery rates. Applied to 1000 genomes, TRACE recovers known Neanderthal and Denisovan introgression and uncovers ghost admixture from uncharacterized hominins in both Africans and non-Africans. Ghost ancestry persists in Neanderthal and Denisovan ancestry deserts, challenging their interpretation as Homo sapiens –specific regions. In Oceanians, TRACE finds that deep lineages are enriched in Denisovan compared with Neanderthal regions, supporting super-archaic introgression. TRACE enables mapping of archaic introgression without archaic reference genomes.",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 2,
-      "openAccess": false,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#7c3aed",
-      "hasAbstract": true,
-      "abstractStatus": "available"
-    },
-    {
       "id": "10.1126/science.ady2660",
       "doi": "10.1126/science.ady2660",
       "title": "Recent strengthening of eastern Pacific ENSO in the last millennium paleorecord",
@@ -1970,6 +1970,46 @@
         "Crossref DOI metadata"
       ],
       "themeColor": "#0f766e",
+      "hasAbstract": true,
+      "abstractStatus": "available"
+    },
+    {
+      "id": "10.1126/science.aef8874",
+      "doi": "10.1126/science.aef8874",
+      "title": "Recovering signatures of archaic hominin introgression using ancestral recombination graphs",
+      "titleEn": "Recovering signatures of archaic hominin introgression using ancestral recombination graphs",
+      "authors": [
+        "Yulin Zhang",
+        "Arjun Biddanda",
+        "Sarah A. Johnson",
+        "Colm O’Dushlaine",
+        "Priya Moorjani"
+      ],
+      "journalId": "science",
+      "journal": "Science",
+      "journalAbbr": "Science",
+      "publisher": "AAAS",
+      "categoryId": "general",
+      "category": "综合顶刊",
+      "categoryZh": "综合顶刊",
+      "categoryEn": "Flagship Journals",
+      "themeId": "modeling",
+      "theme": "地球系统模型",
+      "themeZh": "地球系统模型",
+      "themeEn": "Earth System Modeling",
+      "published": "2026-08-27",
+      "url": "https://doi.org/10.1126/science.aef8874",
+      "officialJournalUrl": "https://www.science.org/journal/science",
+      "abstract": "Admixture between modern humans and extinct hominins has shaped the genomes of present-day individuals, but reconstructing this history has been constrained by the scarcity of archaic samples and unadmixed outgroup populations. We introduce TRACE, a reference- and outgroup-free approach that uses features of ancestral recombination graphs to identify archaic ancestry. Simulations demonstrate that TRACE achieves high precision and low false discovery rates. Applied to 1000 genomes, TRACE recovers known Neanderthal and Denisovan introgression and uncovers ghost admixture from uncharacterized hominins in both Africans and non-Africans. Ghost ancestry persists in Neanderthal and Denisovan ancestry deserts, challenging their interpretation as Homo sapiens –specific regions. In Oceanians, TRACE finds that deep lineages are enriched in Denisovan compared with Neanderthal regions, supporting super-archaic introgression. TRACE enables mapping of archaic introgression without archaic reference genomes.",
+      "abstractEn": "Admixture between modern humans and extinct hominins has shaped the genomes of present-day individuals, but reconstructing this history has been constrained by the scarcity of archaic samples and unadmixed outgroup populations. We introduce TRACE, a reference- and outgroup-free approach that uses features of ancestral recombination graphs to identify archaic ancestry. Simulations demonstrate that TRACE achieves high precision and low false discovery rates. Applied to 1000 genomes, TRACE recovers known Neanderthal and Denisovan introgression and uncovers ghost admixture from uncharacterized hominins in both Africans and non-Africans. Ghost ancestry persists in Neanderthal and Denisovan ancestry deserts, challenging their interpretation as Homo sapiens –specific regions. In Oceanians, TRACE finds that deep lineages are enriched in Denisovan compared with Neanderthal regions, supporting super-archaic introgression. TRACE enables mapping of archaic introgression without archaic reference genomes.",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 2,
+      "openAccess": false,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#7c3aed",
       "hasAbstract": true,
       "abstractStatus": "available"
     },
@@ -3090,47 +3130,6 @@
       "abstractStatus": "available"
     },
     {
-      "id": "10.1029/2026ef008496",
-      "doi": "10.1029/2026ef008496",
-      "title": "Climate‐Mode Precursors and the Predictability of Amazon Hot and Dry Extremes",
-      "titleEn": "Climate‐Mode Precursors and the Predictability of Amazon Hot and Dry Extremes",
-      "authors": [
-        "Sanaa Hobeichi",
-        "Lincoln Muniz Alves",
-        "Andréa S. Taschetto",
-        "Wil Laura",
-        "Nayan Talmale",
-        "et al."
-      ],
-      "journalId": "earths-future",
-      "journal": "Earth's Future",
-      "journalAbbr": "Earth's Future",
-      "publisher": "AGU / Wiley",
-      "categoryId": "climate",
-      "category": "气候变化",
-      "categoryZh": "气候变化",
-      "categoryEn": "Climate Change",
-      "themeId": "climate",
-      "theme": "气候变化",
-      "themeZh": "气候变化",
-      "themeEn": "Climate Change",
-      "published": "2026-08-27",
-      "url": "https://doi.org/10.1029/2026ef008496",
-      "officialJournalUrl": "https://agupubs.onlinelibrary.wiley.com/journal/23284277",
-      "abstract": "We characterize the dependence between lagged large‐scale climate modes and Amazon climate extremes and assess whether monthly precursor signals enable early warning of compound hot‐dry events. A copula‐based framework analyses tail dependence between major climate drivers and precipitation and temperature anomalies at multiple lags, identifying where and how far in advance extreme phases of modes of variability likely precede local extremes. Machine learning models then evaluate the predictability of compound hot‐dry events from lagged climate indices, determining which modes and lead times yield skillful forecasts. Copula modeling shows hot extremes are more likely following positive phases of El Niño‐Southern Oscillation (ENSO) and tropical Atlantic variability, with relationships more prevalent than for cold extremes. The most persistent signal occurs for March–May temperatures, when hot extremes are more likely across the Amazon following positive climate‐mode anomalies at lags up to 7 months, indicating substantial long‐lead early‐warning potential. In September–November, hot extremes are associated with prior tropical North Atlantic warming. During December–February, they occur at short lags with tropical South Atlantic warming across the basin, and at longer ENSO lags in the Planalto Amazon and Andes–Amazon foothills. In contrast, precipitation shows limited tail‐dependence with climate indices, and North Atlantic variability exhibits weak dependence with individual hot and dry extremes. Predictability of compound hot‐dry events is dominated by ENSO and peaks in December–February, especially in the western Guiana highlands, and in March–May in the lower central Amazon, with lowest skill in June–August. Reliable predictions typically require at least one climate index at 1‐month lead.",
-      "abstractEn": "We characterize the dependence between lagged large‐scale climate modes and Amazon climate extremes and assess whether monthly precursor signals enable early warning of compound hot‐dry events. A copula‐based framework analyses tail dependence between major climate drivers and precipitation and temperature anomalies at multiple lags, identifying where and how far in advance extreme phases of modes of variability likely precede local extremes. Machine learning models then evaluate the predictability of compound hot‐dry events from lagged climate indices, determining which modes and lead times yield skillful forecasts. Copula modeling shows hot extremes are more likely following positive phases of El Niño‐Southern Oscillation (ENSO) and tropical Atlantic variability, with relationships more prevalent than for cold extremes. The most persistent signal occurs for March–May temperatures, when hot extremes are more likely across the Amazon following positive climate‐mode anomalies at lags up to 7 months, indicating substantial long‐lead early‐warning potential. In September–November, hot extremes are associated with prior tropical North Atlantic warming. During December–February, they occur at short lags with tropical South Atlantic warming across the basin, and at longer ENSO lags in the Planalto Amazon and Andes–Amazon foothills. In contrast, precipitation shows limited tail‐dependence with climate indices, and North Atlantic variability exhibits weak dependence with individual hot and dry extremes. Predictability of compound hot‐dry events is dominated by ENSO and peaks in December–February, especially in the western Guiana highlands, and in March–May in the lower central Amazon, with lowest skill in June–August. Reliable predictions typically require at least one climate index at 1‐month lead.",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 0,
-      "openAccess": true,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#0f766e",
-      "hasAbstract": true,
-      "abstractStatus": "available"
-    },
-    {
       "id": "10.1038/s41586-026-10932-7",
       "doi": "10.1038/s41586-026-10932-7",
       "title": "Insights into longevity and virus-driven adaptation from Myotis bat genomes",
@@ -3931,46 +3930,6 @@
       "abstractStatus": "available"
     },
     {
-      "id": "10.5194/nhess-26-4071-2026",
-      "doi": "10.5194/nhess-26-4071-2026",
-      "title": "Assessing financial risk to property portfolios from physical rainfall extremes",
-      "titleEn": "Assessing financial risk to property portfolios from physical rainfall extremes",
-      "authors": [
-        "Laura C. Dawkins",
-        "Freya K. Garry",
-        "Dan J. Bernie",
-        "Jason A. Lowe",
-        "Theodoros Economou"
-      ],
-      "journalId": "nhess",
-      "journal": "Natural Hazards and Earth System Sciences",
-      "journalAbbr": "NHESS",
-      "publisher": "Copernicus / EGU",
-      "categoryId": "hazard",
-      "category": "灾害风险",
-      "categoryZh": "灾害风险",
-      "categoryEn": "Hazards & Risk",
-      "themeId": "hazard",
-      "theme": "灾害风险",
-      "themeZh": "灾害风险",
-      "themeEn": "Hazards & Risk",
-      "published": "2026-08-26",
-      "url": "https://doi.org/10.5194/nhess-26-4071-2026",
-      "officialJournalUrl": "https://nhess.copernicus.org/",
-      "abstract": "Abstract. Physical climate risk from extreme rainfall is often poorly understood by financial investors, potentially extending to pension funds that manage assets of substantial societal importance. There is a growing need for investors to better understand these risks to ensure financial resilience in a changing climate. We present a transparent framework to estimate current and near-future financial risk from flood damage using rainfall hazard information from regional climate projections, river flood maps, and depth-damage functions. Synthetic portfolios are constructed from non-residential built-up surface data and country-specific property values, enabling calculation of Expected Annual Damage. Results show that this physical climate risk is already substantial and projected to rise consistently across Europe, with some regions experiencing particularly large increases. Portfolio composition strongly influences risk, with asset location and value at-risk inducing greater variability than climate model uncertainty. We also demonstrate how adaptation could significantly reduce Expected Annual Damage and deliver a strong financial return within a short time frame, reinforcing its role as a cost-effective strategy for managing climate-related risk. This approach offers a pragmatic and transparent method for quantifying an element of financial risk from extreme rainfall using openly available datasets. A key methodological limitation is the simplified statistical mapping between rainfall extremes and flood depth, which replaces a physically based hydrological modelling chain and is not explicitly validated against observations or hydrological simulations. As such, the results should be interpreted as indicative rather than decision-ready estimates of flood risk. Nonetheless, the findings highlight the urgent need for financial actors, such as asset managers, to integrate physical climate risk into decision-making to safeguard long-term financial resilience.",
-      "abstractEn": "Abstract. Physical climate risk from extreme rainfall is often poorly understood by financial investors, potentially extending to pension funds that manage assets of substantial societal importance. There is a growing need for investors to better understand these risks to ensure financial resilience in a changing climate. We present a transparent framework to estimate current and near-future financial risk from flood damage using rainfall hazard information from regional climate projections, river flood maps, and depth-damage functions. Synthetic portfolios are constructed from non-residential built-up surface data and country-specific property values, enabling calculation of Expected Annual Damage. Results show that this physical climate risk is already substantial and projected to rise consistently across Europe, with some regions experiencing particularly large increases. Portfolio composition strongly influences risk, with asset location and value at-risk inducing greater variability than climate model uncertainty. We also demonstrate how adaptation could significantly reduce Expected Annual Damage and deliver a strong financial return within a short time frame, reinforcing its role as a cost-effective strategy for managing climate-related risk. This approach offers a pragmatic and transparent method for quantifying an element of financial risk from extreme rainfall using openly available datasets. A key methodological limitation is the simplified statistical mapping between rainfall extremes and flood depth, which replaces a physically based hydrological modelling chain and is not explicitly validated against observations or hydrological simulations. As such, the results should be interpreted as indicative rather than decision-ready estimates of flood risk. Nonetheless, the findings highlight the urgent need for financial actors, such as asset managers, to integrate physical climate risk into decision-making to safeguard long-term financial resilience.",
-      "subjects": [],
-      "keywordsEn": [],
-      "citedBy": 0,
-      "openAccess": true,
-      "sources": [
-        "Crossref DOI metadata"
-      ],
-      "themeColor": "#dc2626",
-      "hasAbstract": true,
-      "abstractStatus": "available"
-    },
-    {
       "id": "10.5194/nhess-26-4013-2026",
       "doi": "10.5194/nhess-26-4013-2026",
       "title": "Exposure of settlements to wildfires in a transboundary wildland–urban interface region in Central Europe",
@@ -4000,6 +3959,46 @@
       "officialJournalUrl": "https://nhess.copernicus.org/",
       "abstract": "Abstract. Climate change has been causing a noticeable rise in disastrous wildfires in Mediterranean and temperate forests. Although forest fires were of smaller size and less concern in Central Europe than, for example, in the Mediterranean, the region has recently experienced large wildfires. For example, a wildfire burned significant parts of two National Parks on the border between Germany and the Czech Republic in 2022. This event demonstrated the need for local stakeholders and the scientific community to adapt fire risk assessment and management to this new reality. Here, we aim to create an interactive wildfire exposure map for the transboundary National Park region Saxon-Bohemian Switzerland between Germany and the Czech Republic. We use several Earth observation products, historical fire occurrence points, medium to very high fire danger weather and wind scenarios, and three different fire duration scenarios (1, 2, and 3 d) to simulate fire behaviour and burn probability, and to finally assess the potential exposure of settlements to wildfires. Observations from the wildfire in 2022 were used to validate the modelling framework. The interactive wildfire exposure map was tested with members of the general public and local stakeholders to assess its usability and usefulness. The 50 questionnaire responses showed that participants generally rated the map as easy to use and were able to interpret the bivariate legend correctly in most cases, while also providing suggestions for improvements to support potential applications in the monitoring and management of the national parks. We generally found higher flame lengths in Czech municipalities, whereas elevated burn probabilities occurred on both sides of the border. As our results and the experiences from the past fire have shown, wildfires cross borders, demonstrating the need for coordinated cross-border wildfire management.",
       "abstractEn": "Abstract. Climate change has been causing a noticeable rise in disastrous wildfires in Mediterranean and temperate forests. Although forest fires were of smaller size and less concern in Central Europe than, for example, in the Mediterranean, the region has recently experienced large wildfires. For example, a wildfire burned significant parts of two National Parks on the border between Germany and the Czech Republic in 2022. This event demonstrated the need for local stakeholders and the scientific community to adapt fire risk assessment and management to this new reality. Here, we aim to create an interactive wildfire exposure map for the transboundary National Park region Saxon-Bohemian Switzerland between Germany and the Czech Republic. We use several Earth observation products, historical fire occurrence points, medium to very high fire danger weather and wind scenarios, and three different fire duration scenarios (1, 2, and 3 d) to simulate fire behaviour and burn probability, and to finally assess the potential exposure of settlements to wildfires. Observations from the wildfire in 2022 were used to validate the modelling framework. The interactive wildfire exposure map was tested with members of the general public and local stakeholders to assess its usability and usefulness. The 50 questionnaire responses showed that participants generally rated the map as easy to use and were able to interpret the bivariate legend correctly in most cases, while also providing suggestions for improvements to support potential applications in the monitoring and management of the national parks. We generally found higher flame lengths in Czech municipalities, whereas elevated burn probabilities occurred on both sides of the border. As our results and the experiences from the past fire have shown, wildfires cross borders, demonstrating the need for coordinated cross-border wildfire management.",
+      "subjects": [],
+      "keywordsEn": [],
+      "citedBy": 0,
+      "openAccess": true,
+      "sources": [
+        "Crossref DOI metadata"
+      ],
+      "themeColor": "#dc2626",
+      "hasAbstract": true,
+      "abstractStatus": "available"
+    },
+    {
+      "id": "10.5194/nhess-26-4071-2026",
+      "doi": "10.5194/nhess-26-4071-2026",
+      "title": "Assessing financial risk to property portfolios from physical rainfall extremes",
+      "titleEn": "Assessing financial risk to property portfolios from physical rainfall extremes",
+      "authors": [
+        "Laura C. Dawkins",
+        "Freya K. Garry",
+        "Dan J. Bernie",
+        "Jason A. Lowe",
+        "Theodoros Economou"
+      ],
+      "journalId": "nhess",
+      "journal": "Natural Hazards and Earth System Sciences",
+      "journalAbbr": "NHESS",
+      "publisher": "Copernicus / EGU",
+      "categoryId": "hazard",
+      "category": "灾害风险",
+      "categoryZh": "灾害风险",
+      "categoryEn": "Hazards & Risk",
+      "themeId": "hazard",
+      "theme": "灾害风险",
+      "themeZh": "灾害风险",
+      "themeEn": "Hazards & Risk",
+      "published": "2026-08-26",
+      "url": "https://doi.org/10.5194/nhess-26-4071-2026",
+      "officialJournalUrl": "https://nhess.copernicus.org/",
+      "abstract": "Abstract. Physical climate risk from extreme rainfall is often poorly understood by financial investors, potentially extending to pension funds that manage assets of substantial societal importance. There is a growing need for investors to better understand these risks to ensure financial resilience in a changing climate. We present a transparent framework to estimate current and near-future financial risk from flood damage using rainfall hazard information from regional climate projections, river flood maps, and depth-damage functions. Synthetic portfolios are constructed from non-residential built-up surface data and country-specific property values, enabling calculation of Expected Annual Damage. Results show that this physical climate risk is already substantial and projected to rise consistently across Europe, with some regions experiencing particularly large increases. Portfolio composition strongly influences risk, with asset location and value at-risk inducing greater variability than climate model uncertainty. We also demonstrate how adaptation could significantly reduce Expected Annual Damage and deliver a strong financial return within a short time frame, reinforcing its role as a cost-effective strategy for managing climate-related risk. This approach offers a pragmatic and transparent method for quantifying an element of financial risk from extreme rainfall using openly available datasets. A key methodological limitation is the simplified statistical mapping between rainfall extremes and flood depth, which replaces a physically based hydrological modelling chain and is not explicitly validated against observations or hydrological simulations. As such, the results should be interpreted as indicative rather than decision-ready estimates of flood risk. Nonetheless, the findings highlight the urgent need for financial actors, such as asset managers, to integrate physical climate risk into decision-making to safeguard long-term financial resilience.",
+      "abstractEn": "Abstract. Physical climate risk from extreme rainfall is often poorly understood by financial investors, potentially extending to pension funds that manage assets of substantial societal importance. There is a growing need for investors to better understand these risks to ensure financial resilience in a changing climate. We present a transparent framework to estimate current and near-future financial risk from flood damage using rainfall hazard information from regional climate projections, river flood maps, and depth-damage functions. Synthetic portfolios are constructed from non-residential built-up surface data and country-specific property values, enabling calculation of Expected Annual Damage. Results show that this physical climate risk is already substantial and projected to rise consistently across Europe, with some regions experiencing particularly large increases. Portfolio composition strongly influences risk, with asset location and value at-risk inducing greater variability than climate model uncertainty. We also demonstrate how adaptation could significantly reduce Expected Annual Damage and deliver a strong financial return within a short time frame, reinforcing its role as a cost-effective strategy for managing climate-related risk. This approach offers a pragmatic and transparent method for quantifying an element of financial risk from extreme rainfall using openly available datasets. A key methodological limitation is the simplified statistical mapping between rainfall extremes and flood depth, which replaces a physically based hydrological modelling chain and is not explicitly validated against observations or hydrological simulations. As such, the results should be interpreted as indicative rather than decision-ready estimates of flood risk. Nonetheless, the findings highlight the urgent need for financial actors, such as asset managers, to integrate physical climate risk into decision-making to safeguard long-term financial resilience.",
       "subjects": [],
       "keywordsEn": [],
       "citedBy": 0,
